@@ -1,0 +1,20 @@
+<div class="clearfix"></div>
+<footer>
+    <div class="container-fluid">
+        <p class="copyright">Copyright &copy; 2017.Company name All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    //修改密码弹框
+    $(document).on('click', '.revisePwd', function () {
+        //iframe层
+        layer.open({
+            type: 2,
+            title: '修改密码',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['500px','400px'],
+            content: '/Index/editPassword' //iframe的url
+        });
+    });
+</script>

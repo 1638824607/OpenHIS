@@ -1,0 +1,23 @@
+安装之前必须配置一个虚拟域名
+
+必须安装在域名根目录下, 不能圈套圈套在某个目录下 否则会路径出错
+
+安装需要host一个域名根目录下安装. apache配置一个虚拟主机 不能圈套在某个目录下
+示例:
+ http://www.xxx.com/  正确
+  
+ http://www.xxx.com/Openhis/   错误 (很多路径出错)
+ 
+
+
+nginx 配置文件可参考 根目录下 nginx.conf 文件  
+
+
+
+
+如果你是nginx 服务器  lnmp 安装的, 并且是按照 lnmp 官网标准安装的 你可以 直接拿当前根目录下的 nginx.conf 文件 改名字覆盖你的 对应域名的文件. 然后修改里面的 "dzmhis.com"  域名换成你的即可
+
+如果你的php版本是5.6.* ,可能会出现错误，你可以把php.ini文件里边 always_populate_raw_post_data = -1 注释去掉解决问题.
+如果你的php版本>5.6,不会出现此问题。我们推荐使用php的版本为7.*
+
+详细的教程请参考网址：https://www.kancloud.cn/dzmyiliao/dzm/463354 

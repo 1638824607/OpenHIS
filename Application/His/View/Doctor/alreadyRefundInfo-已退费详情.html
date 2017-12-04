@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>退费详情</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../assets/vendor/linearicons/style.css">
+<link rel="stylesheet" href="../assets/vendor/chartist/css/chartist-custom.css">
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="../assets/css/main.css">
+<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+<link rel="stylesheet" href="../assets/css/demo.css">
+<!-- public -->
+<link rel="stylesheet" href="../assets/css/public.css">
+<!-- datetimepicker -->
+<link rel="stylesheet" type="text/css" href="../assets/vendor/datetimepicker/jquery.datetimepicker.css"/>
+</head>
+
+<body>
+<!-- MAIN -->
+<div class="main">
+	<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<div class="container-fluid">
+			<div class="panel clearfix pd10 mb20">
+				<button type="button" class="btn btn-default">返回</button>
+				<div class="r flh34 mr20"><span class="">应收金额：200元</span><span class="ml20">实收金额：200元</span><span class="ml20">应退金额：<span class="red">200元</span></span></div>
+			</div>
+			<div class="panel panel-profile">
+				<div class="clearfix" style="min-height: 900px;">
+					<!-- LEFT COLUMN -->
+					<div class="profile-left">
+						<!-- PROFILE DETAIL -->
+						<div class="profile-detail" style="max-height:860px; overflow-y: auto;">
+							<div class="profile-info">
+								<h4 class="heading"><span class="blue">患者信息</span><span class="r gray2">日期：2017-10-17</span></h4>
+								<ul class="list-unstyled list-justify">
+									<li><span class="gray2">患者编号：2017101785030000005</span></li>
+									<li class="clearfix">
+										<div class="input-group listSeaForm l" style=" width: 54%;">
+											<span class="input-group-btn">
+												<span class="btn">姓名：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" disabled value="张某某">
+										</div>
+										<div class="input-group listSeaForm r" style=" width: 44%;">
+											<span class="input-group-btn">
+												<span class="btn">性别：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" disabled value="男">
+										</div>
+									</li>
+									<li class="clearfix">
+										<div class="input-group listSeaForm l" style=" width: 54%;">
+											<span class="input-group-btn">
+												<span class="btn">生日：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" value="2017-19-10" disabled>
+										</div>
+										<div class="input-group listSeaForm r" style=" width: 44%;">
+											<input type="text" class="form-control form-itmeB" value="11岁8月1天" disabled>
+										</div>
+									</li>
+									<li>
+										<div class="input-group listSeaForm">
+											<span class="input-group-btn">
+												<span class="btn">手机：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" value="15811327243" disabled>
+										</div>
+									</li>
+									<li>
+										<div class="input-group listSeaForm">
+											<span class="input-group-btn">
+												<span class="btn">身份证：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" value="11022619780804432" disabled>
+										</div>
+									</li>
+									<li>
+										<div class="input-group listSeaForm">
+											<span class="input-group-btn">
+												<span class="btn">住址：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" value="和平里北大街23号楼 4单元 5层 501室" disabled>
+										</div>
+									</li>
+								</ul>
+								<h4 class="heading"><span class="blue">诊断信息</span></h4>
+								<ul class="list-unstyled list-justify">
+									<li><span class="gray2">门诊编号：2017101785030000005</span></li>
+									<li class="clearfix">
+										<div class="input-group listSeaForm l" style=" width: 54%;">
+											<span class="input-group-btn">
+												<span class="btn">医生：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" disabled value="黄亮">
+										</div>
+										<div class="input-group listSeaForm r" style=" width: 44%;">
+											<span class="input-group-btn">
+												<span class="btn">科室：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" disabled value="中医科">
+										</div>
+									</li>
+									<li class="clearfix">
+										<div class="input-group listSeaForm l" style=" width: 54%;">
+											<span class="input-group-btn">
+												<span class="btn">接诊类型：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" disabled value="初诊">
+										</div>
+										<div class="input-group listSeaForm r" style=" width: 44%;">
+											<span class="input-group-btn">
+												<span class="btn">是否传染：</span>
+											</span>
+											<input type="text" class="form-control form-itmeB" disabled value="否">
+										</div>
+									</li>
+								</ul>
+								<h4 class="heading"><span class="blue">病历信息</span></h4>
+								<div class="pd10 bc">医生填写的病历内容，不能修改</div>
+								<h4 class="heading mt10"><span class="blue">医生建议</span></h4>
+								<div class="pd10 bc">医生填写的建议，不能修改</div>
+							</div>
+						</div>
+						<!-- END PROFILE DETAIL -->
+					</div>
+					<!-- END LEFT COLUMN -->
+					<!-- RIGHT COLUMN -->
+					<div class="profile-right">
+						<div>
+							<ul class="tabBtn recipelbBtn clearfix">
+								<li class="on">处方1</li>
+								<li>处方2</li>
+							</ul>
+							<ul class="tabBox recipelBox" style="max-height:840px; overflow-y: auto;">
+								<li class="on">
+									<h3 class="panel-title mt20 fz14 gray2">处方编号：2017101785030000005</h3>
+									<table class="table table-bordered ftc">
+										<thead>
+											<tr>
+												<th>
+													<label class="fancy-checkbox">
+														<input type="checkbox">
+														<span>序号</span>
+													</label>
+												</th>
+												<th>药品名</th>
+												<th>单剂量（g/条）</th>
+												<th>单价（元）</th>
+												<th>金额（元）</th>
+												<th>特殊要求</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>白花蛇舌草</td>
+												<td>500</td>
+												<td>0.5</td>
+												<td>250</td>
+												<td>碾碎</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>白花蛇舌草</td>
+												<td>500</td>
+												<td>0.5</td>
+												<td>250</td>
+												<td>碾碎</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>白花蛇舌草</td>
+												<td>500</td>
+												<td>0.5</td>
+												<td>250</td>
+												<td>碾碎</td>
+											</tr>
+										</tbody>
+									</table>
+									<h3 class="heading blue">附加费</h3>
+									<table class="table table-bordered ftc">
+										<thead>
+											<tr>
+												<th>
+													<label class="fancy-checkbox">
+														<input type="checkbox">
+														<span>序号</span>
+													</label>
+												</th>
+												<th>药品名</th>
+												<th>金额（元）</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>代煎</td>
+												<td>50</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>代煎</td>
+												<td>50</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>代煎</td>
+												<td>50</td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+								<li>
+									<h3 class="panel-title mt20 fz14 gray2">处方编号：2017101787010000006</h3>
+									<table class="table table-bordered ftc">
+										<thead>
+											<tr>
+												<th>
+													<label class="fancy-checkbox">
+														<input type="checkbox">
+														<span>序号</span>
+													</label>
+												</th>
+												<th>药品名</th>
+												<th>单剂量（g/条）</th>
+												<th>单价（元）</th>
+												<th>金额（元）</th>
+												<th>特殊要求</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>白花蛇舌草</td>
+												<td>500</td>
+												<td>0.5</td>
+												<td>250</td>
+												<td>碾碎</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>白花蛇舌草</td>
+												<td>900</td>
+												<td>0.5</td>
+												<td>250</td>
+												<td>碾碎</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>白花蛇舌草</td>
+												<td>400</td>
+												<td>0.5</td>
+												<td>250</td>
+												<td>碾碎</td>
+											</tr>
+										</tbody>
+									</table>
+									<h3 class="heading blue">附加费</h3>
+									<table class="table table-bordered ftc">
+										<thead>
+											<tr>
+												<th>
+													<label class="fancy-checkbox">
+														<input type="checkbox">
+														<span>序号</span>
+													</label>
+												</th>
+												<th>药品名</th>
+												<th>金额（元）</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>代煎</td>
+												<td>50</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>代煎</td>
+												<td>50</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>代煎</td>
+												<td>50</td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+							</ul>
+						</div>
+						<!-- END TABBED CONTENT -->
+					</div>
+					<!-- END RIGHT COLUMN -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<!-- Javascript -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="../assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="../assets/scripts/klorofil-common.js"></script>
+<script src="../assets/vendor/datetimepicker/jquery.datetimepicker.js"></script>
+<script src="../assets/js/public.js"></script>
+<script>
+$(function() {
+	//选项卡切换
+	$(document).on('click', '.tabBtn > li', function(){
+		$(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+		$(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+	});
+});
+</script>
+</body>
+
+</html>

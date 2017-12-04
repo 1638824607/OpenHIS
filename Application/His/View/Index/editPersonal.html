@@ -1,0 +1,177 @@
+<div id="wrapper">
+<include file="Public:header" />
+    <!-- MAIN -->
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid clinicForm on">
+                <div class="panel pd10 clearfix">
+                    <button type="button" class="btn btn-primary r chlinicEidt">修改</button>
+                    <form id="uploadForm">
+                        <div class="l doctorPortrait mr20">
+                            <?php if(!empty($personalInfo['picture'])){?>
+                            <img id="doc-pic" data-url="" src="<?php echo C('UPLOAD_DOCTOR').$personalInfo['picture'];?>">
+                            <?php }else{?>
+                            <img id="doc-pic" data-url="" src="/Upload/doctor/doctor_def.jpg">
+                        <?php }?>
+                            <input type="file" name="file" id="file" disabled="" />
+                        </div>
+                    </form>
+                    <dl class="l doctorInfoDl">
+                        <dt>
+                            <div class="input-group listSeaForm wb100">
+                                <input type="text" class="form-control" name="true_name" value="{$personalInfo['true_name']}" disabled maxlength="10">
+                            </div>
+                        </dt>
+                        <dd>科室：{$departmentInfo['department_name']}</dd>
+                        <dd>级别：{$personalInfo['rank']}</dd>
+                        <dd>诊所：{$hospitalInfo['hospital_name']}</dd>
+                        <dd>诊所地址：{$hospitalInfo['address']}</dd>
+                    </dl>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel pd10" style="height: 528px; overflow-y: auto;">
+                            <ul>
+                                <li class="clearfix">
+                                    <div class="input-group listSeaForm l" style="width: 48%;">
+                                    <span class="input-group-btn">
+                                        <span class="btn">性别：</span>
+                                    </span>
+                                        <select class="form-control" id="sex" name="sex" disabled>
+                                            <option value="1" {:$personalInfo['sex'] == 1 ? 'selected' : ''}>男</option>
+                                            <option value="2" {:$personalInfo['sex'] == 2 ? 'selected' : ''}>女</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group listSeaForm r" style="width: 48%;">
+                                    <span class="input-group-btn">
+                                        <span class="btn">学历：</span>
+                                    </span>
+                                        <select class="form-control" id="background" name="background" disabled>
+                                            <option value="0" {:$personalInfo['background'] == 0 ? 'selected' : ''}>-请选择学历-</option>
+                                            <option value="5" {:$personalInfo['background'] == 5 ? 'selected' : ''}>博士后</option>
+                                            <option value="4" {:$personalInfo['background'] == 4 ? 'selected' : ''}>博士</option>
+                                            <option value="3" {:$personalInfo['background'] == 3 ? 'selected' : ''}>研究生</option>
+                                            <option value="2" {:$personalInfo['background'] == 2 ? 'selected' : ''}>本科</option>
+                                            <option value="1" {:$personalInfo['background'] == 1 ? 'selected' : ''}>专科</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="clearfix mt10">
+                                    <div class="input-group listSeaForm l" style="width: 48%;">
+                                    <span class="input-group-btn">
+                                        <span class="btn">手机号：</span>
+                                    </span>
+                                        <span class="ml10">{$personalInfo['user_name']}</span>
+                                    </div>
+                                    <div class="input-group listSeaForm r" style="width: 48%;">
+                                    <span class="input-group-btn">
+                                        <span class="btn">邮箱：</span>
+                                    </span>
+                                        <input type="text" class="form-control" name="mailbox" value="{$personalInfo['mailbox']}" disabled>
+                                    </div>
+                                </li>
+                                <li class="mt10">
+                                    <div class="listSeaForm">
+                                        <lable>擅长：</lable>
+                                        <textarea class="form-control" id="strong" name="strong" rows="8" disabled>{$personalInfo['strong']}</textarea>
+                                    </div>
+                                </li>
+                                <li class="mt10">
+                                    <div class="listSeaForm">
+                                        <lable>荣誉：</lable>
+                                        <textarea class="form-control" id="honor" name="honor" rows="8" disabled>{$personalInfo['honor']}</textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel pd10" style="height: 528px; overflow-y: auto;">
+                            <div class="flh30">
+                                <div class="listSeaForm">
+                                    <lable>简介：</lable>
+                                    <textarea class="form-control" rows="23"id="introduction" name="introduction" disabled>{$personalInfo['introduction']}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="uid" value="{$personalInfo['uid']}">
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+<include file="Public:nav" />
+</div>
+<script>
+    //选项卡切换
+    $(document).ready(function(){
+        $(".personal").addClass('active').siblings('li').removeClass('active').closest('#ulApp');
+        $('#ulApp').find('> li').eq($(this).index()).addClass('active').siblings('li').removeClass('active');
+    });
+    //点击修改
+    $(function () {
+        $(document).on('click', '.chlinicEidt', function (){
+            if ($('.clinicForm').hasClass('on')) {
+                $(this).text('保存');
+                $('.clinicForm').removeClass('on').find('input,textarea,select').removeAttr('disabled');
+            } else {
+                editPersonalInfo();
+                $(this).text('修改');
+                $('.clinicForm').addClass('on').find('input,textarea,select').attr('disabled', true);
+            }
+        });
+        //用户图片修改
+        $("input[type='file']").on('change',doUpload);
+    });
+
+    //点击保存
+    function editPersonalInfo() {
+        var true_name = $("input[name='true_name']").val();
+        var sex = $("#sex option:selected").val();
+        var background = $("#background option:selected").val();
+        var mailbox = $("input[name='mailbox']").val();
+        var strong = $("#strong").val();
+        var honor = $("#honor").val();
+        var introduction = $("#introduction").val();
+        var uid = $("input[name='uid']").val();
+        var picture = $("#doc-pic").attr('data-url');
+        $.post("{:U('/Index/editPersonal')}",
+            {'true_name':true_name,'sex':sex,'background':background,'mailbox':mailbox,'strong':strong,'honor':honor,
+            'introduction':introduction,'uid':uid,'picture':picture},
+            function (data) {
+                remindBox(data.msg);
+            },
+            'json');
+    }
+    //用户图片修改
+    function doUpload() {
+        var file = this.files[0];
+        if(!/image\/\w+/.test(file.type)){
+            remindBox('文件必须是图片');
+            return false;
+        }
+        var formDate  = new FormData($("#uploadForm")[0]);
+        $.ajax({
+            url:"{:U('Index/editPersonal?act=add')}",
+            type:'POST',
+            data:formDate,
+            async:false,
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType: "json",
+            success:function (data) {
+                var picUrl = data.file.savepath+data.file.savename;
+                $("#doc-pic").attr('src',picUrl);
+                $("#doc-pic").attr('data-url',data.file.savename);
+            },
+            error:function (data) {
+                console.log(data);
+            }
+
+        })
+    }
+</script>

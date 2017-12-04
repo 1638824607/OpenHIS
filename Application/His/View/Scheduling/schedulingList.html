@@ -1,0 +1,274 @@
+<!-- MAIN -->
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="panel mb20  clearfix pd10">
+                <div class="fublBox mr20">
+                    <a type="button"
+                       href="{:U('His/Scheduling/Scheduling_list',array('status'=>'last_week','dates'=>$last_date))}"
+                       class="btn btn-success last_week">上一周</a>
+                    <a type="button" href="{:U('His/Scheduling/Scheduling_list')}" class="btn btn-default">今天</a>
+                    <a type="button"
+                       href="{:U('His/Scheduling/Scheduling_list',array('status'=>'next_week','dates'=>$next_date))}"
+                       class="btn btn-default">下一周</a>
+                </div>
+                <if condition="$SchedulingInfo['list']">
+                <span class="tit1">{$SchedulingInfo['list'][0]['start_time_this_week']} —— {$SchedulingInfo['list'][0]['end_time_this_week']}</span>
+                </if>
+                    <button type="button" class="btn btn-primary r" id="export" <if condition="!$SchedulingInfo['list']"> disabled</if> >导出</button>
+            </div>
+            <div class="panel">
+                <div class="pd10">
+                    <div class="pd10 gray2">排班表空白处：表示不上班休息</div>
+                    <table class="table table-bordered ftc">
+                        <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>科室</th>
+                            <th>日期/时间</th>
+                            <foreach name="SchedulingInfo['list'][0]['subsection'][0]['week']" key="w" item="week">
+                                <th>
+                                    {$week['date']}
+                                    <br>
+                                    <switch name="week.week">
+                                        <case value="1">周一</case>
+                                        <case value="2">周二</case>
+                                        <case value="3">周三</case>
+                                        <case value="4">周四</case>
+                                        <case value="5">周五</case>
+                                        <case value="6">周六</case>
+                                        <default/>
+                                        周日
+                                    </switch>
+                                </th>
+                            </foreach>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <if condition="$SchedulingInfo['list']">
+                        <foreach name="SchedulingInfo['list']" item="v">
+                            <tbody>
+                            <tr>
+                                <td rowspan="3">{$v['username']}</td>
+                                <td rowspan="3">{$v['department_name']}</td>
+                                <td>上午</td>
+                                <foreach name="v['subsection'][0]['week']" item="w">
+                                    <empty name="w.registeredfee_id">
+                                        <td></td>
+                                        <else/>
+                                        <td>{$w['registeredfee_name']}</td>
+                                    </empty>
+
+                                </foreach>
+
+                                <td rowspan="3">
+                                    <button type="button" scheduling_id="{$v['scheduling_id']}"
+                                            class="btn btn-primary btn-sm schedulingEditBtn"  <if condition="$alone_status == 2">disabled</if>>编辑
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>下午</td>
+                                <foreach name="v['subsection'][1]['week']" item="w">
+                                    <empty name="w['registeredfee_id']">
+                                        <td></td>
+                                        <else/>
+                                        <td>{$w['registeredfee_name']}</td>
+                                    </empty>
+
+                                </foreach>
+                            </tr>
+                            <tr>
+                                <td>晚上</td>
+                                <foreach name="v['subsection'][2]['week']" item="w">
+                                    <empty name="w['registeredfee_id']">
+                                        <td></td>
+                                        <else/>
+                                        <td>{$w['registeredfee_name']}</td>
+                                    </empty>
+
+                                </foreach>
+                            </tr>
+                            </tbody>
+                        </foreach>
+                            <else />
+                            <tr><td colspan="4" height="30" align="center" class="f_red" >暂无数据</td></tr>
+                            </if>
+                    </table>
+                </div>
+                <div class="paging mt20 mb20 ftc">
+                    {$SchedulingInfo['pager_str']}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<!--排班弹框 start-->
+<div class="bombBox" id="schedulingBomb" style="display: none;"></div>
+<!--排班弹框 end-->
+<input type="hidden" name="list_page" value="{$SchedulingInfo['page']}">
+<input type="hidden" name="now_start" value="{$now_start}">
+<input type="hidden" name="status" value="{$Think.get.status}">
+<input type="hidden" name="dates" value="{$Think.get.dates}">
+<script>
+    var d = new Date();
+    var today = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+    $('.dateTime').datetimepicker({
+        lang: 'ch',
+        timepicker: false,
+        format: 'Y-m-d',
+        validateOnBlur: false,
+        maxDate:today
+    });
+
+    $(function () {
+        var _list_page = $("input[name=list_page]").val() ? $("input[name=list_page]").val() : 1;
+        //排班弹框
+        $(document).on('click', '.schedulingEditBtn', function () {
+            var _self = $(this), scheduling_id = _self.attr('scheduling_id');
+            $.post('{:U("/Scheduling/Scheduling_edit")}', {scheduling_id: scheduling_id}, function (e) {
+                if (e.status == 'success') {
+                    var str = '';
+                    var week = e['data']['info']['subsection'][0]['week'];
+                    var subsection = e['data']['info']['subsection'];
+                    var registeredfee = e['data']['registeredfee'];
+                    str += '<div class="bombContent whiteBg schedulingBomb">';
+                    str += '<div class="bombTit ftc">' + e['data']['info']['username'] + '医生的排班</div>';
+                    str += '<div class="pd10">';
+                    str += '<div class="pd10 clearfix"><span class="l">排班周期：2017/10/15 - 10/25</span><span class="r gray2">排班表空白处：表示不上班休息</span></div>';
+                    str += '<table class="table table-bordered ftc">';
+                    str += '<thead><tr>';
+                    str += '<th>日期/时间</th>';
+                    for (i in week) {
+                        str += '<th>';
+                        str += week[i]['date'] + '<br>';
+                        if (week[i]['week'] == 1) {
+                            str += '周一';
+                        } else if (week[i]['week'] == 2) {
+                            str += '周二';
+                        } else if (week[i]['week'] == 3) {
+                            str += '周三';
+                        } else if (week[i]['week'] == 4) {
+                            str += '周四';
+                        } else if (week[i]['week'] == 5) {
+                            str += '周五';
+                        } else if (week[i]['week'] == 6) {
+                            str += '周六';
+                        } else {
+                            str += '周日';
+                        }
+                        str += '</th>';
+                    }
+                    str += '</tr></thead>';
+                    str += '<tbody><tr>';
+                    str += '<td>上午</td>';
+                    for (i in subsection[0]['week']) {
+                        str += '<td><div class="fublBox">';
+                        str += '<input type="hidden" name="scheduling_week_id" value="' + subsection[0]['week'][i]['scheduling_week_id'] + '">';
+                        str += '<select class="form-control form-itmeB" name="registeredfee_id">';
+                        str += '<option></option>';
+                        for (j in registeredfee) {
+                            if (subsection[0]['week'][i]['registeredfee_id'] == registeredfee[j]['reg_id']) {
+                                str += '<option value="' + registeredfee[j]['reg_id'] + '" selected>' + registeredfee[j]["registeredfee_name"] + '</option>';
+                            } else {
+                                str += '<option value="' + registeredfee[j]['reg_id'] + '">' + registeredfee[j]["registeredfee_name"] + '</option>';
+                            }
+                        }
+                        str += '</select></div></td>';
+                    }
+                    str += '</tr><tr>';
+                    str += '<td>下午</td>';
+                    for (i in subsection[1]['week']) {
+                        str += '<td><div class="fublBox">';
+                        str += '<input type="hidden" name="scheduling_week_id" value="' + subsection[1]['week'][i]['scheduling_week_id'] + '">';
+                        str += '<select class="form-control form-itmeB" name="registeredfee_id">';
+                        str += '<option></option>';
+                        for (j in registeredfee) {
+                            if (subsection[1]['week'][i]['registeredfee_id'] == registeredfee[j]['reg_id']) {
+                                str += '<option value="' + registeredfee[j]['reg_id'] + '" selected>' + registeredfee[j]["registeredfee_name"] + '</option>';
+                            } else {
+                                str += '<option value="' + registeredfee[j]['reg_id'] + '">' + registeredfee[j]["registeredfee_name"] + '</option>';
+                            }
+                        }
+                        str += '</select></div></td>';
+                    }
+                    str += '</tr><tr>';
+                    str += '<td>晚上</td>';
+                    for (i in subsection[2]['week']) {
+                        str += '<td><div class="fublBox">';
+                        str += '<input type="hidden" name="scheduling_week_id" value="' + subsection[2]['week'][i]['scheduling_week_id'] + '">';
+                        str += '<select class="form-control form-itmeB" name="registeredfee_id">';
+                        str += '<option></option>';
+                        for (j in registeredfee) {
+                            if (subsection[2]['week'][i]['registeredfee_id'] == registeredfee[j]['reg_id']) {
+                                str += '<option value="' + registeredfee[j]['reg_id'] + '" selected>' + registeredfee[j]["registeredfee_name"] + '</option>';
+                            } else {
+                                str += '<option value="' + registeredfee[j]['reg_id'] + '">' + registeredfee[j]["registeredfee_name"] + '</option>';
+                            }
+                        }
+                        str += '</select></div></td>';
+                    }
+                    str += '</tr></tbody></table></div><div class="ftc mb20"><button type="button" class="btn btn-primary  ml20 cancelBtn">确定</button></div></div><div class="bombMask"></div>';
+                    $('#schedulingBomb').html(str);
+                    close();
+                    change_scheduling();
+                } else {
+
+                }
+
+            }, 'json');
+            $('#schedulingBomb').fadeIn();
+            function change_scheduling() {
+                $(document).on('change', '.form-itmeB', function () {
+                    var reg_id = $(this).children('option:selected').val();
+                    var scheduling_week_id = $(this).siblings("input[name='scheduling_week_id']").val();
+                    $.post('{:U("/Scheduling/Scheduling_change")}', {
+                        reg_id: reg_id,
+                        scheduling_week_id: scheduling_week_id
+                    }, function (res) {
+                        if (res.msg == 'success') {
+                            remindBox('成功');
+                        }
+                    }, 'json');
+
+                })
+            }
+
+            function close() {
+                // 取消或者关闭
+                $('#schedulingBomb .bombMask, #schedulingBomb .cancelBtn').one('click', function (event) {
+                    $(this).closest('#schedulingBomb').fadeOut();
+                    $('body').removeAttr('style');
+                    window.location.reload();
+                });
+            }
+
+        })
+        $(document).on('click', '.item', function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if (tag == 'i') {
+                if ($(this).hasClass('next')) {
+                    _list_page = parseInt(_list_page) + 1;
+                } else {
+                    _list_page = parseInt(_list_page) - 1;
+                }
+            }
+            var status = $("input[name=status]").val();
+            var dates = $("input[name=dates]").val();
+            if (status || dates) {
+                window.location.href = "{:U('/Scheduling/Scheduling_list')}/p/" + _list_page + "/status/" + status + "/dates/" + dates;
+            } else {
+                window.location.href = "{:U('/Scheduling/Scheduling_list')}/p/" + _list_page;
+            }
+
+        })
+      $(document).on('click','#export',function(){
+          var page = $("input[name=list_page]").val();
+          var now_start = $("input[name=now_start]").val();
+          window.location.href = "{:U('/Scheduling/export')}/p/" + page + "/start_time_this_week/" + now_start;
+        })
+    });
+</script>

@@ -1,0 +1,78 @@
+<div id="wrapper">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="brand">
+        <img src="__PUBLIC_HIS__/img/logo.png" style="width: 40px;height: 40px; display: inline-block"/>
+        <a style="font-size:16px"><?php echo $_SESSION['user_relate']['hospital_name']?></a>
+    </div>
+    <div class="container-fluid">
+        <div class="navbar-btn">
+            <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+        </div>
+
+        <div id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>帮助中心</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Upload/specifications.pdf" target="_blank"><i class="fa fa-address-book-o"></i>使用手册</a></li>
+                    </ul>
+                </li>
+
+                <?php if($_SESSION['user_info']['p_id']==0){?>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php if (!empty($_SESSION['user_relate']['picture'])){?>
+                        <img src="<?php echo C('UPLOAD_DOCTOR').$_SESSION['user_relate']['picture'];?>" class="img-circle" alt="诊所图片">
+                        <?php }else{?>
+                        <img src="<?php echo C('UPLOAD_DOCTOR').'doctor_def.jpg';?>">
+                        <?php }?>
+                        <span><?php echo $_SESSION['user_relate']['owner_name'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="revisePwd"><a href="javascript:void(0)"><i class="lnr lnr-exit"></i> <span>修改密码</span></a></li>
+                        <li><a href="/Login/logout"><i class="lnr lnr-exit"></i> <span>退出登录</span></a></li>
+
+                    </ul>
+                </li>
+                <?php }else{?>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <?php if (!empty($_SESSION['user_relate']['picture'])){?>
+                        <img src="<?php echo C('UPLOAD_DOCTOR').$_SESSION['user_relate']['picture'];?>" class="img-circle" alt="医生图片" />
+                        <?php }else{?>
+                        <img src="<?php echo C('UPLOAD_DOCTOR').'doctor_def.jpg';?>">
+                        <?php }?>
+                        <span><?php echo $_SESSION['user_relate']['true_name']?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="revisePwd"><a href="javascript:void(0)"><i class="lnr lnr-exit"></i> <span>修改密码</span></a></li>
+                        <li><a href="/Index/index"><i class="lnr lnr-exit"></i> <span>返回首页</span></a></li>
+                        <li><a href="/Login/logout"><i class="lnr lnr-exit"></i> <span>退出登录</span></a></li>
+
+                    </ul>
+                </li>
+                <?php }?>
+
+            </ul>
+        </div>
+        <nav class="webNav">
+            <foreach name="menu" item="v">
+            <a class="btn btn-primary dzm-menu" data-id="{$v.id}"  href="javascript:void(0)" >{$v.title}</a>
+            </foreach>
+        </nav>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+<!-- LEFT SIDEBAR -->
+<div id="sidebar-nav" class="sidebar">
+    <div class="sidebar-scroll">
+        <nav>
+            <ul class="nav" id="menu-nav">
+                <foreach name="menu1" item="v">
+                <li class="li-menu"><a href="{:U($v[menu_name])}" class="menu" id="{$v.id}" p-id="{$v.pid}" target="main"><i class="fa fa-medkit"></i> <span>{$v.title}</span></a></li>
+                </foreach>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- END LEFT SIDEBAR -->
+<!--主体右部分-->

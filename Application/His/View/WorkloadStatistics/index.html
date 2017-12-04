@@ -1,0 +1,457 @@
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <div class="container-fluid">
+
+            <ul class="tabBtn clearfix headingTab bcb">
+                <li class="on mr10" load_status="1">门诊费用统计</li>
+                <li class="mr10" load_status="2">门诊处方统计</li>
+                <li class="mr10" load_status="4">门诊挂号费统计</li>
+                <li class="" load_status="5">收费员统计</li>
+            </ul>
+            <div class="panel clearfix pd10">
+            <div class="panel clearfix pd10 mb20">
+                <div class="fublBox mr10">
+                    <span>日期：</span>
+                    <input type="text" class="form-control form-itmeB dateTime startTime" placeholder="" name="startTime"><i
+                        class="fa fa-calendar"></i>
+                </div>
+                <div class="fublBox mr10"><span class="mr10">-</span><input type="text"
+                                                                            class="form-control form-itmeB dateTime endTime"
+                                                                            name="endTime" placeholder=""><i
+                        class="fa fa-calendar"></i>
+                </div>
+                <div class="fublBox mr10">
+                    <span>医生姓名：</span>
+                    <input type="text" class="form-control form-itmeB " placeholder="" name="search">
+                </div>
+                <button type="button" class="btn btn-primary search_info">查询</button>
+                <button type="button" class="btn btn-primary r export">导出</button>
+            </div>
+            <ul class="tabBox mt10">
+                <li class="on clearfix">
+                    <table class="table table-striped ftc">
+                        <thead>
+                        <tr>
+                            <th>医生</th>
+                            <th>门诊数量</th>
+                            <th>就诊实收</th>
+                            <th>挂号实收</th>
+                            <th>就诊退费</th>
+                            <th>挂号退费</th>
+                        </tr>
+                        </thead>
+                        <tbody class="ClinicFeeList_box">
+                        </tbody>
+                    </table>
+                    <div class="paging mt20 mb20 ftc ClinicFeePage_box">
+
+                    </div>
+                </li>
+                <li>
+                    <table class="table table-striped ftc">
+                        <thead>
+                        <tr>
+                            <th>医生</th>
+                            <th>处方数量</th>
+                            <th>中药处方</th>
+                            <th>附加费用</th>
+                            <th>检查项目</th>
+                            <th>退费金额</th>
+                            <th>实收金额</th>
+                        </tr>
+                        </thead>
+                        <tbody id="careOrderTbody">
+                        </tbody>
+                    </table>
+                    <div class="paging ftc mt20 mt20" id="care_order_statistics_pager_box"></div>
+                </li>
+                <li>
+                    <div class="wb100" style="overflow-x: auto;">
+                        <table class="table table-bordered ftc" style="min-width: 1400px;">
+                            <thead>
+                            <tr class="DrugPurchase_hint_box">
+                            </tr>
+                            <tr class="DrugPurchase_sub_box">
+                            </tr>
+                            </thead>
+                            <tbody class="DrugPurchase_list_box">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="paging mt20 mb20 ftc DrugPurchase_page_box">
+                    </div>
+                </li>
+                <li>
+                    <table class="table table-striped ftc">
+                        <thead>
+                        <tr>
+                            <th>收费员</th>
+                            <th>收费次数</th>
+                            <th>实收金额</th>
+                            <th>现金收入</th>
+                            <th>微信支付</th>
+                            <th>支付宝支付</th>
+                        </tr>
+                        </thead>
+                        <tbody id="collectionTbody">
+                        </tbody>
+                    </table>
+                    <div class="paging ftc mt20 mt20" id="collection_statistics_pager_box"></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<style>
+    #care_order_statistics_pager_box{text-align: center;width: 100%;}
+    #collection_statistics_pager_box{text-align: center;width: 100%;}
+</style>
+<script>
+    $('.dateTime').datetimepicker({
+        lang: 'ch',
+        timepicker: false,
+        format: 'Y-m-d',
+        validateOnBlur: false
+    });
+    $(function () {
+        var starTime = '', endTime = '', search = '';
+        var _clinicFee_page = 1, _clinicFee_pagesize = 10;
+        var _drugpurchase_page = 1,_drugpurchase_pagesize = 10;
+        var _careorderstatistics_page=1;
+        var _collectionstatistics_page=1;
+        getClinicFeeList(_clinicFee_page, _clinicFee_pagesize, search, starTime, endTime);
+        //选项卡切换
+        $(document).on('click', '.tabBtn > li', function () {
+            var load_status = $(this).attr('load_status');
+            endTime = $('input[name=endTime]').val();
+            starTime = $('input[name=starTime]').val();
+            search = $('input[name=search]').val();
+            if (endTime || starTime || search) {
+                _clinicFee_page = 1;
+                _drugpurchase_page=1;
+                _careorderstatistics_page=1;
+                _collectionstatistics_page=1;
+            }
+            if (load_status == 1) {
+                getClinicFeeList(_clinicFee_page, _clinicFee_pagesize, search, starTime, endTime);
+            } else if (load_status == 2) {
+                getCareOrderStatistics(starTime,endTime,search,_careorderstatistics_page);
+            } else if (load_status == 4) {
+                getDrugPurchase(_drugpurchase_page,_drugpurchase_pagesize,search, starTime, endTime);
+            } else if (load_status == 5) {
+                getCollectionStatistics(starTime,endTime,search,_collectionstatistics_page);
+            }
+            $(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+            $('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+        });
+        //门诊费用统计列表
+        function getClinicFeeList(page, pagesize, search, startTime, endTime) {
+            $.post("{:U('/WorkloadStatistics/getClinicFee')}", {
+                p: page,
+                pagesize: pagesize,
+                search: search,
+                startTime: startTime,
+                endTime: endTime
+            }, function (e) {
+/*                $(".ClinicFeePage_box").html('');
+                $(".ClinicFeeList_box").html('');*/
+                if (e.status == 'success') {
+                    if (e.data.list.length > 0) {
+                        var str = '';
+                        $.each(e.data.list, function (i, n) {
+                            str += "<tr>\
+                                    <td>" + n.user_name + "</td>\
+                                    <td>" + n.patients + "</td>\
+                                    <td>¥" + n.income + "</td>\
+                                    <td>¥" + n.registration_income + "</td>\
+                                    <td>¥" + n.refundincome + "</td>\
+                                    <td>¥" + n.registration_refundincome + "</td>\
+                                    < / tr > ";
+                        })
+                        _clinicFee_page = e.data.page;
+                        $(".ClinicFeeList_box").html(str);
+                        if (e.data.pager_str.length > 0) {
+                            $(".ClinicFeePage_box").html(e.data.pager_str);
+                        } else {
+                            $(".ClinicFeePage_box").html('');
+                        }
+                    } else {
+                        $(".ClinicFeeList_box").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                        $(".ClinicFeePage_box").html('');
+                    }
+                } else {
+                    remindBox(e.msg);
+                }
+            }, 'json')
+        }
+        //门诊费用分页
+        $(".ClinicFeePage_box").on('click', '.item', function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if (tag == 'i') {
+                if ($(this).hasClass('next')) {
+                    _clinicFee_page = parseInt(_clinicFee_page) + 1;
+                } else {
+                    _clinicFee_page = parseInt(_clinicFee_page) - 1;
+                }
+            } else {
+                _clinicFee_page = parseInt($(this).html());
+            }
+            endTime = $('input[name=endTime]').val();
+            starTime = $('input[name=starTime]').val();
+            search = $('input[name=search]').val();
+            getClinicFeeList(_clinicFee_page, _clinicFee_pagesize, search, starTime, endTime);
+        });
+        //获取挂号费统计
+        function getDrugPurchase(page, pagesize, search, startTime, endTime) {
+            $.post("{:U('/WorkloadStatistics/getDrugPurchase')}", {
+                p: page,
+                pagesize: pagesize,
+                search: search,
+                startTime: startTime,
+                endTime: endTime
+            }, function (e) {
+                if (e.status == 'success') {
+                    if(e.data.list.length > 0){
+                        var str = '<th rowspan="2">医生/号类别</th>';
+                        var s = '';
+                        $.each(e.data.list.registeredfee,function(i,n){
+                            str+='<th colspan="5">'+n.registeredfee_name+'</th>';
+                            s +='<th>未开处方</th>\
+                                <th>已开处方</th>\
+                                <th>退号量</th>\
+                                <th>挂号量</th>\
+                                <th>实收金额</th>';
+                        })
+                        $('.DrugPurchase_hint_box').html(str);
+                        $('.DrugPurchase_sub_box').html(s);
+                        if(e.data.list.info){
+                            if (e.data.list.info.length > 0) {
+                                var string = '';
+                                $.each(e.data.list.info, function (i, n) {
+                                    string +='<tr><td>'+n.user_name+'</td>';
+                                    $.each(n.num,function(k,l){
+                                        string += '<td>'+l.didnotopen_count+'</td>\
+                                    <td>'+l.hasbeenopen_count+'</td>\
+                                    <td>'+l.refund_count+'</td>\
+                                    <td>'+l.registration_count+'</td>\
+                                    <td>¥'+l.realprice_amount+'</td>';
+                                    })
+                                    string+='</tr>';
+                                })
+                                $('.DrugPurchase_list_box').html(string);
+                                _drugpurchase_page = e.data.page;
+                                if (e.data.pager_str.length > 0) {
+                                    $(".DrugPurchase_page_box").html(e.data.pager_str);
+                                } else {
+                                    $(".DrugPurchase_page_box").html('');
+                                }
+                            } else {
+                                $(".DrugPurchase_list_box").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                                $(".DrugPurchase_page_box").html('');
+                            }
+                        }else{
+                            $(".DrugPurchase_list_box").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                            $(".DrugPurchase_page_box").html('');
+                        }
+                    }else{
+                        $(".DrugPurchase_list_box").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                        $(".DrugPurchase_page_box").html('');
+                    }
+
+
+                } else {
+                    remindBox(e.msg);
+                }
+            }, 'json')
+        }
+        //挂号费统计分页
+        $(".DrugPurchase_page_box").on('click', '.item', function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if (tag == 'i') {
+                if ($(this).hasClass('next')) {
+                    _drugpurchase_page = parseInt(_drugpurchase_page) + 1;
+                } else {
+                    _drugpurchase_page = parseInt(_drugpurchase_page) - 1;
+                }
+            } else {
+                _drugpurchase_page = parseInt($(this).html());
+            }
+            endTime = $('input[name=endTime]').val();
+            starTime = $('input[name=starTime]').val();
+            search = $('input[name=search]').val();
+            getDrugPurchase(_drugpurchase_page, _drugpurchase_pagesize, search, starTime, endTime);
+        });
+        //导出
+        $(document).on('click','.export',function(){
+            var _self = $(this);
+            $.each($('.tabBtn > li'),function(){
+                if($(this).hasClass('on')){
+                    var load_status = $(this).attr('load_status');
+                    if (load_status == 1) {
+                        var url = "{:U('/WorkloadStatistics/ClinicFee_export')}/p/" + _clinicFee_page + "/pagesize/" + _clinicFee_pagesize;
+                    } else if (load_status == 2) {
+                        var url = "{:U('/WorkloadStatistics/getCareOrderStatistics')}/action/export/p/" + _careorderstatistics_page + "/pagesize/" + 10;
+                    } else if (load_status == 4) {
+                        var url = "{:U('/WorkloadStatistics/DrugPurchase_export')}/p/" + _drugpurchase_page + "/pagesize/" + _drugpurchase_pagesize;
+                    } else if (load_status == 5) {
+                        var url = "{:U('/WorkloadStatistics/getCollectionStatistics')}/action/export/p/" + _collectionstatistics_page + "/pagesize/" + 10;
+                    }
+                    export_info(url,load_status);
+                }
+
+            })
+        })
+        function export_info(url,status){
+            endTime = $('input[name=endTime]').val();
+            starTime = $('input[name=starTime]').val();
+            search = $('input[name=search]').val();
+            if(search !== ''){
+                if(status == 1 || status == 4){
+                url += "/search/"+search;
+                }else if(status == 2 || status == 5){
+                    url += "/name/"+search;
+                }
+            }
+            if(starTime){
+                url += "/starTime/"+starTime;
+            }
+            if(endTime){
+                url += "/endTime/"+endTime;
+            }
+            window.location.href = url;
+        }
+        //搜索
+        $(document).on("click", '.search_info', function () {
+            var _self = $(this);
+            endTime = $('input[name=endTime]').val();
+            starTime = $('input[name=starTime]').val();
+            search = $('input[name=search]').val();
+            if (endTime || starTime || search) {
+                _clinicFee_page = 1;
+                _drugpurchase_page=1;
+            }
+            $.each($('.tabBtn > li'),function(){
+                if($(this).hasClass('on')){
+                    var load_status = $(this).attr('load_status');
+                    if (load_status == 1) {
+                        getClinicFeeList(_clinicFee_page, _clinicFee_pagesize, search, starTime, endTime);
+                    } else if (load_status == 2) {
+                        getCareOrderStatistics(starTime,endTime,search,_careorderstatistics_page);
+                    } else if (load_status == 4) {
+                        getDrugPurchase(_drugpurchase_page,_drugpurchase_pagesize,search, starTime, endTime);
+                    } else if (load_status == 5) {
+                        getCollectionStatistics(starTime,endTime,search,_collectionstatistics_page);
+                    }
+                }
+            })
+        });
+        //门诊处方统计列表分页
+        $("#care_order_statistics_pager_box").on('click','.item',function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            var startTime = $(":input[name='startTime']").val();
+            var endTime = $(":input[name='endTime']").val();
+            var name = $(":input[name='search']").val();
+            if(tag=='i'){
+                if($(this).hasClass('next')){
+                    _careorderstatistics_page=parseInt(_careorderstatistics_page)+1;
+                }else{
+                    _careorderstatistics_page=parseInt(_careorderstatistics_page)-1;
+                }
+            }else{
+                _careorderstatistics_page=parseInt($(this).html());
+            }
+            getCareOrderStatistics(startTime,endTime,name,_careorderstatistics_page);
+        });
+        //门诊处方统计列表
+        function getCareOrderStatistics(startTime, endTime, name, page) {
+           $.post("{:U('/WorkloadStatistics/getCareOrderStatistics')}",
+                {'startTime':startTime,'endTime':endTime,'name':name,'p':page,'pagesize':10},
+                function (data) {
+                    if (data.status == 'success') {
+                        if (data.data.count > 0) {
+                            var html = '';
+                            $.each(data.data.list, function(i, item){
+                                html += '<tr>' +
+                                    '<td>'+item.true_name+'</td>' +
+                                    '<td>'+item.care_order_num+'</td>' +
+                                    '<td>¥'+item.cmedicine_amount+'</td>' +
+                                    '<td>¥'+item.extra_fee+'</td>' +
+                                    '<td>¥'+item.inspection_fee+'</td>' +
+                                    '<td>¥'+item.refund_income+'</td>' +
+                                    '<td>¥'+item.amount+'</td>' +
+                                    '</tr>';
+                            });
+                            _careorderstatistics_page=data.data.page;
+                            $('#careOrderTbody').html(html);
+                            if(data.data.pager_str.length>0){
+                                $("#care_order_statistics_pager_box").html(data.data.pager_str);
+                            }else{
+                                $("#care_order_statistics_pager_box").html('');
+                            }
+                        } else {
+                            $("#careOrderTbody").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                            $("#care_order_statistics_pager_box").html('');
+                        }
+                    }else {
+                        remindBox(data.msg);
+                    }
+                },
+                'json');
+        }
+        //收费员统计列表分页
+        $("#collection_statistics_pager_box").on('click','.item',function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            var startTime = $(":input[name='startTime']").val();
+            var endTime = $(":input[name='endTime']").val();
+            var name = $(":input[name='search']").val();
+            if(tag=='i'){
+                if($(this).hasClass('next')){
+                    _collectionstatistics_page=parseInt(_collectionstatistics_page)+1;
+                }else{
+                    _collectionstatistics_page=parseInt(_collectionstatistics_page)-1;
+                }
+            }else{
+                _collectionstatistics_page=parseInt($(this).html());
+            }
+            getCollectionStatistics(startTime,endTime,name,_collectionstatistics_page);
+        });
+        //收费员统计列表
+        function getCollectionStatistics(startTime, endTime, name, page) {
+            $.post("{:U('/WorkloadStatistics/getCollectionStatistics')}",
+                {'startTime':startTime,'endTime':endTime,'name':name,'p':page,'pagesize':10},
+                function (data) {
+                    if (data.status == 'success') {
+                        if (data.data.count > 0) {
+                            var html = '';
+                            $.each(data.data.list, function(i, item){
+                                html += '<tr>\
+                                    <td>'+item.true_name+'</td>\
+                                    <td>'+item.chargeNum+'</td>\
+                                    <td>¥'+item.amount+'</td>\
+                                     <td>¥'+item.cashPay+'</td>\
+                                     <td>¥'+item.wechatPay+'</td>\
+                                     <td>¥'+item.aliPay+'</td>\
+                                     </tr>';
+                            });
+                            _collectionstatistics_page=data.data.page;
+                            $('#collectionTbody').html(html);
+                            if(data.data.pager_str.length>0){
+                                $("#collection_statistics_pager_box").html(data.data.pager_str);
+                            }else{
+                                $("#collection_statistics_pager_box").html('');
+                            }
+                        }else {
+                            $("#collectionTbody").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                            $("#collection_statistics_pager_box").html('');
+                        }
+                    }else {
+                        remindBox(data.msg);
+                    }
+                },
+                'json');
+        }
+    });
+</script>

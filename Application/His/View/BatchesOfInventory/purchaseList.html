@@ -1,0 +1,307 @@
+<!-- MAIN -->
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="pd10 panel mb10 clearfix ftr">
+                <div class="fublBox l flh34"><span class="mr20">单据号：{$batches_of_inventory_info.batches_of_inventory_number}</span><span
+                        class="mr20">制单人：{$batches_of_inventory_info.user_name}</span><span class="mr20">供应商：{$batches_of_inventory_info.supplier_name}</span><span
+                        class="mr10">制单日期：{$batches_of_inventory_info.batches_of_inventory_date}</span></div>
+                <if condition="$Think.get.status == 1">
+                    <button type="button" class="btn btn-primary ml10 check">审核</button>
+                </if>
+                <a type="button" href="javascript:history.go(-1)" class="btn btn-default ml10">返回</a>
+            </div>
+            <div class="flh34 mb10 ftr">
+                <span>批发总金额：<span class="red purchase_trade_total_amount">0</span></span> <span class="ml20">处方总金额：<span
+                    class="red purchase_prescription_total_amount">0</span></span>
+            </div>
+            <div class="panel">
+                <div class="pd10">
+                    <table class="table drugsTable ftc">
+                        <thead>
+                        <tr>
+                            <th>
+                                <label class="fancy-checkbox checkAllBtn">
+                                    <span>序号</span>
+                                </label>
+                            </th>
+                            <th>药品名称</th>
+                            <th>规格</th>
+                            <th>生产厂家</th>
+                            <th>数量</th>
+                            <th>单位</th>
+                            <th>批发价</th>
+                            <th>处方价</th>
+                            <th>批发额</th>
+                            <th>处方额</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="list_box">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="paging mt20 mb20 ftc list_page_box">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<input type="hidden" name="batches_of_inventory_id" value="{$Think.get.batches_of_inventory_id}">
+<input type="hidden" name="status" value="{$Think.get.status}">
+<!-- END MAIN -->
+<script>
+
+    $(function () {
+        var _list_page = 1, _pagesize = 10, batches_of_inventory_id = $("input[name=batches_of_inventory_id]").val(), status = $("input[name=status]").val();
+        var number = 0;
+        //初始化
+        get_purchase_list(_list_page, _pagesize, batches_of_inventory_id);
+        //获取列表
+        function get_purchase_list(page, pagesize) {
+            $.post("{:U('/BatchesOfInventory/get_purchase_list')}", {
+                p: page,
+                pagesize: pagesize,
+                batches_of_inventory_id: batches_of_inventory_id
+            }, function (res) {
+                if (res.status == 'success') {
+                    if (res.data.list.length > 0) {
+                        var str = '';
+                        $.each(res.data.list, function (i, n) {
+                            number++;
+                            str += '<tr>';
+                            str += '<td><label class="fancy-checkbox"><input type="hidden" name="purchase_id" value="' + n.purchase_id + '"><span>' + number + '</span></label></td>';
+                            str += '<td>' + n.medicines_name + '</td>';
+                            str += '<td>' + n.conversion + n.unit + '</td>';
+                            str += '<td>' + n.producter + '</td>';
+                            str += '<td>';
+                            str += '<div class="fublBox">';
+                            if (status == 1) {
+                                str += '<input type="number" oninput="if(value.length>3)value = value.slice(0,3);if(value < 0)value=0" class="form-control form-itmeB formNumber" name="purchase_num" value="' + n.purchase_num + '" placeholder="">';
+                            } else if (status == 2) {
+                                str += '<input type="number" oninput="if(value.length>3)value = value.slice(0,3);if(value < 0)value=0" class="form-control form-itmeB formNumber" name="purchase_num" value="' + n.purchase_num + '" readonly  placeholder="">';
+                            }
+                            str += '</div>';
+                            str += '</td>';
+                            str += '<td class="purchase_unit">' + n.unit + '</td>';
+                            str += '<td>';
+                            str += '<div class="fublBox">';
+                            if (status == 1) {
+                                str += '<input type="number" oninput="if(value.length>3)value = value.slice(0,3);if(value < 0)value=0" class="form-control form-itmeB formNumber" name="purchase_trade_price" value="' + n.purchase_trade_price + '" placeholder="">';
+                            } else if (status == 2) {
+                                str += '<input type="number" oninput="if(value.length>3)value = value.slice(0,3);if(value < 0)value=0" class="form-control form-itmeB formNumber" name="purchase_trade_price" value="' + n.purchase_trade_price + '" readonly placeholder="">';
+                            }
+                            str += '</div>';
+                            str += '</td>';
+                            str += '<td>';
+                            str += '<div class="fublBox">';
+                            if (status == 1) {
+                                str += '<input type="number" oninput="if(value.length>3)value = value.slice(0,3);if(value < 0)value=0" class="form-control form-itmeB formNumber" name="purchase_prescription_price" value="' + n.purchase_prescription_price + '" placeholder="">';
+                            } else if (status == 2) {
+                                str += '<input type="number" oninput="if(value.length>3)value = value.slice(0,3);if(value < 0)value=0" class="form-control form-itmeB formNumber" name="purchase_prescription_price" value="' + n.purchase_prescription_price + '" readonly placeholder="">';
+                            }
+                            str += '</div>';
+                            str += '</td>';
+                            str += '<td class="this_purchase_trade_total_amount">' + n.purchase_trade_total_amount + '</td>';
+                            str += '<td class="this_purchase_prescription_total_amount">' + n.purchase_prescription_total_amount + '</td>';
+                            str += '<td>';
+                            if (status == 1) {
+                                str += '<button type="button" class="btn btn-default btn-sm delete_purchase" purchase_id="'+n.purchase_id+'">删除</button>';
+                            } else if (status == 2) {
+                                str += '<button type="button" class="btn btn-default btn-sm" disabled>已审核</button>';
+                            }
+                            str += '</td>';
+                            str += '</tr>';
+                        })
+                        $(".list_box").html(str);
+                        _list_page = res.data.page;
+                        gross_wholesale_amount();
+                        all_prescription_price();
+                        if (res.data.pager_str.length > 0) {
+                            $(".list_page_box").html(res.data.pager_str);
+                        } else {
+                            $(".list_page_box").html('');
+                        }
+                    } else {
+                        $(".list_box").html('<tr><td colspan="11" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                    }
+                } else {
+                    remindBox(res.msg);
+                }
+            }, 'json')
+        }
+
+        //列表分页
+        $(".list_page_box").on('click', '.item', function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if (tag == 'i') {
+                if ($(this).hasClass('next')) {
+                    _list_page = parseInt(_list_page) + 1;
+                } else {
+                    _list_page = parseInt(_list_page) - 1;
+                }
+            } else {
+                _list_page = parseInt($(this).html());
+            }
+            get_purchase_list(_list_page, _pagesize, batches_of_inventory_id);
+        });
+        //计算批发总金额
+        function gross_wholesale_amount() {
+            var amount_info = $('input[name="purchase_trade_price"]'), amount = 0;
+            $.each(amount_info, function () {
+                var price = $(this).val();
+                var num = $(this).parent('div').parent('td').siblings('td').find('input[name=purchase_num]').val();
+                amount += price * num;
+            })
+            $('.purchase_trade_total_amount').text(Number(amount).toFixed(2));
+        }
+
+        //计算处方总金额
+        function all_prescription_price() {
+            var amount_info = $('input[name="purchase_prescription_price"]'), amount = 0;
+            $.each(amount_info, function () {
+                var price = $(this).val();
+                var num = $(this).parent('div').parent('td').siblings('td').find('input[name=purchase_num]').val();
+                amount += price * num;
+            })
+            $('.purchase_prescription_total_amount').text(Number(amount).toFixed(2));
+        }
+
+        //数量变化
+        $(document).on("input propertychange", 'input[name=purchase_num]', function () {
+            change_purchase_num($(this));
+            gross_wholesale_amount();
+            all_prescription_price();
+        })
+        function change_purchase_num(_self) {
+            var num = _self.val();
+            var purchase_trade_price = _self.parent('div').parent('td').siblings('td').find('input[name=purchase_trade_price]').val();
+            var purchase_trade_total_amount = purchase_trade_price * num;
+            _self.parent('div').parent('td').siblings('.this_purchase_trade_total_amount').text(purchase_trade_total_amount);
+            var purchase_prescription_price = _self.parent('div').parent('td').siblings('td').find('input[name=purchase_prescription_price]').val();
+            var purchase_prescription_total_amount = purchase_prescription_price * num;
+            _self.parent('div').parent('td').siblings('.this_purchase_prescription_total_amount').text(Number(purchase_prescription_total_amount).toFixed(2));
+        }
+
+        //批发价变化
+        $(document).on("input propertychange", 'input[name=purchase_trade_price]', function () {
+            change_purchase_trade_price($(this));
+            gross_wholesale_amount();
+        })
+        function change_purchase_trade_price(_self) {
+            var purchase_trade_price = _self.val();
+            var num = _self.parent('div').parent('td').siblings('td').find('input[name=purchase_num]').val();
+            var purchase_trade_total_amount = purchase_trade_price * num;
+            _self.parent('div').parent('td').siblings('.this_purchase_trade_total_amount').text(Number(purchase_trade_total_amount).toFixed(2));
+        }
+
+        //处方价变化
+        $(document).on("input propertychange", 'input[name=purchase_prescription_price]', function () {
+            change_purchase_prescription_price($(this));
+            all_prescription_price();
+        })
+        function change_purchase_prescription_price(_self) {
+            var purchase_prescription_price = _self.val();
+            var num = _self.parent('div').parent('td').siblings('td').find('input[name=purchase_num]').val();
+            var purchase_prescription_total_amount = purchase_prescription_price * num;
+            _self.parent('div').parent('td').siblings('.this_purchase_prescription_total_amount').text(Number(purchase_prescription_total_amount).toFixed(2));
+        }
+
+        $(document).on("click", ".check", function () {
+            var purchase_id_arr = [], purchase_id = $("input[name=purchase_id]"), p = 0;
+            $.each(purchase_id, function () {
+                if (!$(this).val()) {
+                    remindBox($(this).parent('label').parent('td').siblings('.medicines_name').text() + '发生错误，无法提交');
+                    p = 1;
+                    return false;
+                }
+                purchase_id_arr.push($(this).val());
+            })
+            if (p == 1)return false;
+            if (!batches_of_inventory_id) {
+                remindBox('发生错误，无法审核');
+                return false;
+            }
+
+            var purchase_num_arr = [], purchase_num = $("input[name=purchase_num]"), pu = 0;
+            $.each(purchase_num, function () {
+                var medicines_name = $(this).parent('div').parent('td').siblings('.medicines_name').text();
+                if ($(this).val() == 0) {
+                    remindBox(medicines_name + '数量不能为空');
+                    pu = 1;
+                    return false;
+                }
+                if (!isNumber($(this).val())) {
+                    remindBox(medicines_name + '必须为整数或小数');
+                    pu = 1;
+                    return false;
+                }
+                purchase_num_arr.push($(this).val());
+            })
+            if (pu == 1)return false;
+            var purchase_trade_price_arr = [], purchase_trade_price = $("input[name=purchase_trade_price]"), tr = 0;
+            $.each(purchase_trade_price, function () {
+                var medicines_name = $(this).parent('div').parent('td').siblings('.medicines_name').text();
+                if ($(this).val() == 0) {
+                    remindBox(medicines_name + '数量不能为空');
+                    tr = 1;
+                    return false;
+                }
+                if (!isNumber($(this).val())) {
+                    remindBox(medicines_name + '必须为整数或小数');
+                    tr = 1;
+                    return false;
+                }
+                purchase_trade_price_arr.push($(this).val());
+            })
+            if (tr == 1) return false;
+
+            var purchase_prescription_price_arr = [], purchase_prescription_price = $("input[name=purchase_prescription_price]"), purchase_unit_arr = [], pr = 0;
+            $.each(purchase_prescription_price, function () {
+                var medicines_name = $(this).parent('div').parent('td').siblings('.medicines_name').text();
+                purchase_unit_arr.push($(this).parent('div').parent('td').siblings('.purchase_unit').text());
+                if ($(this).val() == 0) {
+                    remindBox(medicines_name + '数量不能为空');
+                    pr = 1;
+                    return false;
+                }
+                if (!isNumber($(this).val())) {
+                    remindBox(medicines_name + '必须为整数或小数');
+                    pr = 1;
+                    return false;
+                }
+                purchase_prescription_price_arr.push($(this).val());
+            })
+            if (pr == 1) return false;
+            $.post('{:U("/BatchesOfInventory/audit")}', {
+                purchase_id: purchase_id_arr,
+                purchase_num: purchase_num_arr,
+                purchase_trade_price: purchase_trade_price_arr,
+                purchase_prescription_price: purchase_prescription_price_arr,
+                purchase_unit: purchase_unit_arr,
+                batches_of_inventory_id: batches_of_inventory_id
+            }, function (res) {
+                if (res.status == "success") {
+                    window.location = res.data;
+                } else {
+                    remindBox(res.msg);
+                }
+            }, 'json');
+
+        })
+        $(document).on("click", ".delete_purchase", function () {
+            var _self = $(this);
+            var purchase_id = _self.attr('purchase_id');
+            $.post("{:U('/BatchesOfInventory/delete_purchase')}", {purchase_id: purchase_id}, function (res) {
+                if(res.status == "success"){
+                    window.location.reload();
+                }else{
+                    remindBox(res.msg);
+                }
+            }, 'json')
+        })
+    });
+</script>

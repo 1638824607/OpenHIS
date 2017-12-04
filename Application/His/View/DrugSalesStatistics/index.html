@@ -1,0 +1,254 @@
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="panel clearfix pd10 mb20">
+            <div class="fublBox mr10"><span>药品分类：</span>
+                <select class="form-control form-itmeB" name="class_id">
+                    <option value="">全部</option>
+                    <foreach name="classLists" item="vo">
+                        <option value="{$vo.did}">{$vo.dictionary_name}</option>
+                    </foreach>
+                </select>
+            </div>
+            <div class="fublBox mr10">
+                <span>日期：</span>
+                <input type="text" class="form-control form-itmeB dateTime startTime" name="startTime" placeholder=""><i
+                    class="fa fa-calendar"></i>
+            </div>
+            <div class="fublBox mr10"><span class="mr10">-</span><input type="text" name="endTime"
+                                                                        class="form-control form-itmeB dateTime endTime"
+                                                                        placeholder=""><i class="fa fa-calendar"></i>
+            </div>
+            <button type="button" class="btn btn-primary search_btn">查询</button>
+        </div>
+
+        <div class="row mb20">
+            <div class="col-md-12 ftc white">
+                <div class="">
+                    <div class="blueBg2 clearfix pdrl10 m_h70">
+                        <div class="flh70 l mr60">
+                            收支概况
+                        </div>
+                        <div class="flh34 l mr60">
+                            <div class="all_profit">0.00</div>
+
+                        <div class="bwt">总利润</div>
+                    </div>
+                    <div class="flh34 l mr60">
+                        <div class="all_trade_total_amount">0.00</div>
+                    <div class="bwt">批发总价</div>
+                </div>
+                <div class="flh34 l mr60">
+                    <div class="all_amount">0.00</div>
+                <div class="bwt">销售总价</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="panel clearfix pd10">
+    <ul class="tabBtn clearfix headingTab bcb">
+        <li class="on mr10">处方药品明细</li>
+        <li class="">处方药品排行</li>
+    </ul>
+    <ul class="tabBox mt10">
+        <li class="on clearfix">
+            <div>
+                <table class="table table-striped ftc">
+                    <thead>
+                    <tr>
+                        <th>药品分类</th>
+                        <th>药品名称</th>
+                        <th>规格</th>
+                        <th>数量</th>
+                        <th>批发单价</th>
+                        <th>销售单价</th>
+                        <th>批发总价</th>
+                        <th>销售总价</th>
+                        <th>利润</th>
+                    </tr>
+                    </thead>
+                    <tbody class="detail_list_box">
+                    </tbody>
+                </table>
+                <div class="paging mt20 mb20 ftc detaile_page_box">
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <table class="table table-striped ftc mt10">
+                    <thead>
+                    <tr>
+                        <th>排行</th>
+                        <th>药品分类</th>
+                        <th>药品名称</th>
+                        <th>规格</th>
+                        <th>数量</th>
+                        <th>总价</th>
+                    </tr>
+                    </thead>
+                    <tbody class="drug_list_box">
+
+                    </tbody>
+                </table>
+                <div class="paging mt20 mb20 ftc drug_page_box">
+
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</div>
+</div>
+<!-- END MAIN CONTENT -->
+<script>
+    var d = new Date();
+    var today = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+    $('.dateTime').datetimepicker({
+        lang: 'ch',
+        timepicker: false,
+        format: 'Y-m-d',
+        validateOnBlur: false,
+        maxDate:today
+    });
+    $(function () {
+        var search_class = '', start_time = '', end_time = '';
+        var _detail_page = 1, _detail_pagesize = 10;
+        var _drug_page = 1,_drug_pagesize = 10;
+        //选项卡切换
+        getdetailList(_detail_page,_detail_pagesize,search_class,start_time,end_time);
+        getDrugList(_drug_page,_drug_pagesize,search_class,start_time,end_time);
+        $(document).on('click', '.tabBtn > li', function () {
+            $(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+            $(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+        });
+        function getdetailList(page, pagesize, search_class, start_time, end_time) {
+            $.post("{:U('/DrugSalesStatistics/detailList')}", {
+                p: page,
+                pagesize: pagesize,
+                search_class: search_class,
+                startTime: start_time,
+                endTime: end_time
+            },
+            function (res) {
+                if(res.status == 'success'){
+                    var list = res.data.total_info_list.list;
+                    var total = res.data.all_total_info;
+                    if(list.length > 0){
+                        var str = '';
+                         $.each(list,function(i,n){
+                            str += "<tr>\
+                                        <td>"+n.medicines_class+"</td>\
+                                        <td>"+n.medicines_name+"</td>\
+                                        <td>"+n.conversion+n.unit+"/"+n.unit+"</td>\
+                                         <td>"+n.num+"</td>\
+                                         <td>"+n.trade_price+"</td>\
+                                         <td>"+n.price+"</td>\
+                                         <td>"+n.trade_total_amount+"</td>\
+                                         <td>"+n.amount+"</td>\
+                                         <td>"+n.profit+"</td>\
+                                     </tr>";
+                         })
+                        $(".all_profit").text(total.profit);
+                        $(".all_trade_total_amount").text(total.trade_total_amount);
+                        $(".all_amount").text(total.amount);
+                        $(".detail_list_box").html(str);
+                        _detail_page = res.data.total_info_list.page;
+                        if(res.data.total_info_list.pager_str.length > 0){
+                            $(".detaile_page_box").html(res.data.total_info_list.pager_str);
+                        }else{
+                            $(".detaile_page_box").html('');
+                        }
+                    }else{
+                        $(".detail_list_box").html('<tr><td colspan="9" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                        $(".detaile_page_box").html('');
+                        $(".all_profit").text('0.00');
+                        $(".all_trade_total_amount").text("0.00");
+                        $(".all_amount").text("0.00");
+                    }
+                }else{
+                    remindBox(res.msg);
+                }
+            },'json')
+        }
+        $('.detaile_page_box').on('click', '.item', function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if (tag == 'i') {
+                if ($(this).hasClass('next')) {
+                    _detail_page = parseInt(_detail_page) + 1;
+                } else {
+                    _detail_page = parseInt(_detail_page) - 1;
+                }
+            } else {
+                _detail_page = parseInt($(this).html());
+            }
+            getdetailList(_detail_page,_detail_pagesize,search_class,start_time,end_time);
+        })
+        function getDrugList(page, pagesize, search_class, start_time, end_time){
+            $.post("{:U('/DrugSalesStatistics/detailList')}", {
+                        p: page,
+                        pagesize: pagesize,
+                        search_class: search_class,
+                        startTime: start_time,
+                        endTime: end_time
+                    },
+                    function (res) {
+                        if(res.status == 'success'){
+                            var list = res.data.total_info_list.list;
+                            if(list.length > 0){
+                                var str = '';
+                                $.each(list,function(i,n){
+                                    str += "<tr>\
+                                        <td>"+(Number(i)+1)+"</td>\
+                                        <td>"+n.medicines_class+"</td>\
+                                        <td>"+n.medicines_name+"</td>\
+                                        <td>"+n.conversion+n.unit+"/"+n.unit+"</td>\
+                                         <td>"+n.num+"</td>\
+                                         <td>"+n.amount+"</td>\
+                                     </tr>";
+                                })
+                                $(".drug_list_box").html(str);
+                                _drug_page = res.data.total_info_list.page;
+                                if(res.data.total_info_list.pager_str.length > 0){
+                                    $(".drug_page_box").html(res.data.total_info_list.pager_str);
+                                }else{
+                                    $(".drug_page_box").html('');
+                                }
+                            }else{
+                                $(".drug_list_box").html('<tr><td colspan="9" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                                $(".drug_page_box").html('');
+                            }
+                        }else{
+                            remindBox(res.msg);
+                        }
+                    },'json')
+        }
+        $('.drug_page_box').on('click', '.item', function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if (tag == 'i') {
+                if ($(this).hasClass('next')) {
+                    _drug_page = parseInt(_drug_page) + 1;
+                } else {
+                    _drug_page = parseInt(_drug_page) - 1;
+                }
+            } else {
+                _drug_page = parseInt($(this).html());
+            }
+            getDrugList(_drug_page,_drug_pagesize,search_class,start_time,end_time);
+        })
+        $(document).on("click",'.search_btn',function(){
+            search_class = $("select[name=class_id] option:selected").val();
+            start_time = $("input[name=startTime]").val();
+            end_time = $("input[name=endTime]").val();
+            if(search_class || start_time || end_time){
+                _detail_page =1;_drug_page = 1;
+            }
+            getdetailList(_detail_page,_detail_pagesize,search_class,start_time,end_time);
+            getDrugList(_drug_page,_drug_pagesize,search_class,start_time,end_time);
+        })
+    });
+</script>

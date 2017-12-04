@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<title>处方退款</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!-- VENDOR CSS -->
+<link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../assets/vendor/linearicons/style.css">
+<link rel="stylesheet" href="../assets/vendor/chartist/css/chartist-custom.css">
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="../assets/css/main.css">
+<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+<link rel="stylesheet" href="../assets/css/demo.css">
+<!-- public -->
+<link rel="stylesheet" href="../assets/css/public.css">
+<!-- datetimepicker -->
+<link rel="stylesheet" type="text/css" href="../assets/vendor/datetimepicker/jquery.datetimepicker.css"/>
+</head>
+
+<body>
+<!-- MAIN -->
+<div class="main">
+	<!-- MAIN CONTENT -->
+	<div class="main-content">
+		<div class="container-fluid">
+			
+			<div class="">
+				<ul class="tabBtn clearfix" style="width: 50%; margin: auto;">
+					<li class="on">已收费</li>
+					<li>已退费</li>
+				</ul>
+				<ul class="tabBox panel mt10">
+					<li class="on">
+						<div class="pd10 grayBg2">
+							<div class="fublBox mr10"><span>患者姓名：</span>
+								<input type="text" class="form-control form-itmeB" placeholder="">
+							</div>
+							<div class="fublBox mr10"><span>挂号日期：</span><input type="text" class="form-control form-itmeB dateTime startTime" placeholder=""><i class="fa fa-calendar"></i></div>
+							<div class="fublBox mr10"><span class="mr10">-</span><input type="text" class="form-control form-itmeB dateTime endTime" placeholder=""><i class="fa fa-calendar"></i></div>
+							<button type="button" class="btn btn-primary">查询</button>
+						</div>
+						<div class="pd10">
+							<table class="table drugsTable ftc">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>门诊编号</th>
+										<th>患者姓名</th>
+										<th>应收金额</th>
+										<th>实收金额</th>
+										<th>支付方式</th>
+										<th>收费日期</th>
+										<th>操作员</th>
+										<th>状态</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>201710200202552022</td>
+										<td>小胖子</td>
+										<td>800</td>
+										<td>800</td>
+										<td>微信+现金</td>
+										<td>2017-10-19</td>
+										<td>马里奥</td>
+										<td>未发药</td>
+										<td><a href="refundInfo-退费详情.html" class="btn btn-primary btn-sm">退费</a></td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>201710200202552022</td>
+										<td>小胖子</td>
+										<td>800</td>
+										<td>800</td>
+										<td>微信+现金</td>
+										<td>2017-10-19</td>
+										<td>马里奥</td>
+										<td>未发药</td>
+										<td><a href="#" class="btn btn-default btn-sm">退费</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="paging mt20 mb20 ftc">
+							<i class="previous">上一页</i>
+							<span class="on">1</span>
+							<span class="">2</span>
+							<span class="">3</span>
+							<span class="">4</span>
+							<span class="">5</span>
+							<span class="">6</span>
+							<i class="next">下一页</i>
+						</div>
+					</li>
+					<li>
+						<div class="pd10 grayBg2">
+							<div class="fublBox mr10"><span>患者姓名：</span>
+								<input type="text" class="form-control form-itmeB" placeholder="">
+							</div>
+							<div class="fublBox mr10"><span>挂号日期：</span><input type="text" class="form-control form-itmeB dateTime startTime" placeholder=""><i class="fa fa-calendar"></i></div>
+							<div class="fublBox mr10"><span class="mr10">-</span><input type="text" class="form-control form-itmeB dateTime endTime" placeholder=""><i class="fa fa-calendar"></i></div>
+							<button type="button" class="btn btn-primary">查询</button>
+						</div>
+						<div class="pd10">
+							<table class="table drugsTable ftc">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>门诊编号</th>
+										<th>患者姓名</th>
+										<th>应退金额</th>
+										<th>实退金额</th>
+										<th>退费方式</th>
+										<th>退费日期</th>
+										<th>操作员</th>
+										<th>状态</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>201710200202552022</td>
+										<td>爱妃</td>
+										<td>800</td>
+										<td>800</td>
+										<td>微信+现金</td>
+										<td>2017-10-19</td>
+										<td>大龙</td>
+										<td>2017-10-19</td>
+										<td>已退费</td>
+										<td><a href="alreadyRefundInfo-已退费详情.html" class="btn btn-primary btn-sm">详情</a></td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td>201710200202552022</td>
+										<td>爱妃</td>
+										<td>800</td>
+										<td>800</td>
+										<td>微信+现金</td>
+										<td>2017-10-19</td>
+										<td>大龙</td>
+										<td>2017-10-19</td>
+										<td>已退费</td>
+										<td><a href="alreadyRefundInfo-已退费详情.html" class="btn btn-primary btn-sm">详情</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="paging mt20 mb20 ftc">
+							<i class="previous">上一页</i>
+							<span class="on">1</span>
+							<span class="">2</span>
+							<span class="">3</span>
+							<span class="">4</span>
+							<span class="">5</span>
+							<span class="">6</span>
+							<i class="next">下一页</i>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<!-- Javascript -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="../assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="../assets/scripts/klorofil-common.js"></script>
+<script src="../assets/vendor/datetimepicker/jquery.datetimepicker.js"></script>
+<script src="../assets/js/public.js"></script>
+<script>
+$('.dateTime').datetimepicker({
+	lang:'ch',
+	timepicker:false,
+	format:'Y-m-d'
+});
+$(function() {
+	//选项卡切换
+	$(document).on('click', '.tabBtn > li', function(){
+		$(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+		$(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+	});
+});
+</script>
+</body>
+
+</html>

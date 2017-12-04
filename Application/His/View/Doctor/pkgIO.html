@@ -1,0 +1,321 @@
+<script src="__PUBLIC_HIS__/vendor/layer/layer.js"></script>
+<div style=" width: 560px; min-height: 360px; padding: 10px; margin: auto; margin-top:10px; background: #FFFFFF;">
+
+    <ul class="tabBtn clearfix headingTab bcb">
+        <li class="on">信息概览</li>
+        <li>订单列表</li>
+        <li>支付记录</li>
+        <li>已退款记录</li>
+    </ul>
+    <ul class="tabBox" style="max-height:846px; overflow-y: auto;">
+
+        <li class="on">
+            <ul class="mall_list">
+
+                <li>总额：￥{$pkg.amount}</li>
+                <li>时间：{$pkg.addtime|date='Y-m-d H:i:s',###}</li>
+                <li>状态：{$pkg.status_str}</li>
+
+
+            </ul>
+        </li>
+
+        <li id="care_history_box">
+            <ul class="mall_list">
+                <foreach name="mall_list" key="k" item="v">
+
+                    <li>
+                        <label>&nbsp;&nbsp; {$v.label}</label> <span class="r" style="color: gray;">{$v.all_amount}元</span>
+                    </li>
+                </foreach>
+            </ul>
+
+        </li>
+        <li>
+            <ul class="mall_list">
+                <if condition="$list_pay">
+                <foreach name="list_pay" key="k" item="v">
+                    <li>
+                        {$v.payment_platform_label}
+
+                        <span style="margin-left: 10px;">{$v['addtime']|date='Y-m-d H:i:s',###}</span>
+                        <span class="r">￥{$v.pay_amount}</span>
+                    </li>
+                </foreach>
+                    <else/>
+                    <li>无记录</li>
+                </if>
+            </ul>
+
+        </li>
+        <li>
+            <ul class="mall_list" id="refund_list_box">
+                <if condition="$refund_list_pay">
+                <foreach name="refund_list_pay" key="k" item="v">
+                    <li>
+                        {$v.payment_platform_label}
+                        <span style="margin-left: 10px;">{$v['addtime']}</span>
+                        <span class="r">￥{$v.refund_amount}</span>
+                    </li>
+                </foreach>
+
+                <else/>
+                <li>无记录</li>
+                </if>
+            </ul>
+
+        </li>
+    </ul>
+
+</div>
+
+
+<style>
+
+    #refund_amount{color: #FF0000;font-weight: bold;font-size: large; margin-right: 10px;}
+    .mall_list{min-height: 200px; padding: 10px;max-height: 200px;overflow-y: scroll;}
+    .mall_list li{border-bottom: #F0F0F0 1px solid;line-height: 35px;height: 35px;}
+
+
+    .tr_registration_item, .tr_patient_list_item, .tr_medicines_list_item, .tr_inspection_list_item, .tr_extracharges_list_item, .history_list_item {
+        cursor: pointer;
+    }
+
+    #registration_pager_box, #patient_list_pager_box {
+        text-align: center;
+        width: 100%;
+    }
+
+    #registration_box .on, #patient_list_box .on, #medicines_list_box .on, #inspectionfee_list_box .on, #extracharges_list_box .on, #history_search_list_box .on {
+        background: #1a8cff;
+        color: #FFFFFF;
+    }
+
+    #medicines_list_box .sel, #inspectionfee_list_box .sel, #extracharges_list_box .sel {
+        background: #0CA818;
+        color: #FFFFFF;
+    }
+
+    .care_order_sub_box {
+        border: 1px solid #0E3460;
+        min-height: 50px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .care_order_sub_box span {
+        display: inline-block;
+        padding: 5px;
+        margin-right: 2px;
+    }
+
+    .medicines_show {
+        display: none;
+    }
+
+    .pay_status {
+        padding: 6px 8px;
+    }
+
+    .unpay {
+        background: #7C7C7C;
+        color: #FF0000;
+    }
+
+    .payed {
+        background: #0CA818;
+        color: #FFFFFF;
+    }
+
+    .form-group{line-height: 35px;height: 35px;}
+
+    #pay_tab td{border: none;}
+</style>
+<!-- END WRAPPER -->
+<script>
+    var is_iframe=self!=top?true:false;
+    var ids='';
+
+    if(is_iframe){
+        if(parent.my_layer){
+            my_layer = parent.my_layer;
+        }else{
+            my_layer = parent.layer;
+        }
+    }else{
+        my_layer = layer;
+    }
+
+
+    function change_refund_type(tid) {
+        if(tid==0) {
+            $("#cash_box").hide();
+        }else{
+            $("#cash_box").show();
+        }
+    }
+
+    $(function () {
+
+
+        //实现全选反选
+        $("#chk_all").on('click', function () {
+
+            $(".item").prop("checked", $(this).prop('checked'));
+            count_amount(0);
+        });
+
+        $("#chk_all2").on('click', function () {
+
+            $(".item").each(function (i,n) {
+                
+
+                if ($(this).prop("checked")) {
+                    $(this).prop("checked", false);
+                }
+                else {
+                    $(this).prop("checked", true);
+                }
+            });
+            count_amount(0);
+        });
+
+        $(".item").click(function () {
+            count_amount(0);
+        });
+
+        $("#cash").on('input propertychange',function (){
+            count_amount(1);
+        });
+
+
+        $(document).on('click', '.tabBtn > li', function(){
+            $(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+            $(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+
+            /*var t = $(this).html();
+            if(t=='已退款记录'){
+                getRefundLog();
+            }*/
+
+        });
+
+        $("#btn_refund").click(function () {
+            refund_do();
+        });
+
+
+    });
+
+    function refund_do() {
+        //parent.layer_loading('退款中');
+        var memo = $("#memo").val();
+
+        if(memo.length<2){
+            my_layer.msg('退款说明不能为空！');
+            $("#memo").focus();
+            return false;
+        }
+
+        var refund_type = $("#refund_type_1").prop('checked')?1:0;
+
+        $.post('/Doctor/pkgRefundDo',{pkg_id:'{$pkg.id}',ids:ids,refund_type:refund_type,cash:$("#cash").val(),memo:memo},function (res) {
+            //parent.layer_close_loading();
+            if(res.status==0) {
+                window.location.reload();
+                /*$("#memo").val('');
+                $("#case").val(0);
+
+                my_layer.msg('操作成功');*/
+                //parent.refund_back('{$pkg.id}');
+
+                //getRefundLog();
+            }else{
+                alert(res.msg);
+            }
+        });
+    }
+    
+    
+    function count_amount(type) {
+
+        var rm=0,ts='';
+
+        if(type==1) {
+            var val = $("#cash").val();
+            if(val.length==0)val=0;
+            rm = parseFloat(val);
+            if(rm>10000){
+                my_layer.msg('注意：超过1万了')
+            }
+
+            if(rm>100000){
+                my_layer.msg('注意：超过10万了')
+            }
+
+            if(rm>1000000){
+                my_layer.msg('注意：操作最大上限不能超过100万');
+                rm = 1000000;
+                $("#cash").val(rm.toFixed(2));
+            }
+
+        }else{
+            $(".item").each(function (i,n) {
+                if($(n).prop('checked')){
+                    rm+= parseFloat($(n).data('all_amount'));
+                    ts+=ts==''?$(n).val():','+$(n).val();
+                }
+            });
+            $("#cash").val(rm.toFixed(2));
+        }
+
+        var is_full = false;
+        if(rm>0){
+            is_full= rm==pkg_amount;
+            $("#btn_refund").prop('disabled',false);
+
+        }else{
+            $("#btn_refund").prop('disabled',true);
+
+        }
+
+        if(is_full){
+            $("#refund_type_0").prop('disabled',false);
+            //$("#refund_type_1").prop('checked',false);
+        }else{
+            $("#refund_type_0").prop('checked',false).prop('disabled',true);
+            //$("#refund_type_0")
+            $("#refund_type_1").prop('checked',true);
+            $("#cash_box").show();
+        }
+
+
+        ids = ts;
+
+
+        $("#refund_amount").html('￥'+rm.toFixed(2));
+    }
+    
+
+    function getRefundLog() {
+        $.get('/Doctor/getRefundLog/pkg_id/{$pkg.id}',function (res) {
+            if(res.status==0){
+                if(res.data.num>0){
+                    var h='';
+                    $.each(res.data.list,function (i,n) {
+
+                        h+='<li title="'+n.adm_memo+'">\n' +
+                            n.payment_platform_label+
+                                '<span style="margin-left: 10px;">'+n.addtime+'</span>'+
+                            '<span class="r">￥'+n.refund_amount+'</span>\n' +
+                            '</li>';
+
+                    });
+                    $("#refund_list_box").html(h);
+                }
+            }else{
+                alert(res.msg);
+            }
+        });
+    }
+</script>

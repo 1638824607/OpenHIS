@@ -1,0 +1,117 @@
+{__NOLAYOUT__}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>大宅门后台病患数据</title>
+    <link href="/Public/roll/css/index.css?v=1" rel="stylesheet" type="text/css">
+    <script src="/Public/roll/js/jquery.min.js"></script>
+</head>
+
+<body class="grayBg2">
+<div class="height64 flh64 blueBg white ftc"><h2>大宅门后台病患数据</h2></div>
+<div class="clearfix fz18 flh64 whiteBg" style="display: none;">
+    <div class="Top_Record">
+        <div class="l">平台医生<span class="red ml10" id="doctor_num">0</span></div>
+        <div class="l ml60" style="margin-right: 100px;">患者<span class="red ml10" id="p_num">{$p_num}</span></div>
+    </div>
+</div>
+<div class="Top_Record mt10">
+
+    <div class="topRec_List">
+        <dl>
+            <!--dd>患者姓名</dd-->
+            <!--dd>性别</dd-->
+            <!--dd>年龄</dd-->
+            <dd>患者编号</dd>
+            <dd>手机号</dd>
+            <dd>医生姓名</dd>
+            <dd>医院</dd>
+            <dd>科室</dd>
+            <dd>时间</dd>
+        </dl>
+        <div class="maquee">
+            <ul id="main_box">
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var rdNum = 3000;
+    /*function autoScroll(obj){
+        rdNum = Math.floor(Math.random() * 10,1);
+        rdNum = (rdNum > 3 ? 3 : rdNum) * 1000;
+        console.log(rdNum);
+        $(obj).find("ul").animate({
+            marginTop : "-39px"
+        },500,function(){
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        })
+    }*/
+
+
+    function autoScroll(obj){
+        $(obj).find("ul").animate({
+            marginTop : "-39px"
+        },500,function(){
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        })
+    }
+    function flip(){
+        var rdNum = Math.floor(Math.random() * 10,1);
+        rdNum = (rdNum > 3 ? 3 : rdNum) * 4000;
+        autoScroll(".maquee");
+        getData();
+        setTimeout('flip()', rdNum);
+    }
+
+
+    $(function(){
+        //setInterval('autoScroll(".maquee")', rdNum);
+        flip();
+    });
+
+
+    function getData() {
+        $.get('/Adm/getData',function (res) {
+            if(res.status==0){
+
+                var s='';
+                $.each(res.data.list,function (i,n) {
+
+
+                    //
+                    //'<div>'+n.sex+'</div>\n' +
+
+                    s+='<li>\n' +
+                        '<div>'+n.user_code+'</div>\n' +
+                        '<div>'+n.mobile+'</div>\n' +
+                        '<div>'+n.doctor.truename+'</div>\n' +
+                        '<div>'+n.doctor.address+'</div>\n' +
+                        '<div>'+n.ks+'</div>\n' +
+                        '<div>'+n.addtime+'</div>\n' +
+                        '</li>';
+                });
+
+                if(res.data.num>0){
+                    $("#main_box").append(s);
+                    $("#p_num").html(parseInt($("#p_num").html())+res.data.num);
+                }
+
+
+               /* var rdNum = Math.floor(Math.random() * 10,1);
+                rdNum = (rdNum > 3 ? 3 : rdNum) * 1000;
+
+                //setTimeout(getData,3000);*/
+            }else{
+                alert(res.msg);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

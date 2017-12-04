@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>《大宅门云诊所系统》安装程序</title>
+    <script type="text/javascript" src="../his/vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../his/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../his/vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../his/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/pub.css">
+    <script type="text/javascript" src="../his/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="./js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="./js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./css/install.css">
+    <script src="../his/vendor/layer/layer.js"></script>
+</head>
+<body>
+<div id="nav">
+    <div class="inside">
+        <p class="name">《大宅门云诊所系统》<span>安装向导</span></p>
+        <ul class="schedule">
+            <li class="number">1</li>
+            <li class="word">使用协议</li>
+        </ul>
+        <ul class="schedule">
+            <li class="number">2</li>
+            <li class="word">环境检测</li>
+        </ul>
+        <ul class="schedule active">
+            <li class="number">3</li>
+            <li class="word">创建数据</li>
+        </ul>
+        <ul class="schedule">
+            <li class="number">4</li>
+            <li class="word">安装完成</li>
+        </ul>
+    </div>
+</div>
+<div id="out">
+    <div class="inside">
+        <div class="box create">
+            <form class="form-inline" action="./index.php?c=success" method="post" onsubmit="loading();" >
+
+                <table class="table" width="100%">
+                    <tr>
+                        <td>
+                            <div style="width: 400px; overflow: hidden;">
+                                <h2>数据库信息</h2>
+                                <div class="one">
+                                    <label class="control-label">数据库类型</label>
+                                    <input class="form-control" type="text" name="DB_TYPE" value="<?php echo $DB_TYPE;?>">
+                                </div>
+                                <div class="one">
+                                    <label class="control-label"> 数据库服务器</label>
+                                    <input class="form-control" type="text" name="DB_HOST" value="127.0.0.1" required />
+                                </div>
+                                <div class="one">
+                                    <label class="control-label"> 数据库端口</label>
+                                    <input class="form-control" type="text" name="DB_PORT" value="3306" required />
+                                </div>
+                                <div class="one">
+                                    <label class="control-label">数据库名</label>
+                                    <input class="form-control" type="text" name="DB_NAME" required />
+                                </div>
+                                <div class="one">
+                                    <label class="control-label">数据库用户名</label>
+                                    <input class="form-control" type="text" name="DB_USER" value="root" required />
+                                </div>
+                                <div class="one">
+                                    <label class="control-label"> 数据库密码</label>
+                                    <input class="form-control" type="password" name="DB_PWD" required />
+                                </div>
+                                <div class="one">
+                                    <label class="control-label"> 数据表前缀</label>
+                                    <input class="form-control" type="text" name="DB_PREFIX" value="dzm_" />
+                                </div>
+                            </div>
+
+                        </td>
+                        <td>
+                            <h2>管理员信息</h2>
+                            <div class="one">
+                                <label class="control-label"> 诊所名称</label>
+                                <input class="form-control" type="text" name="hospital_name" value="" required placeholder="诊所名称" />
+                            </div>
+                            <div class="one">
+                                <label class="control-label"> 院长姓名</label>
+                                <input class="form-control" type="text" name="owner_name" value="" required placeholder="院长姓名" />
+                            </div>
+                            <div class="one">
+                                <label class="control-label"> 用户账号</label>
+                                <input class="form-control" type="text" name="adm_u" value="" required placeholder="登录账号" />
+                            </div>
+
+                            <div class="one">
+                                <label class="control-label"> 用户密码</label>
+                                <input class="form-control" type="password" name="adm_p" value="" required placeholder="登录密码" />
+                            </div>
+
+                            <div class="one">
+                                <label class="control-label" style="width: auto;color: #FF0000;"><input  type="checkbox" name="demo" value="demo" checked /> 安装测试数据</label>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+
+
+                <p class="agree">
+                    <a class="btn btn-primary" href="./index.php?c=test">上一步</a>
+                    <input class="btn btn-success" type="submit" value="确认">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="load_box" style="display: none;">aaa</div>
+<script>
+    function loading() {
+        layer.load(2,{shade: [0.65, '#FFFFFF']});
+    }
+</script>
+</body>
+</html>

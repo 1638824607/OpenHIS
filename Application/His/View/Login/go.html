@@ -1,0 +1,44 @@
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+<div style="margin: auto;width: 80%;text-align:center;padding-top: 60px;">
+    <img src="/Public/assets/img/wx_icon.png" style="min-width: 50px; max-width: 100px;width: 80%;" />
+    <br/>
+    <h1>{$msg}</h1>
+</div>
+<style>
+    body{background: #FFFFFF;}
+    h1{color: #1bacba;font-size: 18px; margin-top: 20px;}
+</style>
+
+<script>
+
+    wx.config({$arr_js});
+
+    wx.ready(function () {
+
+        //wx.closeWindow();
+
+        /*wx.checkJsApi({
+            jsApiList: ['chooseImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+            success: function (res) {
+                debug_show(JSON.stringify(res));
+
+                // 以键值对的形式返回，可用的api值true，不可用为false
+                // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+            }
+        });*/
+
+        setTimeout(close_win,3000);
+    });
+
+    $(function () {
+
+        CallPay();
+    });
+
+
+    function close_win() {
+        wx.closeWindow();
+    }
+
+</script>

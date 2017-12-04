@@ -1,0 +1,302 @@
+/*浮动*/
+.l {float:left}
+.r{float:right}
+.clearfix:after {content:"."; display:block; height:0; visibility:hidden; clear:both}
+.clearfix {zoom:1}
+/*定位*/
+.clearPosition{position: static!important}
+/*文字对齐*/
+.ftl{text-align:left!important}
+.ftc{text-align:center!important}
+.ftr{text-align:right!important}
+/*font-size*/
+.fz12{font-size:12px}
+.fz13{font-size:13px}
+.fz14{font-size:14px}
+.fz15{font-size:15px}
+.fz16{font-size:16px}
+.fz17{font-size:17px}
+.fz18{font-size:18px}
+.fz20{font-size:20px}
+.fz22{font-size:22px}
+.fz24{font-size:24px}
+.fz26{font-size:26px}
+.fz28{font-size:28px}
+/*line-height*/
+.flh18{line-height: 18px;}
+.flh20{line-height: 20px;}
+.flh22{line-height: 22px;}
+.flh24{line-height: 24px;}
+.flh26{line-height: 26px;}
+.flh28{line-height: 28px;}
+.flh30{line-height: 30px;}
+.flh32{line-height: 32px;}
+.flh34{line-height: 34px;}
+.flh35{line-height: 35px;}
+.flh64{line-height: 64px;}
+.flh70{line-height: 70px;}
+/*清除块级元素*/
+.clearBlock{display: inline-block!important;}
+/*相对定位*/
+.ralePosition{display: inline-block!important;}
+/*字体颜色*/
+.red, .red *{color:#fd6666!important}
+.yello, .yello *{color:#faaf19!important}
+.green, .green *{color:#1fd273!important}
+.blue, .blue *{color:#429bff!important}
+.blue2, .blue2 *{color: #47c6c6!important}
+.gray, .gray *{color:#666666!important}
+.gray2, .gray2 *{color:#999!important}
+.white, .white *{color:#fff!important}
+/*背景颜色*/
+.redBg{background-color:#fd6666!important}
+.yelloBg{background-color:#faaf19!important}
+.greenBg{background-color:#1fd273!important}
+.blueBg{background-color:#429bff!important}
+.blueBg2{background-color:#47c6c6!important}
+.grayBg{background-color:#aaa!important}
+.grayBg2{background-color:#f7f7f9!important}
+.whiteBg{background-color:#fff!important}
+/*按钮*/
+.btn1, .btn2, .btn3, .btn4{border: 0; display: inline-block; text-align: center; padding: 0 20px; cursor: pointer; vertical-align:middle;}
+.btn1{height: 50px; font-size: 18px; line-height: 50px;}
+.btn2{height: 44px; font-size: 16px; line-height: 44px;}
+.btn3{height: 30px; font-size: 12px; line-height: 30px;}
+.btn4{height: 24px; font-size: 12px; line-height: 24px;}
+
+.radiusz4{ border-radius: 4px; }
+.radiusz6{ border-radius: 6px; }
+.radiusz20{ border-radius: 20px; }
+
+/*外边距*/
+.mauto{ margin: auto; }
+
+.mt8{margin-top:8px!important}
+.mt10{margin-top:10px!important}
+.mt20{margin-top:20px!important}
+.mt30{margin-top:30px!important}
+.mt40{margin-top:40px!important}
+.mt50{margin-top:50px!important}
+.mt60{margin-top:60px!important}
+
+.mr8{margin-right:8px!important}
+.mr10{margin-right:10px!important}
+.mr20{margin-right:20px!important}
+.mr30{margin-right:30px!important}
+.mr40{margin-right:40px!important}
+.mr50{margin-right:50px!important}
+.mr60{margin-right:60px!important}
+
+.mb10{margin-bottom:8px!important}
+.mb10{margin-bottom:10px!important}
+.mb20{margin-bottom:20px!important}
+.mb30{margin-bottom:30px!important}
+.mb40{margin-bottom:40px!important}
+.mb50{margin-bottom:50px!important}
+.mb60{margin-bottom:60px!important}
+
+.ml8{margin-left:8px!important}
+.ml10{margin-left:10px!important}
+.ml20{margin-left:20px!important}
+.ml30{margin-left:30px!important}
+.ml40{margin-left:40px!important}
+.ml50{margin-left:50px!important}
+.ml60{margin-left:60px!important}
+/*高度*/
+.height64{height: 64px}
+.height70{height: 70px}
+
+.m_h70{ min-height: 70px; }
+/*内边距*/
+.pd10{padding: 10px}
+.pd20{padding: 20px}
+
+.pdrl10{ padding: 0 10px; }
+.pdrl20{ padding: 0 20px; }
+/*边框*/
+.bc{border: 1px solid #ccc}
+.bct{border-top: 1px solid #ccc}
+.bcr{border-right: 1px solid #ccc}
+.bcb{border-bottom: 1px solid #ccc}
+.bcl{border-left: 1px solid #ccc}
+
+.bw{border: 1px solid #fff}
+.bwt{border-top: 1px solid #fff}
+.bwr{border-right: 1px solid #fff}
+.bwb{border-bottom: 1px solid #fff}
+.bwl{border-left: 1px solid #fff}
+/*宽度*/
+.wb50{width: 50%!important; }
+.wb100{width: 100%!important; }
+
+/*限制文字溢出*/
+.Tellipsis{overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.tit1{ font-size: 20px; text-align: center;}
+.wepBox{ min-width: 1000px; }
+/*导航*/
+.webNav{ font-size: 16px; overflow: hidden;}
+.webNav .btn{ height: 53px; line-height: 40px; float: left; border-radius: 0!important; border: 0; box-shadow: none; }
+/*input*/
+.form-itmeB{ width: auto; display: inline-block; }
+.fublBox{ position: relative; display: inline-block; }
+.fublBox input[type="text"]{}
+.fublBox i.fa,.listSeaForm i.fa{ position: absolute; top: 9px; right: 5px; cursor: pointer; color:#429bff; z-index: 10}
+.formNumber{ width: 70px; text-align: center;}
+/*初始化input*/
+.listSeaForm{ box-shadow: none; line-height: 30px;  position: relative;}
+.listSeaForm .btn{ padding: 0!important; box-shadow: none; }
+.listSeaForm textarea{ box-shadow: none;}
+/*---- 弹框 ----*/
+.bombBox{width:100%; height:100%; position:fixed; top:0; left:0; z-index:1010}
+.bombBox .fa-remove{position:absolute; top:8px; right:8px; color:#666; font-size:18px; cursor: pointer; z-index:2}
+.bombBox .deleteDoc{position:absolute; top:10px; right: 14px; font-size: 14px; color: #fff; z-index:2}
+
+.bombBox .bombContent { min-width: 300px; display: table; margin:-260px auto 0; position:relative; top:50%; z-index:1;}
+.bombBox .tableContent{margin:auto; position:absolute; top:0; right:0; bottom:0; left:0; z-index:1}
+.bombBox .loadingBox{ background:url(../img/load_icon.gif) no-repeat center; }
+.bombBox .pictureBox{ width: 100% }
+.bombBox .pictureBox img{ width:100%; height:auto}
+
+.bombBox .promptBox{width:100%; max-width:300px; background-color:#fff; border-radius:4px;}
+.bombBox .bombTit{height: 40px; line-height: 40px; text-indent: 10px; font-size: 16px; background-color: #f1f1f1; overflow:hidden; border-radius:4px 4px 0 0}
+.bombBox .promptBox .promptTxt{text-align:center; padding:30px; font-size:16px}
+.bombBox .promptBox .promptBtn{height:40px; text-align:center;}
+.bombBox .promptBox .promptBtn .btn{margin:0 20px}
+.bombBox .promptBox textarea{width: 90%; display: block; margin:10px auto; padding: 4px}
+
+.bombBox .LabelBox{max-height: 26rem; overflow-y: auto}
+.bombBox .LabelBox .tagClass{border-bottom: #dedede 1px solid}
+.bombBox .LabelBox .tagClass .tagBox .tags{margin: 0 5px 5px 0; border-radius:4px; color: #fff; background-color: #26b9b6; border: #26b9b6 1px solid}
+.bombBox .LabelBox .tagClass .tagBox .tags.on{background-color: #dd514c; border: #dd514c 1px solid}
+.bombBox .tagCustom {padding: 0 10px}
+
+.bombBox .bombDocument{padding: 12px; width: 100%; opacity: 0.8; background-color: #000; position: absolute; left: 0; bottom: 20px; z-index: 2; color: #fff}
+
+.remindBox {max-width:90%; display:table; margin:-100px auto 0; position:relative; top:50%; padding:6px 12px; background-color:#000; color:#fff; border-radius:4px; opacity:0.8px}
+/*操作提示取消*/
+.bottomBomb{width:100%; position:fixed; bottom:-100%; left:0; font-size:18px; color:#1475de; background-color: #dedede; z-index:10000}
+.bottomBomb .optionList li{height:40px; line-height:40px; text-align:center; background-color:#fff; margin-bottom:1px;}
+.bottomBomb .optionList li > *{width:100%; height:100%; display:block}
+.bottomBomb a{color:#333; text-decoration:none}
+.bottomBomb .optioncancel{margin:10px 0 0; display:block; height:40px; line-height:40px; text-align:center; background-color:#fff;}
+/*提示框*/
+.prompt {position:absolute; width:200px; z-index:100; background-color:#fffccf; padding:10px; box-shadow:1px 0 5px #888; border-radius:4px; display:none}
+.prompt .arrow {position:absolute; top:-10px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid #fffccf}
+/*药品弹框*/
+.drugBomb{width: 30%; min-width: 280px; height: 100%; overflow-y: auto; padding:60px 0 150px; position: absolute; top: 0; right: -100%; z-index: 1}
+.drugBomb .tabBtn{width:100%; position: absolute; top: 0; left: 0;}
+.drugBomb .tabBox{max-height: 100%; overflow-y: auto; }
+.drugBomb .tabBox li{margin: 0 10px;}
+.drugBomb .addDrug{width:100%; position: absolute; bottom: 20px}
+
+/*收费*/
+.sPaymentBox{ width: 100%;}
+.sPaymentBox dl{ width: 30%; display: inline-block;}
+.sPaymentBox dl dd{ margin-top: 10px;}
+
+/*头像*/
+.headPortraitBox{ position: relative; }
+.headPortraitBox input[type="file"]{ width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; }
+
+.bombBox .bombMask{width:100%; height:100%; position:absolute; top:0; left:0; background-color:#000; opacity:0.6; z-index:0}
+/*分页*/
+.paging {}
+.paging span ,.paging i{ border: #ccc 1px solid; cursor: pointer; margin-right: 6px; padding: .2em .8em .3em; font-size: 75%;font-weight: 500;line-height: 1;text-align: center; white-space: nowrap;vertical-align: baseline; border-radius: .25em;}
+.paging span.on,.paging i{border: #337ab7 1px solid; color: #fff; background-color: #337ab7;}
+
+.bottomPageBox{width:100%; position: absolute; bottom: 16px; left: 0; padding: 0 20px;}
+/*===============用户管理===============*/
+/*二维码*/
+.codeErm img{ width: 140px; height: 140px; }
+/*注册 重置密码*/
+.registerTop{min-width: 1000px; height: 140px; background-color: #fff; border-bottom: #ccc 1px solid;}
+.registerTop .btn2{ position: relative; top: 70px; right: 270px;}
+.registerTop .logo{ position: relative; top: 20px; left: 30px; }
+.registerTop .logo div{ height: 70px; border-left: #666666 1px solid; margin-left: 10px; padding-left: 10px; font-size:26px; line-height: 110px; position: relative; top: 20px; color: #666666;}
+
+.registerSteps{ margin:28px auto 0; display: table; }
+.registerSteps .stepsBox{ text-align: center; float: left; font-size: 18px; }
+.registerSteps .stepsBox .iconBox{ width: 36px; height: 36px; display: inline-block; position: relative; color: #fff; text-align:center; line-height: 36px;}
+.registerSteps .stepsBox .iconBox div{ width: 26px; height: 26px; background-color: #ccc; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin:auto; transform:rotate(45deg); -ms-transform:rotate(45deg); -moz-transform:rotate(45deg); -webkit-transform:rotate(45deg); -o-transform:rotate(45deg); z-index: 0;}
+.registerSteps .stepsBox .iconBox span{ position: relative; z-index: 1; }
+.registerSteps .stepsBox p{ color: #666;}
+.registerSteps .stepsLine{ width: 200px; height: 6px; float: left; background-color: #ccc; position: relative; top: 16px;}
+/**/
+.goul-input-box *{ vertical-align: middle; }
+.goul-input-box label.title{ width: 100px; height: 42px; display: inline-block; line-height: 42px; text-align: right; overflow:hidden; }
+.goul-input-box input[type="text"],.goul-input-box input[type="password"],.goul-input-box input[type="number"]{ width: 330px; height: 40px; border:#ccc 1px solid; text-indent: 8px; border-radius: 4px;}
+.goul-input-box input[type="button"]{ width: 330px;border-radius: 4px;}
+.goul-input-box input.yzTxt{ width: 225px; }
+.goul-input-box input.yzBtn{ width: 100px; padding: 0;}
+/*注册信息填写*/
+.registerBox{ background-color: #ffffff; box-shadow: 0 10px 10px #dedede; padding-bottom: 25px; overflow:hidden;}
+.tabBtn > li{ width: 50%; height: 40px; line-height: 40px; float: left; cursor: pointer; background-color: #e5e5e5; text-align: center;}
+.rTit{ text-align: center; line-height: 60px; font-size: 14px; }
+.tabBtn > li.on{ background-color: #00AAFF; color: #fff;}
+.recipelbBtn > li { width: auto; height: 34px; line-height: 34px; padding:0 18px; background-color: none; margin-right: 6px;}
+.recipelbBtn > li i.fa{ display: none; }
+.recipelbBtn > li.on{ background-color: #41B314;}
+.recipelbBtn > li.on i.fa{ display: inline-block; }
+.headingTab li{ width: auto; padding: 0 18px; }
+.tabBox > li {display: none;}
+.tabBox > li.on{ display: block; }
+
+.registerBox .registerFrom li{ margin-top: 20px; }
+.registerBox .registerFrom label.title{ width:219px; margin-right: 10px;}
+.registerBox .steps1,.registerBox .steps2,.registerBox .steps3{display: none;}
+
+.regisBox.s1 .steps1{ display: block; }
+.regisBox.s2 .steps2{ display: block; }
+.regisBox.s3 .steps3{ display: block; }
+.regisBox.s1 .registerSteps .stepsBox.s1 .iconBox div,.regisBox.s2 .registerSteps .stepsBox.s1 .iconBox div,.regisBox.s2 .registerSteps .stepsBox.s2 .iconBox div,.regisBox.s3 .registerSteps .stepsBox.s1 .iconBox div,.regisBox.s3 .registerSteps .stepsBox.s2 .iconBox div,.regisBox.s3 .registerSteps .stepsBox.s3 .iconBox div{background-color: #429bff;}
+.regisBox.s1 .registerSteps .stepsBox.s1 p,.regisBox.s2 .registerSteps .stepsBox.s1 p,.regisBox.s2 .registerSteps .stepsBox.s2 p,.regisBox.s3 .registerSteps .stepsBox.s1 p,.regisBox.s3 .registerSteps .stepsBox.s2 p,.regisBox.s3 .registerSteps .stepsBox.s3 p{ color: #429bff;}
+.regisBox.s2 .registerSteps .stepsLine.s2,.regisBox.s3 .registerSteps .stepsLine.s2,.regisBox.s3 .registerSteps .stepsLine.s3{ background-color: #429bff;}
+/*提示*/
+.promptV{ width:216px; position: absolute; top: 0; right: 8px;}
+
+/*医院云管理首页*/
+.hospCloudList{  }
+.hospCloudList .cloudBox{ width: 240px; height: 260px; background-color: #fff; float: left; margin:  0 30px 30px 0 ; position: relative;}
+
+.hospCloudList .hospitalBox{}
+.hospCloudList .hospitalBox .topLi{width: 100%; height: 30px; font-size: 16px; text-align: center; color: #fff; line-height: 30px; position: absolute; top: 0; left: 0;}
+.hospCloudList .hospitalBox .topLi.on1{ background-color: #5fd5ff; }
+.hospCloudList .hospitalBox .topLi.on2{ background-color: #fd6666;}
+.hospCloudList .hospitalBox .topLi.on3{ background-color: #429bff;}
+
+.hospCloudList .hospitalBox .hospLogo{ width: 160px; height: 160px; border-radius: 160px; display: block; margin: 46px auto 0; }
+.hospCloudList .hospitalBox .hospName{width: 100%; height: 30px; font-size: 16px; text-align: center; line-height: 30px; position: absolute; bottom: 10px; left: 0;color: black}
+
+
+.hospCloudList .addHospital .lineHosp{ width: 100px; height: 100px; border-radius: 100px; background-color: #f7f7f9; margin: 52px auto 0; text-align: center;}
+.hospCloudList .addHospital .lineHosp i{ font-size: 60px; line-height: 100px;}
+.hospCloudList .addHospital .hospName{width: 100%; height: 30px; font-size: 16px; text-align: center; line-height: 30px; margin-top: 20px;}
+
+.checkForm{}
+.checkForm .am-checkbox{ float: left; margin: 10px 12px 0 0}
+.checkForm .am-checkbox .am-icon-checked{ color: #f00!important; }
+/*患者详情*/
+.pInfoDl dt{line-height: 30px; padding:0 10px; margin-bottom: 12px;}
+.pInfoDl dd{padding:0 10px; margin-bottom: 12px;}
+/*药品表格*/
+.drugsTable .fa{ font-size: 18px; cursor: pointer; }
+.drugsTable td { line-height: 30px!important; }
+.drugsTable .form-control{ height: 30px; }
+
+/*未处理处方*/
+.treatment-today-list{}
+.treatment-today-list li{ cursor: pointer; padding: 10px;}
+.treatment-today-list li:hover{ background-color: #dedede; }
+
+/*编辑信息*/
+.clinicForm.on input,.clinicForm.on textarea,.clinicForm.on select{ border: 0; background: none; appearance:none; -moz-appearance:none; -webkit-appearance:none;}
+
+/*个人信息*/
+.doctorPortrait{ width: 160px; height: 160px; position: relative; }
+.doctorPortrait img{ width: 160px; height: 160px; border-radius: 160px;}
+.doctorPortrait input{ width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0;}
+
+.doctorInfoDl{ width: 340px; margin-top: 10px; }
+
+.doctorInfoDl dt input{ padding-left: 0; }
+.doctorInfoDl dd{ line-height: 26px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}

@@ -1,0 +1,291 @@
+<div class="tableContent whiteBg moneyBomb" style=" width: 560px; min-height: 360px; padding: 10px; margin: auto; margin-top:10px;">
+    <div class="pd20" style="height:auto;background: #FFFFFF;">
+        <ul class="list-unstyled list-justify" style=" max-height: 280px; overflow-y: auto;" id="pay_order_list">
+        </ul>
+        <div class="sPaymentBox ftc">
+            <div class="green ftl">应收 <span class="r" id="pay_order_amount"></span></div>
+            <div class="tit1 bcb ftl mt10 mb10">支付方式</div>
+            <table align="center" width="90%" id="pay_tab">
+                <tr>
+                    <td width="50%">
+                        <table class="table" style="border: none;">
+                            <tr>
+                                <td width="100">现金支付:</td>
+                                <td><input type="text" class="form-control" placeholder="" value="0" id="pay_cash"
+                                           onkeyup="value=value.replace(/[^\0-9.]/g,'')"
+                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\0-9.]/g,''))"
+                                /></td>
+                            </tr>
+                            <tr>
+                                <td>在线支付:</td>
+                                <td><input type="text" class="form-control" placeholder="" value="0" id="pay_ol_input"
+                                           onkeyup="value=value.replace(/[^\0-9.]/g,'')"
+                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\0-9.]/g,''))"
+                                />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="50%" id="ol_result_box">
+                        <img src="/Public/his/img/load_icon.gif" id="pay_qr_img"/>
+                        <div>
+                            <img src="/Public/assets/img/wx_ali.jpg" width="215" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+
+
+    </div>
+    <div class="bottomPageBox" style="position:inherit;">
+        <button type="button" class="btn btn-primary wb100" id="btn_save_pay">保 存</button>
+    </div>
+</div>
+
+<input type="hidden" name="pkg_ids" value="">
+<input type="hidden" name="pkg_status" value="">
+<style>
+    .tr_registration_item, .tr_patient_list_item, .tr_medicines_list_item, .tr_inspection_list_item, .tr_extracharges_list_item, .history_list_item {
+        cursor: pointer;
+    }
+
+    #registration_pager_box, #patient_list_pager_box {
+        text-align: center;
+        width: 100%;
+    }
+
+    #registration_box .on, #patient_list_box .on, #medicines_list_box .on, #inspectionfee_list_box .on, #extracharges_list_box .on, #history_search_list_box .on {
+        background: #1a8cff;
+        color: #FFFFFF;
+    }
+
+    #medicines_list_box .sel, #inspectionfee_list_box .sel, #extracharges_list_box .sel {
+        background: #0CA818;
+        color: #FFFFFF;
+    }
+
+    .care_order_sub_box {
+        border: 1px solid #0E3460;
+        min-height: 50px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .care_order_sub_box span {
+        display: inline-block;
+        padding: 5px;
+        margin-right: 2px;
+    }
+
+    .medicines_show {
+        display: none;
+    }
+
+    .pay_status {
+        padding: 6px 8px;
+    }
+
+    .unpay {
+        background: #7C7C7C;
+        color: #FF0000;
+    }
+
+    .payed {
+        background: #0CA818;
+        color: #FFFFFF;
+    }
+
+    .form-group{line-height: 35px;height: 35px;}
+
+    #pay_tab td{border: none;}
+</style>
+<script>
+    var is_iframe=self!=top?true:false;
+    if(is_iframe){
+        if(parent.my_layer){
+            my_layer = parent.my_layer;
+        }else{
+            my_layer = parent.layer;
+        }
+    }else{
+        my_layer = layer;
+    }
+    $(function(){
+        var registration_id = "{$registration_id}";
+        //实时更改在线支付和现金支付
+        var registration_amounts =0;
+        var pkg_id = 0, stopPayStatus = 0, pkg_status = 0;
+        getMain();
+        function getMain(){
+            $.post("{:U('/Registration/getRegistrationPayInfo')}",{registration_id:registration_id},function(e){
+                if(e.status == "success"){
+                    if(e.data.registration_info){
+                        var str = '<li>门诊编号 <span class="r">'+e.data.registration_info.registration_number+'</span></li>\
+                    <li>日期/时间<span class="r">'+e.data.registration_info.date+'&';
+                        if(e.data.registration_info.subsection_type== 1){
+                            str += '上午</span></li>';
+                        }else if(e.data.registration_info.subsection_type== 2){
+                            str +='下午</span></li>';
+                        }else if(e.data.registration_info.subsection_type== 3){
+                            str +='晚上</span></li>';
+                        }
+                        str += '<li>科室名称<span class="r">'+e.data.registration_info.department_name+'</span></li>\
+                            <li>医生姓名<span class="r">'+e.data.registration_info.user_name+'</span></li>\
+                            <li>挂号类型<span class="r">'+e.data.registration_info.registeredfee_name+'</span></li>\
+                            <li>挂号费<span class="r registeredfee_aggregate_amount">'+e.data.registration_info.registeredfee_aggregate_amount+'</span></li>';
+                        $("#pay_order_list").html(str);
+                        pkg_id = e.data.registration_info.pkg_id;
+                        $("input[name=pkg_ids]").val(e.data.registration_info.pkg_id);
+                        registration_amounts = Number(e.data.amount).toFixed(2);
+                        $("#pay_order_amount").text(Number(e.data.amount).toFixed(2));
+                        $("#pay_ol_input").val(Number(e.data.amount).toFixed(2));
+
+                        $("#pay_cash").val(0);
+                        $("#pay_qr_img").attr('src', '/qr?size=5&type=pay&id=' + e.data.registration_info.pkg_id);
+                        getMainSub();
+                    }
+                }else{
+                    remindBox(e.msg);
+                }
+            },'json')
+        }
+
+        $("#pay_cash").on('input propertychange', function () {
+            var val = $(this).val();
+            if (val.length == 0) {
+                $("#pay_ol_input").val(registration_amounts);
+                return false;
+            }
+            var ol = registration_amounts - parseFloat(val);
+            if (ol < 0) {
+                ol = 0;
+                $("#pay_cash").val(registration_amounts);
+            }
+            if($("#pay_ol_input").attr('disabled') == "disabled"){
+                $("#pay_cash").val(registration_amounts);
+            }else{
+                $("#pay_ol_input").val(ol.toFixed(2));
+            }
+            change_ol_amount();
+        });
+        $("#pay_ol_input").on('input propertychange', function () {
+            var val = $(this).val();
+            if (val.length == 0) {
+                $("#pay_cash").val(registration_amounts);
+                return false;
+            }
+            var cash = registration_amounts - parseFloat(val);
+            if (cash < 0) {
+                cash = 0;
+                $("#pay_ol_input").val(registration_amounts);
+            }
+            $("#pay_cash").val(cash.toFixed(2));
+            change_ol_amount();
+        });
+
+    //获取在线支付状态
+    function getOnLinePay() {
+        if (stopPayStatus != 0) return false;
+        $.post('/Registration/getOnLinePay', {pkg_id: pkg_id}, function (res) {
+            if (res.status == 0) {
+                pkg_status = res.data.pkg.status;
+                $("input[name=pkg_status]").val(pkg_status);
+                show_pay_status();
+                if (res.data.num > 0) {
+                    var all_amount = 0, type;
+                    $("#pay_ol_input").val(0);
+                    $.each(res.data.list, function (i, n) {
+                        all_amount += parseFloat(n.pay_amount);
+                        switch (n.payment_platform) {
+                            case '0':
+                                $("#pay_cash").val(n.pay_amount);
+                                $("#pay_cash").attr('disabled', true);
+                                break;
+                            default:
+                                $("#pay_ol_input").val(n.pay_amount);
+                                var ss='<img src="/Public/assets/img/pay_done_'+n.payment_platform+'.png" />\n' +
+                                        '<div>'+n.payment_platform_label+'到账:￥<span  style="color: #FF0000;font-size: 16px;font-weight: bold;">'+
+                                        n.pay_amount+'</span></div>';
+                                $('#ol_result_box').html(ss);
+                                $("#pay_ol_input").attr('disabled', true);
+                                $("#pay_qr_img").hide();
+
+                        }
+                    });
+
+                    if(all_amount>=res.data.pkg.amount){
+                    }else{
+                        var cash = res.data.pkg.amount-all_amount;
+                        $("#pay_cash").val(cash);
+                    }
+                    $("#btn_change_ol_amount").hide();
+                } else {
+                    $("#btn_change_ol_amount").show();
+                    $("#btn_save_pay").show();
+                    show_pay_status();
+                    if (pkg_status == 0) setTimeout(getOnLinePay, 3000);
+                }
+            } else {
+                remindBox(res.msg);
+            }
+        });
+    }
+        //保存订单
+        $("#btn_save_pay").click(function () {
+            var cash = $("#pay_cash").val();
+            var ol = $("#pay_ol_input").val();
+            if(Number(ol)+Number(cash)<registration_amounts){
+                return false;
+            }
+           $.post('{:U("/Registration/payOrder")}', {
+                pkg_id: pkg_id,
+                ol: ol,
+                cash: cash,
+                pkg_status: pkg_status
+            }, function (res) {
+                if (res.status == "success") {
+                    remindBox('保存成功');
+                    if(parent.refund_back){
+                        parent.refund_back();
+                    }else{
+                        refund_back();
+                    }
+                } else {
+                    remindBox(res.msg);
+                }
+            });
+        });
+        function show_pay_status() {
+
+            if (pkg_status == 1) {
+                $("#pay_qr_img").hide();
+            } else {
+                $("#pay_qr_img").show();
+            }
+        }
+        //显示收费弹窗
+        function getMainSub() {
+            stopPayStatus = 0;
+            $('#moneyBomb').fadeIn();
+            // 取消或者关闭
+            $('#moneyBomb .bombMask, #moneyBomb .fa-remove').one('click', function (event) {
+                $(this).closest('#moneyBomb').fadeOut();
+                $('body').removeAttr('style');
+                stopPayStatus = 1;
+            });
+            getOnLinePay();
+        }
+        function change_ol_amount(){
+            var ol = $("#pay_ol_input").val();
+            $.post('{:U("/Registration/change_ol_pay_part")}', {pkg_id: pkg_id, ol: ol}, function (res) {
+                if (res.status == "success") {
+                } else {
+                    remindBox(res.msg);
+                }
+            }, 'json');
+        }
+    })
+</script>

@@ -1,0 +1,24 @@
+<div class="">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="panel mb20 clearfix pd10">
+                <span class="tit1 blue">{$role_name}功能</span><span class="gray2 ml10"></span>
+                <button type="button" onclick="window.history.go(-1);" class="btn btn-default r">返回</button>
+            </div>
+            <div class="panel panel-profile pd10">
+                <foreach name="menus" item="vo">
+                <h3 class="tit1 flh30 blue ftl bcb mt20">{$vo.title}</h3>
+                <div class="clearfix mt10">
+                    <foreach name="vo[$vo['id']]" item="v">
+                    <label class="fancy-checkbox l mr40">
+                        <input type="checkbox" disabled="disabled"  <?php if(in_array($v['id'],$rulesArr)){echo "checked";} ?>>
+                        <span>{$v.title}</span>
+                    </label>
+                    </foreach>
+                </div>
+                </foreach>
+            </div>
+        </div>
+    </div>
+</div>

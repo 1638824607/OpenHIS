@@ -1,0 +1,1825 @@
+[ 2017-11-29T09:20:47+08:00 ] 127.0.0.1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000068s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+
+[ 2017-11-29T09:20:47+08:00 ] 127.0.0.1 /index.php/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+SQL: SELECT b.userid AS uid,b.* FROM dzm_his_wxmp b  WHERE b.userid=1 [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status E:\wsl\webroot\install_test\web02\Application\His\Controller\LoginController.class.php 第 98 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+NOTIC: [8] Undefined variable: qr_img E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 44 行.
+NOTIC: [8] Undefined variable: qr_img E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 45 行.
+NOTIC: [8] Undefined variable: qr_img E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 48 行.
+NOTIC: [8] Undefined variable: qr_img E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 50 行.
+NOTIC: [8] Undefined variable: qr_img E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 61 行.
+NOTIC: [8] Undefined variable: qr_img_content E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 95 行.
+NOTIC: [8] Undefined variable: enid E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\ecda27f47c7a7285d99b700a6d1c0c12.php 第 101 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017796s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002153s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002171s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002052s ]
+
+[ 2017-11-29T09:20:47+08:00 ] 127.0.0.1 /Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000141s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000312s ]
+
+[ 2017-11-29T09:21:14+08:00 ] 127.0.0.1 /login/userlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000044s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0637s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE `user_name` = 'web02' LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-11-29T09:21:14+08:00 ] 127.0.0.1 /login/enlogin?enuid=b787mcMBIRFDqvtVXb3CX66ianYMXURZBhaxdE3Ycr7O
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT b.userid AS uid,b.* FROM dzm_his_wxmp b  WHERE b.userid=1 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `dzm_his_hospital` WHERE ( hid='1' ) LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2017-11-29T09:21:14+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000044s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0148s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008254s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000059s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-11-29T09:21:15+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000066s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0175s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0205s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-11-29T09:21:15+08:00 ] 127.0.0.1 /qr?type=bindwx&id=28aaGhv0ROy5mF7eVsUj8TEVW2IzwiEuxwfTFRpkQqMW&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000279s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001550s ]
+
+[ 2017-11-29T09:21:18+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0154s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0022s ]
+
+[ 2017-11-29T09:21:21+08:00 ] 127.0.0.1 /index.php/index/base_index?hospital_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0455s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0150s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 0 ORDER BY order_list asc  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: menu1 E:\wsl\webroot\install_test\web02\Application\Runtime\Cache\His\a2fbc9338a55b9767c99486e40bc8103.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010935s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2017-11-29T09:21:21+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0158s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0191s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 16  [ RunTime:0.0015s ]
+
+[ 2017-11-29T09:21:21+08:00 ] 127.0.0.1 /index.php/IncomeStat/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000073s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0166s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0174s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0158s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008840s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008878s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000285s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000061s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-11-29T09:21:21+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000064s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000050s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0190s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0160s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0157s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id  [ RunTime:0.0010s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id ORDER BY p.addtime DESC LIMIT 0,5   [ RunTime:0.0016s ]
+
+[ 2017-11-29T09:21:22+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000181s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0163s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0162s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0157s ]
+SQL: SELECT SUM(l.pay_amount) as generalIncome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(l.pay_amount) as chargeincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT SUM(r.refund_amount) as refundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT SUM(l.pay_amount) as wechartincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(l.pay_amount) as cashincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 0 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(l.pay_amount) as alipayincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 2 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(r.refund_amount) as cashrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 0 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(r.refund_amount) as wechartrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 1 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(r.refund_amount) as alipayrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 2 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-11-29T09:21:27+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000044s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0170s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-11-29T09:21:27+08:00 ] 127.0.0.1 /qr?type=bindwx&id=198e4o4BZw9yLwOjSRbau7-S-NuBtKYKHA02I-P-pJwpsv7z&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000461s ]
+
+[ 2017-11-29T09:21:45+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000144s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000153s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:24:25+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000185s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0159s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007888s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000286s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2017-11-29T09:24:25+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000164s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:24:25+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0185s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0210s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-11-29T09:24:25+08:00 ] 127.0.0.1 /qr?type=bindwx&id=1202gT2x-S-jrq0TFuIQ5aMxv8vuseuagtyVWPiLQepbjb&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+
+[ 2017-11-29T09:24:28+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0185s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008193s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000310s ]
+
+[ 2017-11-29T09:24:29+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000159s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:24:29+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000062s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:24:29+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000178s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0252s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0198s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-11-29T09:24:29+08:00 ] 127.0.0.1 /qr?type=bindwx&id=71698veHFJuTh1iMHxdV2H9lEpkzjLEbUHKe5tMJOvuQ&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+
+[ 2017-11-29T09:24:35+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0157s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007787s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000316s ]
+
+[ 2017-11-29T09:24:35+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:24:35+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:24:35+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000198s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0211s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0192s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-11-29T09:24:35+08:00 ] 127.0.0.1 /qr?type=bindwx&id=c27dhl9j9gSdTOXcMQW5UseVPoRPYGsiHl0a2u-P--X-NOy&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+
+[ 2017-11-29T09:25:08+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000055s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0185s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000279s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2017-11-29T09:25:08+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000149s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:25:08+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:25:09+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000061s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0238s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-11-29T09:25:09+08:00 ] 127.0.0.1 /qr?type=bindwx&id=7b16Of0rSTLuQk-S--P-lXqxoIqvP-S-Sp0cPZZrgyLFnSEyls&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000050s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+
+[ 2017-11-29T09:25:15+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000082s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0181s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007725s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007778s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000274s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000249s ]
+
+[ 2017-11-29T09:25:15+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000073s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:25:15+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T09:25:15+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0188s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-11-29T09:25:15+08:00 ] 127.0.0.1 /qr?type=bindwx&id=a19bzsUuRGzop2utvIvDrSpBRMmwdnMfF1IrMms3t0Qr&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000099s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+
+[ 2017-11-29T09:25:24+08:00 ] 127.0.0.1 /index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000058s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0157s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007955s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000273s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2017-11-29T09:25:25+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0171s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-11-29T09:25:25+08:00 ] 127.0.0.1 /qr?type=bindwx&id=c9dc3kZX59y9aiwLu-P-vzhrmgxmK-S-1e0tXGkvoWnLdv18&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000065s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+
+[ 2017-11-29T10:15:04+08:00 ] 127.0.0.1 /index.php/index/base_index?hospital_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001535s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002649s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.001707s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006999s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0105s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 0 ORDER BY order_list asc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined variable: menu1 E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\a2fbc9338a55b9767c99486e40bc8103.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018570s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001840s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003723s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002056s ]
+
+[ 2017-11-29T10:15:05+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000174s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000952s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0123s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 16  [ RunTime:0.0010s ]
+
+[ 2017-11-29T10:15:05+08:00 ] 127.0.0.1 /index.php/IncomeStat/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000166s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001070s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0126s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0138s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008546s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000295s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000345s ]
+
+[ 2017-11-29T10:15:05+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0168s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0135s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0142s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id  [ RunTime:0.0012s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id ORDER BY p.addtime DESC LIMIT 0,5   [ RunTime:0.0020s ]
+
+[ 2017-11-29T10:15:05+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000153s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0133s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0133s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0127s ]
+SQL: SELECT SUM(l.pay_amount) as generalIncome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT SUM(l.pay_amount) as chargeincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT SUM(r.refund_amount) as refundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT SUM(l.pay_amount) as wechartincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT SUM(l.pay_amount) as cashincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 0 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT SUM(l.pay_amount) as alipayincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 2 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT SUM(r.refund_amount) as cashrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 0 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT SUM(r.refund_amount) as wechartrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 1 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT SUM(r.refund_amount) as alipayrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 2 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-11-29T10:15:08+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0131s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0109s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 1  [ RunTime:0.0007s ]
+
+[ 2017-11-29T10:15:08+08:00 ] 127.0.0.1 /index.php/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0118s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0124s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0009s ]
+ERR: 1146:Table 'web02.dzm_doctor' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dzm_doctor`
+ERR: 1146:Table 'web02.dzm_doctor' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dzm_doctor`
+
+[ 2017-11-29T10:15:13+08:00 ] 127.0.0.1 /index.php/index/base_index?hospital_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000094s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0121s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 0 ORDER BY order_list asc  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: menu1 E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\a2fbc9338a55b9767c99486e40bc8103.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008511s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008548s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000414s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2017-11-29T10:15:13+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000066s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0145s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 16  [ RunTime:0.0016s ]
+
+[ 2017-11-29T10:15:13+08:00 ] 127.0.0.1 /index.php/IncomeStat/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000073s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0134s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0156s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0148s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2017-11-29T10:15:13+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000081s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0157s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0148s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0171s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id  [ RunTime:0.0016s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id ORDER BY p.addtime DESC LIMIT 0,5   [ RunTime:0.0016s ]
+
+[ 2017-11-29T10:15:13+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0144s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0112s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0107s ]
+SQL: SELECT SUM(l.pay_amount) as generalIncome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT SUM(l.pay_amount) as chargeincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(r.refund_amount) as refundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(l.pay_amount) as wechartincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(l.pay_amount) as cashincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 0 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(l.pay_amount) as alipayincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 2 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(r.refund_amount) as cashrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 0 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT SUM(r.refund_amount) as wechartrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 1 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT SUM(r.refund_amount) as alipayrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 2 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-11-29T10:18:26+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000320s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001655s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0504s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043158s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043203s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2017-11-29T10:18:27+08:00 ] 127.0.0.1 /index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000155s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0592s ]
+SQL: SHOW COLUMNS FROM `dzm_his_wxopenid` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `dzm_his_wxopenid` WHERE ( userid = 1 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `dzm_his_member` WHERE ( uid = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_hospital` [ RunTime:0.0408s ]
+SQL: SELECT h.* FROM dzm_his_hospital h LEFT JOIN dzm_his_member m ON m.uid = h.hid  WHERE h.hid = '1' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-11-29T10:18:27+08:00 ] 127.0.0.1 /qr?type=bindwx&id=70caaW88iet-P-8FDxBRV0TKz-S-3UdsJSDIhbjOBhJBt-S-vt&size=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+
+[ 2017-11-29T10:18:29+08:00 ] 127.0.0.1 /index.php/index/base_index?hospital_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0117s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 0 ORDER BY order_list asc  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8] Undefined variable: menu1 E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\a2fbc9338a55b9767c99486e40bc8103.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008034s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000287s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000320s ]
+
+[ 2017-11-29T10:18:30+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000292s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001567s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0174s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 16  [ RunTime:0.0014s ]
+
+[ 2017-11-29T10:18:30+08:00 ] 127.0.0.1 /index.php/IncomeStat/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000310s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001643s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0130s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0122s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0136s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008920s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008961s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000384s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000380s ]
+
+[ 2017-11-29T10:18:30+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0169s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0153s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0137s ]
+SQL: SELECT SUM(l.pay_amount) as generalIncome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT SUM(l.pay_amount) as chargeincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT SUM(r.refund_amount) as refundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT SUM(l.pay_amount) as wechartincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT SUM(l.pay_amount) as cashincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 0 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(l.pay_amount) as alipayincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 2 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(r.refund_amount) as cashrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 0 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT SUM(r.refund_amount) as wechartrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 1 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT SUM(r.refund_amount) as alipayrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 2 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-11-29T10:18:30+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000159s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0139s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0132s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0136s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id  [ RunTime:0.0013s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id ORDER BY p.addtime DESC LIMIT 0,5   [ RunTime:0.0012s ]
+
+[ 2017-11-29T10:18:33+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000066s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0116s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 1  [ RunTime:0.0013s ]
+
+[ 2017-11-29T10:18:33+08:00 ] 127.0.0.1 /index.php/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000045s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0134s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0152s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+ERR: 1146:Table 'web02.dzm_doctor' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dzm_doctor`
+ERR: 1146:Table 'web02.dzm_doctor' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `dzm_doctor`
+
+[ 2017-11-29T10:19:00+08:00 ] 127.0.0.1 /index.php/index/base_index?hospital_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0130s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 0 ORDER BY order_list asc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8] Undefined variable: menu1 E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\a2fbc9338a55b9767c99486e40bc8103.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010265s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010316s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2017-11-29T10:19:00+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0129s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 16  [ RunTime:0.0006s ]
+
+[ 2017-11-29T10:19:00+08:00 ] 127.0.0.1 /index.php/IncomeStat/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000222s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0309s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0145s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0127s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007833s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000291s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2017-11-29T10:19:00+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000047s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0184s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0153s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0151s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id  [ RunTime:0.0016s ]
+SQL: SELECT p.id,p.op_place,p.status,a.`name`,a.sex,a.birthday,p.amount,p.addtime,p.doctor_id FROM dzm_his_care_pkg p INNER JOIN dzm_patient a ON a.patient_id = p.patient_id INNER JOIN dzm_his_member m ON m.uid = p.doctor_id  WHERE p.hospital_id = '1' GROUP BY p.id ORDER BY p.addtime DESC LIMIT 0,5   [ RunTime:0.0009s ]
+
+[ 2017-11-29T10:19:00+08:00 ] 127.0.0.1 /index.php/IncomeStat/getIncomeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0127s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0115s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dzm_his_care_pkg` [ RunTime:0.0115s ]
+SQL: SELECT SUM(l.pay_amount) as generalIncome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT SUM(l.pay_amount) as chargeincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT SUM(r.refund_amount) as refundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT SUM(l.pay_amount) as wechartincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT SUM(l.pay_amount) as cashincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 0 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT SUM(l.pay_amount) as alipayincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_paylog l ON l.pkg_id = p.id  WHERE p.status IN ('1','5') AND l.payment_platform = 2 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(r.refund_amount) as cashrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 0 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(r.refund_amount) as wechartrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 1 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(r.refund_amount) as alipayrefundincome FROM dzm_his_care_pkg p INNER JOIN dzm_his_care_refundlog r ON r.pkg_id = p.id  WHERE p.status IN ('4','7') AND r.payment_platform = 2 AND r.status = 1 AND p.hospital_id = '1' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-11-29T10:19:02+08:00 ] 127.0.0.1 /index.php/His/index/getMenuByPid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000079s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `dzm_his_member` [ RunTime:0.0141s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0115s ]
+SQL: SELECT b.rules FROM dzm_his_auth_group_access a LEFT JOIN dzm_his_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `is_menu` = 1 AND `status` = 1 AND `pid` = 1  [ RunTime:0.0010s ]
+
+[ 2017-11-29T10:19:02+08:00 ] 127.0.0.1 /index.php/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0120s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0128s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0143s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000669s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000710s ]
+NOTIC: [8] Undefined index: name E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 77 行.
+NOTIC: [8] Undefined index: birthday E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 105 行.
+NOTIC: [8] Undefined index: mobile E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 122 行.
+NOTIC: [8] Undefined index: address E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 134 行.
+NOTIC: [8] Undefined index: allergy_info E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 139 行.
+NOTIC: [8] Undefined index: name E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 524 行.
+NOTIC: [8] Undefined index: mobile E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 525 行.
+NOTIC: [8] Undefined index: birthday E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 527 行.
+NOTIC: [8] Undefined index: address E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 528 行.
+NOTIC: [8] Undefined index: allergy_info E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 529 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000336s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000406s ]
+
+[ 2017-11-29T10:19:02+08:00 ] 127.0.0.1 /Doctor/getMedicines
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000050s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0138s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0196s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0151s ]
+SQL: SELECT 
+c.hmr_id as medicines_id,b.inventory_num,b.inventory_unit,b.inventory_prescription_price,a.medicines_name,a.unit
+ FROM dzm_his_hospital_medicines_relation c 
+ LEFT JOIN dzm_his_medicines a ON c.medicines_id=a.medicines_id
+ LEFT JOIN  dzm_his_inventory b ON c.hmr_id=b.hmr_id
+ WHERE c.hospital_id='1'  LIMIT 50 [ RunTime:0.0012s ]
+
+[ 2017-11-29T10:19:02+08:00 ] 127.0.0.1 /Doctor/getPatientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000157s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0126s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0123s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0117s ]
+SQL: SELECT count(b.patient_id) as count_num FROM dzm_patient b WHERE b.hospital_id='1'    [ RunTime:0.0022s ]
+
+[ 2017-11-29T10:19:02+08:00 ] 127.0.0.1 /Doctor/getRegistrations
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000306s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001484s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0108s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0119s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0122s ]
+SQL: SELECT 
+ count(a.patient_id) as count_num 
+FROM dzm_his_registration a 
+LEFT JOIN dzm_patient b ON a.patient_id=b.patient_id 
+LEFT JOIN dzm_his_registeredfee d ON a.registeredfee_id=d.reg_id 
+WHERE a.physician_id='1' AND a.registration_status=1    [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: pager E:\wsl\webroot\install_test\dzm_install\Application\His\Model\HisDoctorModel.class.php 第 198 行.
+
+[ 2017-11-29T10:19:03+08:00 ] 127.0.0.1 /Doctor/getInspectionfee
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000062s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0133s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0121s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0133s ]
+SQL: SELECT * FROM dzm_his_inspectionfee WHERE hid='1'  [ RunTime:0.0007s ]
+
+[ 2017-11-29T10:19:03+08:00 ] 127.0.0.1 /Doctor/getExtracharges
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000066s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0112s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0126s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0119s ]
+SQL: SELECT * FROM dzm_his_prescription_extracharges WHERE hid='1' AND type='0' [ RunTime:0.0006s ]
+
+[ 2017-11-29T10:19:03+08:00 ] 127.0.0.1 /Doctor/getPkgList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000163s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0116s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0121s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0130s ]
+SQL: SELECT a.*,b.name,b.mobile,b.sex,b.birthday
+,from_unixtime(a.addtime,'%m-%d %h:%i') as addtime_str
+,from_unixtime(a.addtime,'%Y-%m-%d %h:%i:%s') as addtime_str_full,c.true_name,d.owner_name
+ FROM dzm_his_care_pkg a 
+ LEFT JOIN dzm_patient b ON a.patient_id=b.patient_id
+ LEFT JOIN dzm_his_doctor c ON a.doctor_id=c.uid
+ LEFT JOIN dzm_his_hospital d ON a.hospital_id=d.hid
+ WHERE a.doctor_id='1' AND  a.type_id=0 AND a.hospital_id=1
+ORDER BY a.id DESC
+ LIMIT 50
+ [ RunTime:0.0011s ]
+
+[ 2017-11-29T10:19:28+08:00 ] 127.0.0.1 /index.php/Registration/Registration_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000116s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0130s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0115s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_scheduling` [ RunTime:0.0112s ]
+SQL: SHOW COLUMNS FROM `dzm_his_registeredfee` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `dzm_his_registration` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `dzm_patient` [ RunTime:0.0125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM dzm_his_registration r INNER JOIN dzm_his_doctor da ON da.uid = r.physician_id INNER JOIN dzm_his_department AS d ON d.did = r.department_id INNER JOIN dzm_patient AS p ON p.patient_id = r.patient_id INNER JOIN dzm_his_registeredfee AS re ON re.reg_id = r.registeredfee_id  WHERE r.company_id = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT r.registration_id,r.registration_amount,r.registration_number,r.company_id,r.registration_status,r.create_time,r.operator_id,r.department_id,r.patient_id,r.physician_id,d.department_name,p.name,r.registeredfee_id,re.registeredfee_name,da.true_name as user_name FROM dzm_his_registration r INNER JOIN dzm_his_doctor da ON da.uid = r.physician_id INNER JOIN dzm_his_department AS d ON d.did = r.department_id INNER JOIN dzm_patient AS p ON p.patient_id = r.patient_id INNER JOIN dzm_his_registeredfee AS re ON re.reg_id = r.registeredfee_id  WHERE r.company_id = '1' ORDER BY r.create_time DESC LIMIT 0,10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Undefined index: p E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\b4a5a0d1c619e147b625124bcafe2fdb.php 第 179 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048987s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049034s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000281s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000296s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /index.php/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0130s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0119s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0586s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000660s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000703s ]
+NOTIC: [8] Undefined index: name E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 77 行.
+NOTIC: [8] Undefined index: birthday E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 105 行.
+NOTIC: [8] Undefined index: mobile E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 122 行.
+NOTIC: [8] Undefined index: address E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 134 行.
+NOTIC: [8] Undefined index: allergy_info E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 139 行.
+NOTIC: [8] Undefined index: name E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 524 行.
+NOTIC: [8] Undefined index: mobile E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 525 行.
+NOTIC: [8] Undefined index: birthday E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 527 行.
+NOTIC: [8] Undefined index: address E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 528 行.
+NOTIC: [8] Undefined index: allergy_info E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 529 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019086s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /Doctor/getRegistrations
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000052s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0139s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0166s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0162s ]
+SQL: SELECT 
+ count(a.patient_id) as count_num 
+FROM dzm_his_registration a 
+LEFT JOIN dzm_patient b ON a.patient_id=b.patient_id 
+LEFT JOIN dzm_his_registeredfee d ON a.registeredfee_id=d.reg_id 
+WHERE a.physician_id='1' AND a.registration_status=1    [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: pager E:\wsl\webroot\install_test\dzm_install\Application\His\Model\HisDoctorModel.class.php 第 198 行.
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /Doctor/getPatientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0142s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0133s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0148s ]
+SQL: SELECT count(b.patient_id) as count_num FROM dzm_patient b WHERE b.hospital_id='1'    [ RunTime:0.0007s ]
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /Doctor/getMedicines
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0117s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0124s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0123s ]
+SQL: SELECT 
+c.hmr_id as medicines_id,b.inventory_num,b.inventory_unit,b.inventory_prescription_price,a.medicines_name,a.unit
+ FROM dzm_his_hospital_medicines_relation c 
+ LEFT JOIN dzm_his_medicines a ON c.medicines_id=a.medicines_id
+ LEFT JOIN  dzm_his_inventory b ON c.hmr_id=b.hmr_id
+ WHERE c.hospital_id='1'  LIMIT 50 [ RunTime:0.0011s ]
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /Doctor/getExtracharges
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0324s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0174s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0131s ]
+SQL: SELECT * FROM dzm_his_prescription_extracharges WHERE hid='1' AND type='0' [ RunTime:0.0012s ]
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /Doctor/getInspectionfee
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001823s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0119s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0124s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0150s ]
+SQL: SELECT * FROM dzm_his_inspectionfee WHERE hid='1'  [ RunTime:0.0010s ]
+
+[ 2017-11-29T10:19:31+08:00 ] 127.0.0.1 /Doctor/getPkgList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000055s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0111s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0121s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0110s ]
+SQL: SELECT a.*,b.name,b.mobile,b.sex,b.birthday
+,from_unixtime(a.addtime,'%m-%d %h:%i') as addtime_str
+,from_unixtime(a.addtime,'%Y-%m-%d %h:%i:%s') as addtime_str_full,c.true_name,d.owner_name
+ FROM dzm_his_care_pkg a 
+ LEFT JOIN dzm_patient b ON a.patient_id=b.patient_id
+ LEFT JOIN dzm_his_doctor c ON a.doctor_id=c.uid
+ LEFT JOIN dzm_his_hospital d ON a.hospital_id=d.hid
+ WHERE a.doctor_id='1' AND  a.type_id=0 AND a.hospital_id=1
+ORDER BY a.id DESC
+ LIMIT 50
+ [ RunTime:0.0006s ]
+
+[ 2017-11-29T10:19:36+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000053s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T10:19:36+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /index.php/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000046s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0119s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0126s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0144s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000715s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000758s ]
+NOTIC: [8] Undefined index: name E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 77 行.
+NOTIC: [8] Undefined index: birthday E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 105 行.
+NOTIC: [8] Undefined index: mobile E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 122 行.
+NOTIC: [8] Undefined index: address E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 134 行.
+NOTIC: [8] Undefined index: allergy_info E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 139 行.
+NOTIC: [8] Undefined index: name E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 524 行.
+NOTIC: [8] Undefined index: mobile E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 525 行.
+NOTIC: [8] Undefined index: birthday E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 527 行.
+NOTIC: [8] Undefined index: address E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 528 行.
+NOTIC: [8] Undefined index: allergy_info E:\wsl\webroot\install_test\dzm_install\Application\Runtime\Cache\His\4c76a4f64095c59596389c0565f34682.php 第 529 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021360s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021406s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000443s ]
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Public/his/css/bootstrap.min.css.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000065s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Public/his/vendor/chartist/js/chartist.min.js.map
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000063s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+ERR: 无法加载控制器:Public
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Doctor/getRegistrations
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000050s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0176s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0152s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0173s ]
+SQL: SELECT 
+ count(a.patient_id) as count_num 
+FROM dzm_his_registration a 
+LEFT JOIN dzm_patient b ON a.patient_id=b.patient_id 
+LEFT JOIN dzm_his_registeredfee d ON a.registeredfee_id=d.reg_id 
+WHERE a.physician_id='1' AND a.registration_status=1    [ RunTime:0.0019s ]
+NOTIC: [8] Undefined variable: pager E:\wsl\webroot\install_test\dzm_install\Application\His\Model\HisDoctorModel.class.php 第 198 行.
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Doctor/getPatientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000060s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0200s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0183s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0132s ]
+SQL: SELECT count(b.patient_id) as count_num FROM dzm_patient b WHERE b.hospital_id='1'    [ RunTime:0.0007s ]
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Doctor/getMedicines
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0141s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0270s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0116s ]
+SQL: SELECT 
+c.hmr_id as medicines_id,b.inventory_num,b.inventory_unit,b.inventory_prescription_price,a.medicines_name,a.unit
+ FROM dzm_his_hospital_medicines_relation c 
+ LEFT JOIN dzm_his_medicines a ON c.medicines_id=a.medicines_id
+ LEFT JOIN  dzm_his_inventory b ON c.hmr_id=b.hmr_id
+ WHERE c.hospital_id='1'  LIMIT 50 [ RunTime:0.0008s ]
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Doctor/getExtracharges
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000059s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000048s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000415s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0125s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0122s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0118s ]
+SQL: SELECT * FROM dzm_his_prescription_extracharges WHERE hid='1' AND type='0' [ RunTime:0.0004s ]
+
+[ 2017-11-29T10:19:54+08:00 ] 127.0.0.1 /Doctor/getPkgList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000049s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0136s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0150s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0118s ]
+SQL: SELECT a.*,b.name,b.mobile,b.sex,b.birthday
+,from_unixtime(a.addtime,'%m-%d %h:%i') as addtime_str
+,from_unixtime(a.addtime,'%Y-%m-%d %h:%i:%s') as addtime_str_full,c.true_name,d.owner_name
+ FROM dzm_his_care_pkg a 
+ LEFT JOIN dzm_patient b ON a.patient_id=b.patient_id
+ LEFT JOIN dzm_his_doctor c ON a.doctor_id=c.uid
+ LEFT JOIN dzm_his_hospital d ON a.hospital_id=d.hid
+ WHERE a.doctor_id='1' AND  a.type_id=0 AND a.hospital_id=1
+ORDER BY a.id DESC
+ LIMIT 50
+ [ RunTime:0.0009s ]
+
+[ 2017-11-29T10:19:55+08:00 ] 127.0.0.1 /Doctor/getInspectionfee
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.000304s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001481s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_group_access` [ RunTime:0.0111s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM dzm_his_auth_group_access a INNER JOIN dzm_his_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `dzm_his_auth_rule` [ RunTime:0.0129s ]
+SQL: SELECT `condition`,`menu_name` FROM `dzm_his_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','84','85','86','89','87','88','141','142','143','144','145','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `dzm_his_doctor` [ RunTime:0.0119s ]
+SQL: SELECT * FROM dzm_his_inspectionfee WHERE hid='1'  [ RunTime:0.0005s ]
+

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> 
+
+<title>大宅门后台病患数据</title>
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+</head>
+
+<body class="grayBg2">
+<div class="height64 flh64 blueBg white ftc"><h2>大宅门后台病患数据</h2></div>
+<div class="clearfix fz18 flh64 whiteBg">
+	<div class="Top_Record">
+		<div class="l">平台医生<span class="red ml10">200</span></div>
+		<div class="l ml60" style="margin-right: 100px;">患者<span class="red ml10">231351354</span></div>
+	</div>
+</div>
+<div class="Top_Record mt10">
+	
+    <div class="topRec_List">
+  		<dl>
+        	<dd>患者姓名</dd>
+        	<dd>性别</dd>
+        	<dd>年龄</dd>
+        	<dd>手机号</dd>
+        	<dd>医生姓名</dd>
+        	<dd>医院</dd>
+        	<dd>科室</dd>
+        	<dd>时间</dd>
+        </dl>
+        <div class="maquee">
+            <ul>
+                <li>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                </li>
+                <li>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                </li>
+                <li>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                </li>
+                <li>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                </li>
+                <li>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                    <div>1</div>
+                    <div>王**</div>
+                    <div>中了30元</div>
+                    <div>2014/12/30 14:20</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> 
+
+
+<script type="text/javascript">
+var rdNum = 3000;
+function autoScroll(obj){  
+	var rdNum = Math.floor(Math.random() * 10,1);
+	rdNum = (rdNum > 3 ? 3 : rdNum) * 1000;
+	console.log(rdNum);
+	$(obj).find("ul").animate({  
+		marginTop : "-39px"  
+	},500,function(){  
+		$(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
+	})
+}
+$(function(){
+	setInterval('autoScroll(".maquee")', rdNum);
+})
+
+</script> 
+</body>
+</html>

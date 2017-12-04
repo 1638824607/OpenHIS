@@ -1,0 +1,283 @@
+<!-- MAIN -->
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="pd10 panel mb20">
+                <div class="fublBox mr10"><span>费用名称：</span>
+                    <input type="text" class="form-control form-itmeB" name="search" placeholder="">
+                </div>
+                <button type="button" class="btn btn-primary search">查询</button>
+                <button type="button" class="btn btn-primary r surchrgeAddBtn">新增</button>
+            </div>
+            <div class="panel">
+                <div class="pd10">
+                    <table class="table drugsTable ftc">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>费用名称</th>
+                            <th>金额</th>
+                            <th>处方类型</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbodyApp"></tbody>
+                    </table>
+                </div>
+                <div class="paging l mt10" id="charges_pager_box"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<!-- 添加费用弹框 start -->
+<div class="bombBox" id="surchrgeBomb" style="display: none;">
+    <div class="bombContent surchrgeBomb whiteBg">
+        <div class="bombTit">添加处方附加费<i class="fa fa-remove"></i></div>
+        <div class="ftc pd10">
+            <div class="input-group listSeaForm wb100">
+				<span class="input-group-btn">
+					<span class="btn">费用名称：</span>
+				</span>
+                <input class="form-control" id="addExtrachargesName" name="extracharges_name" type="text" value="" placeholder="">
+            </div>
+            <div class="input-group listSeaForm wb100 mt10">
+				<span class="input-group-btn">
+					<span class="btn">费用金额：</span>
+				</span>
+                <input class="form-control" id="addFee" name="fee" type="text" value="" placeholder="">
+            </div>
+            <div class="input-group listSeaForm wb100 mt10">
+				<span class="input-group-btn">
+					<span class="btn">处方类型：</span>
+				</span>
+                <select class="form-control" id="addType" name="type">
+                    <option value="0">中药处方</option>
+                    <option value="1">西药处方</option>
+                </select>
+            </div>
+            <a class="btn btn-primary determine wb100 mt20 add">保存</a>
+        </div>
+    </div>
+    <a><div class="bombMask"></div></a>
+</div>
+<!-- 添加费用弹框 end -->
+<!-- 编辑费用弹框 start -->
+<div class="bombBox" id="editchrgeBomb" style="display: none;">
+    <div class="bombContent editchrgeBomb whiteBg">
+        <div class="bombTit">编辑处方附加费<i class="fa fa-remove"></i></div>
+        <div class="ftc pd10">
+            <div class="input-group listSeaForm wb100">
+				<span class="input-group-btn">
+					<span class="btn">费用名称：</span>
+				</span>
+                <input class="form-control" type="text" id="editExtrachargesName" name="extracharges_name" value="" placeholder="">
+            </div>
+            <div class="input-group listSeaForm wb100 mt10">
+				<span class="input-group-btn">
+					<span class="btn">费用金额：</span>
+				</span>
+                <input class="form-control" type="text" id="editFee" name="fee" value="" placeholder="">
+            </div>
+            <div class="input-group listSeaForm wb100 mt10">
+				<span class="input-group-btn">
+					<span class="btn">处方类型：</span>
+				</span>
+                <select class="form-control" id="editType" name="type">
+
+                </select>
+            </div>
+            <input type="hidden" id="editPreId" name="pre_id" value="">
+            <a class="btn btn-primary determine wb100 mt20 edit">保存</a>
+        </div>
+    </div>
+    <a><div class="bombMask"></div></a>
+</div>
+<!-- 编辑费用弹框 end -->
+<!-- Javascript -->
+<style>
+    #charges_pager_box{text-align: center;width: 100%;}
+</style>
+<script>
+    var _charges_page = 1;
+    $(function() {
+        //首次加载页面
+        $(document).ready(function(){
+            getChargesLists('',1);
+        });
+        //搜索加载列表
+        $(":input[name='search']").bind('input propertychange', function() {
+            var search = $(":input[name='search']").val();
+            getChargesLists(search, 1);
+        });
+        $(document).on('click', '.search', function(){
+            var search = $(":input[name='search']").val();
+            getChargesLists(search, 1);
+        });
+        //处方附加费列表分页
+        $("#charges_pager_box").on('click','.item',function () {
+            var tag = $(this)[0].tagName.toLowerCase();
+            if(tag=='i'){
+                if($(this).hasClass('next')){
+                    _charges_page=parseInt(_charges_page)+1;
+                }else{
+                    _charges_page=parseInt(_charges_page)-1;
+                }
+            }else{
+                _charges_page=parseInt($(this).html());
+            }
+            var search=$(":input[name='search']").val();
+            getChargesLists(search,_charges_page);
+        });
+        //添加费用弹框
+        $(document).on('click', '.surchrgeAddBtn', function () {
+            $('#surchrgeBomb').fadeIn();
+            // 取消或者关闭
+            $('#surchrgeBomb .bombMask, #surchrgeBomb .fa-remove').one('click', function(event) {
+                $(this).closest('#surchrgeBomb').fadeOut();
+                $('body').removeAttr('style');
+            });
+        });
+        //添加费用保存
+        $(document).on('click', '.add', function(){
+            var extracharges_name = $('#addExtrachargesName').val();
+            var fee = $('#addFee').val();
+            var type = $('#addType option:selected').val();
+            $.post("{:U('/PrescriptionExtracharges/addExtraCharges')}",
+                {"extracharges_name":extracharges_name,"fee":fee,"type":type},
+                function (data) {
+                    if (data.status=='success') {
+                        getChargesLists('', _charges_page);
+                        $('#surchrgeBomb').fadeOut();
+                        $('#addExtrachargesName').val('');
+                        $('#addType option:selected').removeAttr('selected');
+                        $('#addFee').val('');
+                    }
+                    remindBox(data.msg);
+                },
+                "json");
+        });
+        //编辑费用弹框
+        $(document).on('click', '.surchrgeEditBtn', function () {
+            var pre_id = $(this).attr('data-preid');
+            $.get("{:U('/PrescriptionExtracharges/editExtraCharges')}",
+                {'pre_id':pre_id},
+                function (data) {
+                    if (data.status=='success') {
+                        $('#editExtrachargesName').val(data.data.extracharges_name);
+                        $('#editFee').val(data.data.fee);
+                        $('#editPreId').val(data.data.pre_id);
+                        var html = '<select class="form-control" id="editType" name="type">' +
+                            '<option value="0"';
+                        if (data.data.type == 0) {
+                            html += 'selected';
+                        }
+                        html +='>中药处方</option>' +
+                            '<option value="1"';
+                        if (data.data.type == 1) {
+                            html += 'selected';
+                        }
+                        html += '>西药处方</option>' +
+                            '</select>';
+                        $("#editType").replaceWith(html);
+                    }
+                },
+                "json");
+            $('#editchrgeBomb').show(0);
+            // 取消或者关闭
+            $('#editchrgeBomb .bombMask, #editchrgeBomb .fa-remove').one('click', function(event) {
+                $(this).closest('#editchrgeBomb').hide(0);
+                $('body').removeAttr('style');
+            });
+        });
+        //编辑费用保存
+        $(document).on('click', '.edit', function(){
+            var extracharges_name = $('#editExtrachargesName').val();
+            var fee = $('#editFee').val();
+            var pre_id = $('#editPreId').val();
+            var type = $('#editType option:selected').val();
+            var id= $('#'+pre_id+' td:eq(0)').html();
+            $.post("{:U('/PrescriptionExtracharges/editExtraCharges')}",
+                {"extracharges_name":extracharges_name,"fee":fee,"type":type,'pre_id':pre_id},
+                function (data) {
+                    if (data.status=='success') {
+                        var html = '<tr id="'+pre_id+'"><td>'+id+'</td>' +
+                            '<td>'+extracharges_name+'</td>' +
+                            '<td>'+fee+'</td>' +
+                            '<td>';
+                        if (type == 0) {
+                            html += '中药处方';
+                        } else {
+                            html += '西药处方';
+                        }
+                        html += '</td>' +
+                            '<td><button type="button" class="btn btn-primary btn-sm mr10 surchrgeEditBtn" data-preid="'+pre_id+'">编辑</button>' +
+                            '<button type="button" class="btn btn-default btn-sm returnBtn delete" data-preid="'+pre_id+'">删除</button></td></tr>';
+                        $('#'+pre_id).replaceWith(html);
+                        $('#editchrgeBomb').hide(0);
+                    }
+                    remindBox(data.msg);
+                },
+                "json");
+        });
+        //删除附加费用
+        $(document).on('click', '.delete', function() {
+            var search = $(":input[name='search']").val();
+            var pre_id = $(this).attr('data-preid');
+            promptBox('是否确定删除？', function () {
+                $.post("{:U('/PrescriptionExtracharges/deleteExtraCharges')}",
+                    {'pre_id': pre_id},
+                    function (data) {
+                        if (data.status == 'success') {
+                            getChargesLists(search, _charges_page);
+                        }
+                        remindBox(data.msg);
+                    },
+                    "json");
+            });
+        });
+    });
+    //搜索加载列表
+    function getChargesLists(search, page) {
+        $.post("{:U('/PrescriptionExtracharges/index')}",
+            { "search": search, 'p':page, 'pagesize':10},
+            function (data) {
+                if (data.status=='success') {
+                    if (data.data.count > 0) {
+                        var html = '';
+                        $.each(data.data.list,function (i,item) {
+                            var id = i + 1;
+                            html += '<tr id="'+item.pre_id+'">' +
+                                '<td>'+id+'</td>' +
+                                '<td>'+item.extracharges_name+'</td>' +
+                                '<td>'+item.fee+'</td>' +
+                                '<td>';
+                            if (item.type == 0) {
+                                html += '中药处方';
+                            } else {
+                                html += '西药处方';
+                            }
+                            html += '</td>' +
+                                '<td><button type="button" class="btn btn-primary btn-sm mr10 surchrgeEditBtn" data-preid="'+item.pre_id+'">编辑</button>' +
+                                '<button type="button" class="btn btn-default btn-sm returnBtn delete" data-preid="'+item.pre_id+'">删除</button></td></tr>';
+                        });
+                        _charges_page=data.data.page;
+                        $("#tbodyApp").html(html);
+                        if(data.data.pager_str.length>0){
+                            $("#charges_pager_box").html(data.data.pager_str);
+                        }else{
+                            $("#charges_pager_box").html('');
+                        }
+                    } else {
+                        $("#tbodyApp").html('<tr><td colspan="7" height="30" align="center" class="f_red" >暂无数据</td></tr>');
+                        $("#charges_pager_box").html('');
+                    }
+                } else {
+                    remindBox(data.msg);
+                }
+            },
+            "json");
+    }
+</script>

@@ -1,0 +1,114 @@
+<!-- MAIN -->
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+          <form id='config'>
+            <div class="panel pd10">
+                <h4 class="tit1 ftl"><span class="blue">第三方配置</span></h4>
+                <ul class="list-unstyled list-justify mt10 clinicForm" style="width: 65%">
+                    <li>
+                        <div class="input-group listSeaForm">
+							<span class="input-group-btn">
+								<span class="btn">微信公众平台APPID：</span>
+							</span>
+                            <input type='text' name='appid' id='appid' class="form-control" value="{$config.appid}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group listSeaForm">
+							<span class="input-group-btn">
+								<span class="btn">微信公众平台APPSECRET：</span>
+							</span>
+                            <input type='text' class="form-control" name='appsecret' id='appsecret' value="{$config.appsecret}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group listSeaForm">
+							<span class="input-group-btn">
+								<span class="btn">微信TOKEN：</span>
+							</span>
+                            <input type='text' class="form-control" name='token' id='token' value="{$config.token}">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-group listSeaForm">
+							<span class="input-group-btn">
+								<span class="btn">微信EncodingAESKey：</span>
+							</span>
+                            <input type='text' class="form-control" name='encodingaeskey' id='encodingaeskey' value="{$config.encodingaeskey}">
+                        </div>
+                    </li>
+                    <li>
+                       <div class="input-group listSeaForm">
+                            <span class="input-group-btn">
+                                <span class="btn">微信支付企业帐号：</span>
+                            </span>
+                            <input type='text' class="form-control" name='mchid' id='mchid' value="{$config.mchid}">
+                        </div>
+                    </li>
+                    <li>
+                       <div class="input-group listSeaForm">
+                            <span class="input-group-btn">
+                                <span class="btn">微信支付KEY：</span>
+                            </span>
+                            <input type='text' class="form-control" name='mchkey' id='mchkey' value="{$config.mchkey}">
+                        </div>
+                    </li>
+                         <li>
+                       <div class="input-group listSeaForm">
+                            <span class="input-group-btn">
+                                <span class="btn">微信企业付款证书部分路径：</span>
+                            </span>
+                            <input type='text' class="form-control" name='ssl_cert_path' id='ssl_cert_path' value="{$config.ssl_cert_path}">
+                        </div>
+                    </li>
+                         <li>
+                       <div class="input-group listSeaForm">
+                            <span class="input-group-btn">
+                                <span class="btn">支付宝APPID：</span>
+                            </span>
+                            <input type='text' class="form-control" name='app_id' id='app_id' value="{$config.app_id}">
+                        </div>
+                    </li>
+                             <li>
+                       <div class="input-group listSeaForm">
+                            <span class="input-group-btn">
+                                <span class="btn">商户私钥：</span>
+                            </span>
+                            <input type='text' class="form-control" name='merchant_private_key' id='merchant_private_key' value="{$config.merchant_private_key}">
+                        </div>
+                    </li>
+                             <li>
+                       <div class="input-group listSeaForm">
+                            <span class="input-group-btn">
+                                <span class="btn">支付宝公钥：</span>
+                            </span>
+                            <input type='text' class="form-control" name='alipay_public_key' id='alipay_public_key' value="{$config.alipay_public_key}">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+           
+        </form>
+         <button class='btn btn-primary config-save'>保存</button>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<script>
+    $(function () {
+         $(".config-save").click(function(){
+          $.post('{:U("HisWxmp/index")}', $("#config").serialize(), function(data) {
+                if(data.status=='success'){
+                    remindBox(data.msg);
+                }else{
+                    remindBox(data.msg);
+                }
+          },'json')
+      })
+    })
+       
+        
+</script>

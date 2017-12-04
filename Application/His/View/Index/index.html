@@ -1,0 +1,121 @@
+<div id="wrapper">
+<include file="Public:header" />
+<!-- MAIN -->
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <!-- OVERVIEW -->
+                <div class="hospCloudList clearfix hospitalShow">
+
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+</div>
+<script>
+    var is_checking = 0;
+    //选项卡切换
+    $(document).ready(function(){
+        $(".index").addClass('active').siblings('li').removeClass('active').closest('#ulApp');
+        $('#ulApp').find('> li').eq($(this).index()).addClass('active').siblings('li').removeClass('active');
+    });
+    //修改密码弹框
+    $(document).on('click', '.revisePwd', function () {
+        //$('#revisePwdBomb').fadeIn();
+        //iframe层
+        layer.open({
+            type: 2,
+            title: '修改密码',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['500px','400px'],
+            content: '/Index/editPassword' //iframe的url
+        });
+
+    });
+
+    //加载页面
+    $(document).ready(function(){
+        $.ajax({
+            type:'POST',
+            url:"{:U('/Index/index')}",
+            dataType:'json',
+            success:function(data) {
+                if (data.status == 'success') {
+                    if (data.msg == '') {
+                console.log(data);
+                    window.location.href = data.data.url;
+                    } else {
+                        if (data.data) {
+                            var html = '';
+                            html += '<a class="cloudBox hospitalBox" href="/index.php/index/base_index?hospital_id='+data.data.hid+'">' +
+                                '<div class="topLi"></div>' +
+                                '<img class="hospLogo" src="/Upload/groupPic/hospital.jpg" >'+
+                                '<div class="hospName">'+data.data.hospital_name+'</div>' +
+                                '</a>';
+                            $('.hospitalShow').html(html);
+                        } else {
+                            remindBox(data.data.msg);
+                        }
+                    }
+                } else {
+                    var html = '';
+                    html += '<a class="cloudBox hospitalBox" href="/index.php/index/base_index?hospital_id='+data.fields.hospitalLists.hid+'">' +
+                        '<div class="topLi"></div>' +
+                        '<img class="hospLogo" src="/Upload/groupPic/hospital.jpg" >'+
+                        '<div class="hospName">'+data.fields.hospitalLists.hospital_name+'</div>' +
+                        '</a>';
+                    $('.hospitalShow').html(html);
+                    var content = '<img src="'+data.fields.url+'" style="width:292px;height:273px;margin:16px 10px 4px 12px;">';
+                    layer.open({
+                        title:data.fields.msg,
+                        type: 1,
+                        //skin: 'layui-layer-rim', //加上边框
+                        area: ['315px','355px'], //宽高
+                        content: content,
+                        cancel: function(index, layero){
+                            is_checking = 0;
+                        }
+                    });
+                    is_checking = 1;
+                    setTimeout(check_bind,3000);
+                }
+
+            }
+        });
+    });
+
+    function check_bind() {
+        if(is_checking==0){
+            return false;
+        }
+        $.post("{:U('/Index/index')}",
+            function(data){
+                if (data.status == 'success') {
+                    if (data.msg == '') {
+                        window.location.href = data.data.url;
+                    } else {
+                        if (data.data) {
+                            var html = '';
+                            html += '<a class="cloudBox hospitalBox" href="/index.php/index/base_index?hospital_id='+data.data.hid+'">' +
+                                '<div class="topLi"></div>' +
+                                '<img class="hospLogo" src="/Upload/groupPic/hospital.jpg" >'+
+                                '<div class="hospName">'+data.data.hospital_name+'</div>' +
+                                '</a>';
+                            $('.hospitalShow').html(html);
+                        } else {
+                            remindBox(data.data.msg);
+                        }
+                    }
+                    layer.close();
+                } else {
+                      setTimeout(check_bind,3000);
+                }
+            },
+            'json')
+
+    }
+</script>

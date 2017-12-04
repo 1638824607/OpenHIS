@@ -1,0 +1,226 @@
+<script src="__PUBLIC_HIS__/vendor/layer/layer.js"></script>
+<div style=" width: 560px; min-height: 360px; padding: 10px; margin: auto; margin-top:10px; background: #FFFFFF;">
+
+    <ul class="tabBtn clearfix headingTab bcb">
+        <li class="on">退款</li>
+        <li>支付记录</li>
+    </ul>
+    <ul class="tabBox" style="max-height:846px; overflow-y: auto;">
+        <li class="on" id="care_history_box">
+           <ul class="mall_list">
+                <li>
+                    <label>&nbsp;&nbsp;科室名称</label> <span class="r" style="color: gray;">{$show['department_name']}</span>
+                </li>
+               <li>
+                   <label>&nbsp;&nbsp;挂号类型</label> <span class="r" style="color: gray;">{$show['registeredfee_name']}</span>
+               </li>
+               <li>
+                   <label>&nbsp;&nbsp;挂号费用 </label> <span class="r pay_amount" style="color: gray;">{$show['pay_amount']}元</span>
+               </li>
+            </ul>
+
+            <div style="padding: 10px; border-top:#000000 1px solid;margin-top: 10px;">
+                退款金额：<span class="r" id="refund_amount">￥0.00</span>
+            </div>
+
+            <div style="padding: 15px;">
+                <span class="r">
+                    <label><input type="radio" value="0" name="refund_type"  refund_type="10" id="refund_type_0" /> 原路退回</label>
+                    <label><input type="radio" value="1" name="refund_type" refund_type="11" id="refund_type_1"  checked /> 使用现金退回</label>
+                </span>
+            </div>
+
+            <div id="cash_box" style="display: ;padding: 8px;">
+                现金：<input type="number" name="cash" id="cash" value="{$show['pay_amount']}" disabled placeholder="" max="1000000" maxlength="10"/>
+            </div>
+
+            <div style="text-align: center;">
+                <textarea placeholder="退款说明" id="memo" cols="60" rows="3"></textarea>
+            </div>
+            <div style="padding: 15px;" >
+
+                <button type="button" class="btn btn-primary wb100" id="btn_refund">退款</button>
+            </div>
+
+        </li>
+        <li>
+            <ul class="mall_list">
+                <foreach name="list_pay" key="k" item="v">
+                    <li>
+                        {$v.payment_platform_label}
+                        <span class="r">￥{$v.pay_amount}</span>
+                    </li>
+                </foreach>
+            </ul>
+
+        </li>
+    </ul>
+
+</div>
+
+
+<style>
+
+    #refund_amount{color: #FF0000;font-weight: bold;font-size: large; margin-right: 10px;}
+    .mall_list{min-height: 200px; padding: 10px;max-height: 200px;}
+    .mall_list li{border-bottom: #F0F0F0 1px solid;line-height: 35px;height: 35px;}
+
+
+    .tr_registration_item, .tr_patient_list_item, .tr_medicines_list_item, .tr_inspection_list_item, .tr_extracharges_list_item, .history_list_item {
+        cursor: pointer;
+    }
+
+    #registration_pager_box, #patient_list_pager_box {
+        text-align: center;
+        width: 100%;
+    }
+
+    #registration_box .on, #patient_list_box .on, #medicines_list_box .on, #inspectionfee_list_box .on, #extracharges_list_box .on, #history_search_list_box .on {
+        background: #1a8cff;
+        color: #FFFFFF;
+    }
+
+    #medicines_list_box .sel, #inspectionfee_list_box .sel, #extracharges_list_box .sel {
+        background: #0CA818;
+        color: #FFFFFF;
+    }
+
+    .care_order_sub_box {
+        border: 1px solid #0E3460;
+        min-height: 50px;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .care_order_sub_box span {
+        display: inline-block;
+        padding: 5px;
+        margin-right: 2px;
+    }
+
+    .medicines_show {
+        display: none;
+    }
+
+    .pay_status {
+        padding: 6px 8px;
+    }
+
+    .unpay {
+        background: #7C7C7C;
+        color: #FF0000;
+    }
+
+    .payed {
+        background: #0CA818;
+        color: #FFFFFF;
+    }
+
+    .form-group{line-height: 35px;height: 35px;}
+
+    #pay_tab td{border: none;}
+</style>
+<script>
+    var is_iframe=self!=top?true:false;
+    if(is_iframe){
+        if(parent.my_layer){
+            my_layer = parent.my_layer;
+        }else{
+            my_layer = parent.layer;
+        }
+    }else{
+        my_layer = layer;
+    }
+    var ids = {$show["registration_id"]};
+    $(function(){
+        $(document).on('click', '.tabBtn > li', function(){
+            $(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+            $(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+        });
+        $(document).on('click','#refund_type_0',function(){
+            change_refund_type(0);
+        })
+        $(document).on('click','#refund_type_1',function(){
+            change_refund_type(1);
+        })
+        function change_refund_type(tid) {
+            var nums = "{$show['pay_amount']}";
+            nums=Number(nums).toFixed(2);
+            if(tid==0) {
+                $("#cash_box").hide();
+            }else{
+                $("#cash_box").show();
+                $("#cash").val(nums);
+            }
+            $("#refund_amount").html('￥'+nums);
+        }
+        $(document).on('input','#cash',function(){
+            var num = $(this).val();
+            if(num < 0){
+                $(this).val(0);
+            }
+            nums = Number(num).toFixed(2);
+            var parnt = /^([1-9]\d*(\.\d*[1-9])?)|(0\.\d*[1-9])$/;
+            if(!parnt.exec(nums)){
+                nums = '0.00';
+            }
+            $('#refund_amount').html('￥'+nums);
+        })
+        $("#btn_refund").click(function () {
+            refund_do();
+        });
+        getRefundLog();
+    })
+    function refund_do() {
+        var memo = $("#memo").val();
+        var cash = $("#cash").val();
+        var refund_type = $("#refund_type_1").prop('checked')?1:0;
+        if(memo.length<2){
+            my_layer.msg('退款说明不能少于2个字！');
+            $("#memo").focus();
+            return false;
+        }
+
+        if(refund_type==1){
+            if(cash.length==0||cash<=0){
+                my_layer.msg('退款金额应大于0！');
+                $("#cash").focus();
+                return false;
+            }
+        }
+
+
+        $.post('/Registration/pkgRefundDo',{pkg_id:'{$show["pkg_id"]}',ids:ids,refund_type:refund_type,cash:cash,memo:memo},function (res) {
+                if(res.status==0) {
+                if(parent.refund_back){
+                    parent.refund_back();
+                }else{
+                    refund_back();
+                }
+            }else{
+               remindBox(res.msg);
+            }
+        });
+    }
+    function getRefundLog() {
+        $.get('/Doctor/getRefundLog/pkg_id/{$show["pkg_id"]}',function (res) {
+            if(res.status==0){
+                if(res.data.num>0){
+                    var h='';
+                    $.each(res.data.list,function (i,n) {
+
+                        h+='<li title="'+n.adm_memo+'">\n' +
+                                n.payment_platform_label+
+                                '<span style="margin-left: 10px;">'+n.addtime+'</span>'+
+                                '<span class="r">￥'+n.refund_amount+'</span>\n' +
+                                '</li>';
+
+                    });
+                    $("#refund_list_box").html(h);
+                }
+            }else{
+                alert(res.msg);
+            }
+        });
+    }
+</script>

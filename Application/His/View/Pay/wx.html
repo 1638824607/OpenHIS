@@ -1,0 +1,90 @@
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+
+<div style="margin: auto;width: 80%;text-align:center;padding-top: 60px;">
+    <img src="/Public/assets/img/money_icon.png" style="min-width: 50px; max-width: 100px;width: 80%;" />
+    <br/>
+    <!--收款方：{$hospital.hospital_name}-->
+    <h1>订单总额：{$pkg.amount}元</h1>
+    <h1 style="color: #000000;">在线支付金额：{$pkg.ol_pay_part}元</h1>
+
+    <input type="button" value="支付" onclick="CallPay();" />
+
+</div>
+
+<script>
+
+    wx.config({$arr_js});
+
+    wx.ready(function () {
+
+        //wx.closeWindow();
+
+        /*wx.checkJsApi({
+            jsApiList: ['chooseImage'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+            success: function (res) {
+                debug_show(JSON.stringify(res));
+
+                // 以键值对的形式返回，可用的api值true，不可用为false
+                // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+            }
+        });*/
+
+
+    });
+
+    $(function () {
+
+        CallPay();
+    });
+
+    function debug_show(msg) {
+        $("#debug_box").val($("#debug_box").val() + "\n" + msg);
+    }
+
+
+    function onBridgeReady() {
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',
+            {$arr_json},
+            function (res) {
+                closeLoadBox();
+                //WeixinJSBridge.log(res.err_msg);
+                //alert(JSON.stringify(res));
+
+                if (res.err_msg == "get_brand_wcpay_request:ok") {
+                    //成功
+                    //window.location.href = '';
+
+                    //alert('支付成功，页面关闭');
+                    wx.closeWindow();
+                    //save_question();
+                } else if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                    //用户取消
+
+                } else if (res.err_msg == "get_brand_wcpay_request:fail") {
+
+                    alert('错误：' + res.err_desc);
+
+                } else {
+                    alert(JSON.stringify(res));
+                }
+            }
+        );
+    }
+
+
+    function CallPay() {
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+    }
+
+</script>

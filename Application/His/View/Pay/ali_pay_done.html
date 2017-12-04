@@ -1,0 +1,58 @@
+<div style="margin: auto;width: 80%;text-align:center;padding-top: 60px;">
+    <img src="/Public/assets/img/money_icon.png" style="min-width: 50px; max-width: 100px;width: 80%;" />
+    <br/>
+    <h1>{$msg}</h1>
+    <if condition="$amount gt 0">
+    <h1 style="color: #000000;">{$amount}元</h1>
+    </if>
+</div>
+
+<script language="javascript">
+    // 这个脚本是 ie6和ie7 通用的脚本
+    function custom_close(){
+        if
+        (confirm("您确定要关闭本页吗？")){
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        }
+        else{}
+    }
+
+
+
+    function CloseWebPage(){
+        if (navigator.userAgent.indexOf("MSIE") > 0) {
+            if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+                window.opener = null;
+                window.close();
+            } else {
+                window.open('', '_top');
+                window.top.close();
+            }
+        }
+        else if (navigator.userAgent.indexOf("Firefox") > 0) {
+            window.location.href = 'about:blank ';
+        } else {
+            window.opener = null;
+            window.open('', '_self', '');
+            window.close();
+        }
+    }
+
+
+
+</script>
+<!--
+
+<a href="javascript:window.opener=null;window.open('','_self');window.close();">关闭</a>
+
+<input id="btnClose" type="button" value="关闭本页" onClick="custom_close()" />
+<input id="btnClose2" type="button" value="关闭本页2" onClick="CloseWebPage();" />
+-->
+
+
+<style>
+    body{background: #FFFFFF;}
+    h1{color: #1bacba;font-size: 18px; margin-top: 20px;}
+</style>

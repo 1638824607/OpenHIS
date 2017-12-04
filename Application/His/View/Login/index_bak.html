@@ -1,0 +1,128 @@
+<div id="wrapper">
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="auth-box ">
+                <div class="left">
+                    <div class="content">
+                        <div class="header">
+                            <div class="logo text-center"><img src="{:C('PUB_FILE_DIR')}img/logo-dark.png" alt="Klorofil Logo"></div>
+                            <p class="lead">使用您的云诊所账号登录</p>
+                        </div>
+                        <form class="form-auth-small" id="form_login">
+                            <ul class="tabBtn clearfix">
+                                <li  <if condition="$qr_img">class="on"</if> ><span></span>扫码登陆</li>
+                                <li  <if condition="!$qr_img">class="on"</if> ><span></span>账户登录</li>
+                            </ul>
+                            <ul class="tabBox mt10" style="min-height: 186px;">
+                                <li  <if condition="$qr_img">class="on"</if>>
+                                    <div class="codeErm">
+
+                                        <if condition="$qr_img">
+                                            <img src="{$qr_img}" />
+                                            <p class="gray mt10">打开 手机微信  扫描二维码</p>
+                                            <div class="fz12 mt10 gray2">dddd</div>
+                                            <else />
+                                            <div>
+                                                <h3 style="color: red;">未设置微信登录，无法使用</h3>
+                                            </div>
+
+                                        </if>
+
+                                        <div class="fz12 mt10 gray2">
+                                            <span class="mr10"><i class="fa fa-pencil"></i> 面输入</span><span class="mr10"><i class="fa fa-bolt"></i> 更快</span><span class=""><i class="fa fa-shield"></i> 更安全</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li  <if condition="!$qr_img">class="on"</if>>
+                                    <div class="form-group">
+                                        <label for="signin-email" class="control-label sr-only">手机号/邮箱</label>
+                                        <input type="email" class="form-control" name="u" id="signin-email" value="" placeholder="手机号/邮箱">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="signin-password" class="control-label sr-only">密码</label>
+                                        <input type="password" class="form-control" name="p" id="signin-password" value="" placeholder="密码">
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <label class="fancy-checkbox element-left">
+                                            <input type="checkbox">
+                                            <span>记住密码</span>
+                                        </label>
+                                    </div>
+                                    <button type="button" id="btn_submit" class="btn btn-primary btn-lg btn-block">登陆</button>
+                                </li>
+                            </ul>
+
+                            <!--<div class="bottom">
+                                <span class="helper-text"><a href="#">重置密码</a> | <a href="#">创建账号</a></span>
+                            </div>-->
+                        </form>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="overlay"></div>
+                    <div class="content text">
+                        <h1 class="heading"></h1>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--{$qr_img_content}-->
+
+<script type="text/javascript">
+    var enid='{$enid}';
+    $(function () {
+        //选项卡切换
+        $('.tabBtn > li').click(function(){
+            $(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+            $(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+        });
+
+        if(enid.length>0)check_qr_scan(enid);
+
+        $("#btn_submit").click(function () {
+            var u = $("#signin-email").val();
+            var p = $("#signin-password").val();
+
+            if(u==''||u.length==0){
+                alert('请填写手机号或邮箱');
+                return false;
+            }
+
+            if(p==''||p.length==0){
+                alert('请填写登录密码');
+                return false;
+            }
+
+            $.post('/login/userlogin',{u:u,p:p},function (res) {
+                if(res.status==0){
+                    var d = res.data;
+                    window.location.href='/login/enlogin?enuid='+d.enuid;
+                }else{
+                    alert(res.msg);
+                }
+            },'json');
+
+        });
+    });
+
+    function check_qr_scan(enid) {
+        $.post('/login/check_scan',{enid:enid},function (res) {
+            if(res.status==0){
+                var d = res.data;
+                if(d.status!=2){
+                    setTimeout("check_qr_scan('"+d.enid+"')",3000);
+                }else{
+                    window.location.href='/login/enlogin?enuid='+d.enuid+'&enid='+d.enid;
+                }
+            }else{
+                alert(res.msg);
+            }
+        },'json');
+    }
+</script>

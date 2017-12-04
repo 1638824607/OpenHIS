@@ -1,0 +1,77 @@
+</div>
+<script type="text/javascript">
+    var load_idx ;
+    var isHospital=<?php echo $isHospital;?>;
+    $(function() {
+        $(".dzm-menu").click(function () {
+
+            $('#menu-nav').html('');
+            var id =$(this).attr('data-id');
+            $(this).attr('class','btn btn-primary dzm-menu');
+            $(this).siblings().attr('class','btn btn-default dzm-menu');
+            var html = "";
+            $.post('{:U("His/index/getMenuByPid")}',{'pid':id},function (data) {
+                     $.each(data , function (key,val) {
+                         html += '<li class="li-menu">';
+                         html +='<a href="/index.php/'+val.menu_name +'"'+ "class='menu'  target='main'>"+"<i class='"+val.icon+"'></i> <span>"+val.title+"</span></a>";
+                         html += "</li>";
+                     });
+                $('#menu-nav').append(html);
+
+                var item = $('#menu-nav').find('.menu:first');//.attr('href');
+                item.addClass('active');
+                pageLoad();
+                $("#main").attr('src', item.attr('href'));
+            })
+
+        });
+        if(isHospital==1){
+             $(".dzm-menu").eq(3).trigger('click');
+        }else{
+            $(".dzm-menu").first().trigger("click");
+        }
+
+        //左侧导航
+        $(document).on('click','#menu-nav li a',function (data) {
+
+            pageLoad();
+            $(this).addClass('active').closest('li').siblings('li').find('a').removeClass('active');
+        })
+        //修改密码弹框
+        $(document).on('click', '.revisePwd', function () {
+
+            //iframe层
+            layer.open({
+                type: 2,
+                title: '修改密码',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['500px','400px'],
+                content: '/Index/editPassword' //iframe的url
+            });
+
+        });
+
+
+    });
+
+    //iframe高度自适应
+    function reinitIframe(){
+        var iframe = document.getElementById("main");
+        try{
+            var bHeight = iframe.contentWindow.document.body.scrollHeight;
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            var height = Math.max(bHeight, dHeight);
+            iframe.height = height;
+            //console.log(height);
+        }catch (ex){}
+    }
+    //window.setInterval("reinitIframe()", 200);
+  function pageLoad() {
+      load_idx = layer.load(2,{shade: [0.65, '#FFF']});
+  }
+  function endLoad() {
+        layer.close(load_idx);
+  }
+
+</script>

@@ -1,0 +1,644 @@
+<!-- MAIN -->
+<div style="margin: auto;width: 99%;padding: 10px; background: #FFFFFF;max-width: 1200px;margin-top: 10px;overflow: hidden;">
+    <ul class="tabBtn recipelbBtn clearfix l" id="care_order_tab_btn_box" style="width: 100%;">
+        <li style="float: right; background: none;"> <a href="javascript:prePrint();" class="btn" style="background: #00AAFF;color: #FFFFFF;" title="打印当前处方 "  onclick="" id="btn_print">打 印</a></li>
+    </ul>
+
+    <div style="clear:both;"></div>
+    <ul class="tabBox recipelBox" id="care_order_tab_content_box"></ul>
+</div>
+<!-- END MAIN -->
+
+<style>
+    .tr_registration_item,.tr_patient_list_item,.tr_medicines_list_item,.tr_inspection_list_item,.tr_extracharges_list_item,.history_list_item{cursor: pointer;}
+    #registration_pager_box,#patient_list_pager_box{text-align: center;width: 100%;}
+    #registration_box .on,#patient_list_box .on,#medicines_list_box .on,#inspectionfee_list_box .on,#extracharges_list_box .on,#history_search_list_box .on{background: #1a8cff;color: #FFFFFF;}
+    #medicines_list_box .sel,#inspectionfee_list_box .sel,#extracharges_list_box .sel{background: #0CA818;color: #FFFFFF;}
+
+    .care_order_sub_box{border: 1px solid #0E3460;min-height: 50px;padding: 12px; margin-bottom: 12px;}
+    .care_order_sub_box span{display: inline-block;padding: 5px;margin-right: 2px;}
+    .medicines_show{display: none;}
+
+    .pay_status{padding: 6px 8px;}
+    .unpay{background: #7C7C7C;color:#FF0000;}
+    .payed{background:#0CA818;color: #FFFFFF;}
+    .main_list_box{height:auto;max-height: 450px; overflow: hidden;overflow-y: scroll;}
+
+
+    table tbody {
+        display:block;
+        height:auto;
+        overflow-y:scroll;
+        max-height: 340px;
+    }
+
+    table thead, tbody tr {
+        display:table;
+        width:100%;
+        table-layout:fixed;
+    }
+
+    table thead {
+        width: calc( 100% - 1em )
+    }
+
+</style>
+<!-- END WRAPPER -->
+<script>
+    var active_order_idx = -1;//当前活动处方
+    var DATA={
+        //患者信息
+        'patient':{
+            patient_id:0,
+            name:'',
+            mobile:'',
+            sex:1,
+            birthday:'',
+            address:'',
+            allergy_info:''
+        },
+        //患者病历
+        'history':{
+            id:0,
+            type_id:0,
+            is_contagious:0,
+            case_date:'',
+            case_code:'',
+            case_title:'',
+            case_result:'',
+            doctor_tips:'',
+            memo:''
+        },
+        //药品及治疗项目
+        care_order:[],
+        pkg_id: {$pkg.id},
+        pkg_status: {$pkg.status},
+        pkg_amount: {$pkg.amount},
+        pkg_order_code: {$pkg.order_code},
+        registration_id:0
+    };
+
+    function prePrint() {
+        var url = '/Doctor/printOrder/id/'+DATA['care_order'][active_order_idx]['order']['id'];
+        //$("#btn_print").attr('href',url);
+        layer.open({
+            type: 2,
+            title: false,
+            area: ['800px', '600px'],
+            shade: 0.8,
+            closeBtn: 0,
+            shadeClose: true,
+            content: url
+        });
+        return false;
+    }
+
+    $(function() {
+
+
+        //选项卡切换
+        $('#care_order_tab_btn_box').on('click', '.order_tab', function(){
+
+            //切换处方
+            active_order_idx = $(this).data('idx');
+
+
+            $("#care_order_tab_content_box .on").removeClass('on');
+            $("#care_order_box_"+active_order_idx).addClass('on');
+
+            $(this).addClass('on').siblings('li').removeClass('on').closest('.tabBtn');
+            //$(this).closest('.tabBtn').siblings('.tabBox').find('> li').eq($(this).index()).addClass('on').siblings('li').removeClass('on');
+        });
+
+        loadHistory();
+
+    });
+
+    //显示收费状态
+    function show_pay_status() {
+        //pkg_order_code
+
+        var pkg_status_label = DATA.pkg_status==1?'已收费':'未收费';
+        $("#pkg_status_label").html(pkg_status_label);
+        $("#pkg_status_label").attr('title','￥'+DATA.pkg_amount);
+        $("#care_case_code").html(DATA.pkg_order_code);
+
+    }
+
+
+
+    //计算几剂药
+    function count_d() {
+        var a=parseInt($("#care_order_num_a_"+active_order_idx).val());
+        var b=parseInt($("#care_order_num_b_"+active_order_idx).val());
+        var c=parseInt($("#care_order_num_c_"+active_order_idx).val());
+
+        //每a天b剂	服用c天	共 d 剂
+        var d=Math.ceil(c*(b/a));
+        //console.log('每%d天%d剂,服用%d天,共 %d 剂', a,b,c,d);
+        $("#care_order_num_"+active_order_idx).html(d);
+        $("#care_order_num_d_"+active_order_idx).val(d);
+        DATA['care_order'][active_order_idx]['order']['num_d']=d;
+    }
+
+
+
+    //加载看诊记录
+    function loadHistory() {
+
+        loadCareOrder(DATA.pkg_id);
+
+        show_pay_status();
+    }
+
+    //加载用药详情
+    function loadCareOrder(pkg_id) {
+        $.post('/Doctor/getCareOrder',{pkg_id:pkg_id},function (res) {
+            if(res.status==0){
+                if(res.data.num>0){
+                    //清除现有
+                    if(DATA.care_order.length>0){
+                        for(var __idx=DATA.care_order.length;__idx>=0;__idx--) {
+                            delete DATA['care_order'][__idx];
+                            $("#btn_order_"+__idx).remove();
+                            $("#care_order_box_"+__idx).remove();
+                        }
+                        active_order_idx=-1;
+                    }
+
+                    care_order_data = res.data.list;
+
+                    showCareOrderData();
+
+                }
+            }else{
+                alert(res.msg);
+            }
+        });
+    }
+
+    //加载看诊方子
+    function showCareOrderData() {
+
+        if(care_order_data.length==0){
+            return false;
+        }
+        active_order_idx++;
+        addOrderHtml(active_order_idx);
+        var o = care_order_data.shift();
+
+        $("#care_order_num_a_"+active_order_idx).val(o.num_a);
+        $("#care_order_num_b_"+active_order_idx).val(o.num_b);
+        $("#care_order_num_c_"+active_order_idx).val(o.num_c);
+        $("#care_order_num_d_"+active_order_idx).val(o.num_d);
+        $("#care_order_num_"+active_order_idx).val(o.num_d);
+        $("#care_order_use_tips_"+active_order_idx).val(o.use_tips);
+        $("#care_order_memo_"+active_order_idx).val(o.memo);
+
+        count_d();
+
+        /*
+
+        {
+            'idx':idx,
+            'label':'处方'+(idx+1),
+            'order_status':0,
+            'order':{
+                'id':0,
+                'num_a':1,
+                'num_b':1,
+                'num_c':1,
+                'num_d':1,
+                'amount':0,
+                'case_code':'',
+                'use_tips':'',
+                'memo':''
+            },
+            'order_sub':[],//药品
+            'order_inspectionfee':[],//检查项目
+            'order_extracharges':[]//附加费用
+        };
+        */
+
+        DATA['care_order'][active_order_idx]['idx']=active_order_idx;
+        DATA['care_order'][active_order_idx]['label']=o.label;
+        DATA['care_order'][active_order_idx]['order_status']=1;
+        DATA['care_order'][active_order_idx]['order']= {
+            id: o.id,
+            num_a: o.num_a,
+            num_b: o.num_b,
+            num_c: o.num_c,
+            num_d: o.num_d,
+            amount: o.all_amount,
+            case_code: o.case_code,
+            use_tips: o.use_tips,
+            memo: o.memo
+        };
+
+        //获取子项目
+        $.post('/Doctor/getCareOrderSub',{fid:o.id},function (res) {
+            if(res.status==0) {
+                //分类：0药，1附加费，2检查项目
+                if(res.data.num>0) {
+                    $.each(res.data.list,function (i,n) {
+                        parseCareOrderSub(n);
+                    });
+                }
+                parseHtmlMedicines();
+
+                showCareOrderData();
+                count_d();
+            }else{
+                alert(res.msg);
+            }
+        });
+    }
+
+    //加载看诊方子明细
+    function parseCareOrderSub(o){
+        var id= o.goods_id;
+        var type_id = parseInt(o.type_id);
+
+        //console.log('type_id:%d,%o', type_id,o);
+
+        if(type_id==0){
+            //药
+            DATA['care_order'][active_order_idx]['order_sub'][id]={id:o.id,num:o.num,tips:o.tips,amount:o.amount,info:{
+                medicines_id:id,
+                medicines_name:o.goods_name,
+                inventory_unit:o.unit,
+                inventory_num:o.num,
+                inventory_prescription_price:o.price,
+            }};
+        }else if(type_id==2){
+            //检查项目
+            DATA['care_order'][active_order_idx]['order_inspectionfee'][id]={id:o.id,num:o.num,tips:o.tips,amount:o.amount,info:{
+                ins_id:id,
+                inspection_name:o.goods_name,
+                unit:o.unit,
+                unit_price:o.price,
+                class:o.tips
+            }};
+
+        }else{
+            //附加费用order_extracharges
+
+            DATA['care_order'][active_order_idx]['order_extracharges'][id]={id:o.id,num:o.num,tips:o.tips,amount:o.amount,info:{
+                pre_id:id,
+                extracharges_name:o.goods_name,
+                fee:o.price,
+            }};
+        }
+    }
+
+
+    function check_pkg_status(){
+        show_pay_status();
+        return DATA.pkg_status==0;
+    }
+
+
+
+
+    //把数据用html显示出来
+    function parseHtmlMedicines() {
+
+        var data = DATA['care_order'][active_order_idx]['order_sub'];
+        var s='',j=0,o,item_amount=0;
+        //console.log(data);
+
+            if(DATA.care_order.length>0){
+                //j=0,item_amount=0;
+                $.each(data,function (i,n) {
+                    if(!n)return true;
+
+                    j++;
+
+                    o=n.info;
+                    item_amount = o.inventory_prescription_price*n.num;
+
+                    s+='<tr id="sub_item_'+o.medicines_id+'" data-id="'+o.medicines_id+'">' +
+                        '<td>药'+j+'</td>\n' +
+                        '<td>'+o.medicines_name+'</td>\n' +
+                        '<td><input type="text" min="1" class="form-control form-itmeB formNumber ml10 mr10 input_auto_cache" data-data_to="order_sub" placeholder="数量" value="'+n.num+'" data-medicines_id="'+o.medicines_id+'" name="num" id="buy_m_num_'+o.medicines_id+'" /></td>\n' +
+                        '<td>'+o.inventory_prescription_price+'/'+o.inventory_unit+'</td>\n' +
+                        '<td id="sub_item_amount_'+o.medicines_id+'">'+item_amount.toFixed(2)+'</td>\n' +
+                        '<td><input type="text" value="'+n.tips+'" class="input_auto_cache" data-data_to="order_sub" placeholder="特殊要求" data-medicines_id="'+o.medicines_id+'" name="tips" /></td>\n' +
+                        '</tr>';
+
+                });
+
+            }
+
+        //检查项目放药品后面
+        var data_order_inspectionfee = DATA['care_order'][active_order_idx]['order_inspectionfee'];
+
+        //console.log(data);
+
+        if(data_order_inspectionfee.length>0){
+            j=0;item_amount=0;
+            $.each(data_order_inspectionfee,function (i,n) {
+                if(!n)return true;
+
+                j++;
+
+                o=n.info;
+                item_amount = parseFloat(o.unit_price)*n.num;
+
+                s+='<tr id="sub_inspectionfee_item_'+o.ins_id+'" data-id="'+o.ins_id+'">' +
+                    '<td>检'+j+'</td>\n' +
+                    '<td>'+o.inspection_name+'</td>\n' +
+                    '<td><input type="text" min="1" class="form-control form-itmeB formNumber ml10 mr10 input_auto_cache" data-data_to="order_inspectionfee" placeholder="数量" value="'+n.num+'" data-medicines_id="'+o.ins_id+'" name="num" id="buy_inspectionfee_num_'+o.ins_id+'" /></td>\n' +
+                    '<td>'+o.unit_price+'/'+o.unit+'</td>\n' +
+                    '<td id="sub_inspectionfee_item_amount_'+o.ins_id+'">'+item_amount.toFixed(2)+'</td>\n' +
+                    '<td>'+o.class+'</td>\n' +
+                    '</tr>';
+
+            });
+        }
+
+        //order_extracharges 附加费用
+        var data_order_extracharges = DATA['care_order'][active_order_idx]['order_extracharges'];
+
+        //console.log(data);
+
+        if(data_order_extracharges.length>0){
+            j=0;item_amount=0;
+            $.each(data_order_extracharges,function (i,n) {
+                if(!n)return true;
+
+                j++;
+
+                o=n.info;
+                item_amount = parseFloat(o.fee)*n.num;
+
+                s+='<tr id="sub_extracharges_item_'+o.pre_id+'" data-id="'+o.pre_id+'">' +
+                    '<td>附'+j+'</td>\n' +
+                    '<td>'+o.extracharges_name+'</td>\n' +
+                    '<td><input type="text" min="1" class="form-control form-itmeB formNumber ml10 mr10 input_auto_cache" data-data_to="order_extracharges" placeholder="数量" value="'+n.num+'" data-pre_id="'+o.pre_id+'" name="num" id="buy_extracharges_num_'+o.pre_id+'" /></td>\n' +
+                    '<td>'+o.fee+'/'+'次</td>\n' +
+                    '<td id="sub_extracharges_item_amount_'+o.pre_id+'">'+item_amount.toFixed(2)+'</td>\n' +
+                    '<td>附加费</td>\n' +
+                    '</tr>';
+            });
+        }
+
+        $("#care_order_medicines_list_box_"+active_order_idx).html(s);
+
+
+        showMedicines();
+    }
+
+    //药品展示
+    function showMedicines() {
+        var data = DATA['care_order'][active_order_idx]['order_sub'];
+
+        if(DATA.care_order.length>0){
+            var s='',txt='',j=0,o,item_amount=0,order_maount=0;
+            $.each(data,function (i,n) {
+                if(!n)return true;
+
+                j++;
+                //console.log(n);
+
+                o=n.info;
+                item_amount = o.inventory_prescription_price*n.num;
+                order_maount+=item_amount;
+
+                txt+='<span>'+o.medicines_name+' '+n.num+o.inventory_unit+'</span>';
+            });
+            DATA['care_order'][active_order_idx]['order']['amount']=order_maount;
+
+            $("#care_order_sub_box_"+active_order_idx).html(txt);
+
+            if(txt.length>0){
+                $(".medicines_show_"+active_order_idx).show();
+            }else{
+                $(".medicines_show_"+active_order_idx).hide();
+            }
+
+        }
+    }
+
+
+    //添加药方
+    function addOrderHtml(idx) {
+
+        //判断空处方
+        /*for(var a=0;a<DATA.care_order.length;a++) {
+            if(DATA['care_order'][a] && DATA['care_order'][a].order_status==0){
+
+                console.log(DATA['care_order'][a]);
+
+                remindBox('请使用空处方！');
+                return false;
+            }
+        }*/
+
+        if(DATA.care_order.length>9){
+            remindBox('系统限制同一患者病历，只可开10个处方！');
+            return false;
+        }
+
+        active_order_idx = idx;
+
+
+        DATA['care_order'][idx]={
+            'idx':idx,
+            'label':'处方'+(idx+1),
+            'order_status':0,
+            'order':{
+                'id':0,
+                'num_a':1,
+                'num_b':1,
+                'num_c':1,
+                'num_d':1,
+                'amount':0,
+                'case_code':'',
+                'use_tips':'',
+                'memo':''
+            },
+            'order_sub':[],//药品
+            'order_inspectionfee':[],//检查项目
+            'order_extracharges':[]//附加费用
+        };
+
+        //console.log(DATA['care_order'][idx]);
+
+        /*
+        <div class="main_list_box">
+				<table class="table drugsTable">
+
+				</table>
+				</div>
+        */
+
+        $('#care_order_tab_btn_box').find('li').removeClass('on');
+        $('#care_order_tab_content_box').find('li').removeClass('on');
+
+
+        $('#care_order_tab_btn_box').append('<li class="btn on order_tab"  id="btn_order_'+idx+'" data-idx="'+idx+'"> 处方'+(idx+1)+'</li>');
+
+        $('#care_order_tab_content_box').append('<li class="on" id="care_order_box_'+idx+'">\
+				<table class="table drugsTable" style="margin-bottom: 0;">\
+					<thead>\
+						<tr>\
+							<th>序号</th>\
+							<th>药品名</th>\
+							<th>单剂量（g/条）</th>\
+							<th>单价（元）</th>\
+							<th>金额（元）</th>\
+							<th>特殊要求</th>\
+						</tr>\
+					</thead>\
+					<tbody id="care_order_medicines_list_box_'+idx+'"></tbody>\
+				</table>\
+				<div class="ftr ypInfo clearfix mb20">\
+					<div class="fublBox mr10 mt20">每<input type="text" maxlength="2" class="form-control form-itmeB formNumber ml10 mr10 input_auto_cache" data-data_to="order" placeholder="" value="1" name="num_a" id="care_order_num_a_'+idx+'" />天</div>\
+					<div class="fublBox mr20 mt20"><input type="text" class="form-control form-itmeB formNumber mr10 input_auto_cache" data-data_to="order" value="1" name="num_b"  id="care_order_num_b_'+idx+'">剂</div>\
+					<div class="fublBox mr20 mt20">服用<input type="text" class="form-control form-itmeB formNumber ml10 mr10 input_auto_cache" data-data_to="order" value="1" name="num_c"  id="care_order_num_c_'+idx+'">天</div>\
+					<div class="fublBox mt20"><input type="hidden" name="num_d" id="care_order_num_d_'+idx+'" value="1" />共 <span id="care_order_num_'+idx+'">1</span> 剂</div>\
+				</div>\
+				<h3 class="heading blue medicines_show medicines_show_'+idx+'">药品展示</h3>\
+				<div class="care_order_sub_box medicines_show medicines_show_'+idx+'" id="care_order_sub_box_'+idx+'"></div>\
+				<h3 class="heading blue">服药要求</h3>\
+				<textarea class="form-control mb20 input_auto_cache" data-data_to="order" rows="2" maxlength="500" placeholder="填写医生建议（限500字）" name="use_tips" id="care_order_use_tips_'+idx+'" ></textarea>\
+				<h3 class="heading blue">中药备注</h3>\
+				<textarea class="form-control mb20 input_auto_cache" data-data_to="order" rows="2" maxlength="500" placeholder="填写中药备注（限500字）" name="memo" id="care_order_memo_'+idx+'"></textarea>\
+			</li>');
+
+
+    }
+
+
+
+
+
+    //未保存
+    function unsave_check(lock) {
+
+        if(lock==1){
+            if(UNSAVE_STATUS==0){
+                UNSAVE_STATUS=1;
+                //绑定beforeunload事件
+                $(window).bind('beforeunload',function(){
+
+                    return true;
+                    return 'Are you okay ?';
+                });
+            }
+
+        }else{
+            if(UNSAVE_STATUS==1){
+                UNSAVE_STATUS=0;
+                //解除绑定
+                $(window).unbind('beforeunload');
+            }
+        }
+    }
+
+    //获取元素data
+    function getItemInfo(FLS,id) {
+        var s=$("#"+id),o={},t;
+
+        $.each(FLS,function (i,n) {
+            t=s.data(n);
+            o[n]=t;
+        });
+        return o;
+    }
+
+    //js验证手机号
+    function validatemobile(o)
+    {
+        var mobile=o.val();
+        if(mobile.length==0)
+        {
+            remindBox('请输入手机号码！');
+            //o.focus();
+            return false;
+        }else if(mobile.length!=11)
+        {
+            remindBox('请输入有效的手机号码(11位数字)！');
+            o.val('');
+            o.focus();
+            return false;
+        }else{
+            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            if(!myreg.test(mobile))
+            {
+                remindBox('请输入有效的手机号码！');
+                o.focus();
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    //计算年龄
+    function getAge(beginStr) {
+        var reg = new RegExp(
+            /^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})(\s)(\d{1,2})(:)(\d{1,2})(:{0,1})(\d{0,2})$/);
+
+        beginStr+=' 01:01:01';
+
+        var beginArr = beginStr.match(reg);
+
+        var d = new Date();
+        var endStr = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+
+        var endArr = endStr.match(reg);
+
+        var days = 0;
+        var month = 0;
+        var year = 0;
+
+        days = endArr[4] - beginArr[4];
+        if (days < 0) {
+            month = -1;
+            days = 30 + days;
+        }
+
+        month = month + (endArr[3] - beginArr[3]);
+        if (month < 0) {
+            year = -1;
+            month = 12 + month;
+        }
+
+        year = year + (endArr[1] - beginArr[1]);
+
+        var yearString = year > 0 ? year + "岁" : "";
+        var mnthString = month > 0 ? month + "月" : "";
+        var dayString = days > 0 ? days + "天" : "";
+
+        /*
+         * 1 如果岁 大于等于1 那么年龄取 几岁
+         * 2 如果 岁等于0 但是月大于1 那么如果天等于0
+天小于3天 取小时
+         * 例如出生2天 就取 48小时
+         */
+        var result = "";
+        if (year >= 1) {
+            result = yearString + mnthString;
+        } else {
+            if (month >= 1) {
+                result = days > 0 ? mnthString + dayString : mnthString;
+            } else {
+                var begDate = new Date(beginArr[1], beginArr[3] - 1,
+                    beginArr[4], beginArr[6], beginArr[8], beginArr[10]);
+                var endDate = new Date(endArr[1], endArr[3] - 1, endArr[4],
+                    endArr[6], endArr[8], endArr[10]);
+
+                var between = (endDate.getTime() - begDate.getTime()) / 1000;
+                days = Math.floor(between / (24 * 3600));
+                var hours = Math.floor(between / 3600 - (days * 24));
+                dayString = days > 0 ? days + "天" : "";
+                result = days >= 3 ? dayString : days * 24 + hours + "小时";
+            }
+        }
+
+        return result;
+    }
+
+</script>

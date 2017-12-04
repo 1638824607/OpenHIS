@@ -1,0 +1,70 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$order.hospital_name}</title>
+    <style type="text/css" media=print>
+        .noprint{display : none }
+    </style>
+</head>
+<body>
+<div class="noprint" style="text-align: right;">
+    <input value="打印"  onclick="window.print();" type="button" style="font-size: 20px;color: red;" />
+</div>
+
+<div style="width:100%;height: 30px;">
+    <span style="float: right">处方总金额：￥{$order.all_amount}</span>
+    <span style="float: left">收费日期：{$order.addtime|date="Y-m-d H:i:s",###}</span>
+    <span style="float: left;margin-left: 15px;">收费员：{$order.true_name}</span>
+</div>
+
+<div style="width: 100%; overflow: hidden;">
+    <div style="border: 2px solid #000000; border-bottom: none; width: auto; text-align: center; line-height: 30px; height: 30px;">
+        <!--{$order.hospital_name}&#45;&#45;-->
+        {$order.department_name}--
+        {$order.label}
+    </div>
+    <table width="100%" border="1" cellspacing="0" cellpadding="5" >
+        <thead>
+        <tr>
+            <td>序号</td>
+            <td>药品名</td>
+            <td>单位</td>
+            <td>单价（元）</td>
+            <td>金额（元）</td>
+            <td>备注</td>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <foreach name="list" key="k" item="v">
+            <tr>
+                <td>{$v.id}</td>
+                <td>{$v.goods_name}</td>
+                <td>{$v.single}{$v.unit}</td>
+                <td>{$v.price}</td>
+                <td>{$v.amount}</td>
+                <td>{$v.tips}</td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+</div>
+
+<div style="text-align: right;padding: 10px;">
+    <p><span style="float: left">打印时间：{$print_time}</span>
+    <span class="fublBox mr10 mt20">每{$order.num_a}天</span>
+    <span class="fublBox mr20 mt20">{$order.num_b}剂</span>
+    <span class="fublBox mr20 mt20">服用{$order.num_c}天</span>
+    <span class="fublBox mt20">共 {$order.num_d} 剂</span>
+    </p>
+    <p>医生建议:{$order.use_tips}</p>
+    <p>中药备注:{$order.memo}</p>
+</div>
+<script type="text/javascript">
+    window.print();
+</script>
+</body>
+</html>

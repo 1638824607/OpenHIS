@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>《大宅门云诊所系统》安装程序</title>
+    <script type="text/javascript" src="../his/vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../his/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../his/vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../his/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/pub.css">
+    <script type="text/javascript" src="../his/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="./js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="./js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./css/install.css">
+
+</head>
+<body>
+<div id="nav">
+    <div class="inside">
+        <p class="name">《大宅门云诊所系统》<span>安装向导</span></p>
+        <ul class="schedule">
+            <li class="number">1</li>
+            <li class="word">使用协议</li>
+        </ul>
+        <ul class="schedule">
+            <li class="number">2</li>
+            <li class="word">环境检测</li>
+        </ul>
+        <ul class="schedule">
+            <li class="number">3</li>
+            <li class="word">创建数据</li>
+        </ul>
+        <ul class="schedule active">
+            <li class="number">4</li>
+            <li class="word">安装完成</li>
+        </ul>
+    </div>
+</div>
+<div id="out">
+    <div class="inside">
+        <div class="box agreement">
+            <h2>恭喜您安装成功</h2>
+            <p class="content">
+                <a href="../../index.php" target="_blank">去登录后访问后台</a><br>
+                <span class="admin_hint">账号：<?php echo $_POST['adm_u'];?> &emsp; 密码为：<?php echo $_POST['adm_p'];?></span>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
